@@ -30,7 +30,7 @@ subBtn.addEventListener('click', ()=>{
     if(passcode.value === defaultPasscode){
         console.log("Pass!!");
         form.reset();
-        window.location.href = "./source/protected.html";
+        window.location.href = "./protected.html";
     }
     else{
         alert('Wrong Code!!')
