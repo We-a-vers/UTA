@@ -20,7 +20,7 @@ logOutBtn.addEventListener('click', ()=>{
 logOutBtn.addEventListener('click', ()=>{
     console.log("You have successfully logged out");
     form.reset();
-    window.location.href = "./source/index.html";
+    window.location.href = "./index.html";
 })
 
 // Close by clicking outside of the form
