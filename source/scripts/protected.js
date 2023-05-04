@@ -16,7 +16,7 @@ logOutBtn.addEventListener('click', ()=>{
     modal.style.display = 'block';
 })
 
-// Jump to the protected page if passcode matches
+// Jump to the home page if logout button clicked
 logOutBtn.addEventListener('click', ()=>{
     console.log("You have successfully logged out");
     form.reset();
