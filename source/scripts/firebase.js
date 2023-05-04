@@ -2,14 +2,13 @@ import * as firebase from 'https://www.gstatic.com/firebasejs/9.21.0/firebase-ap
 import { getDatabase, ref, set, get } from 'https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDfwdVOBgGUGCta6kbv0hVbYUUFaiaAO98",
-    authDomain: "weaversuta.firebaseapp.com",
-    databaseURL: "https://weaversuta-default-rtdb.firebaseio.com",
-    projectId: "weaversuta",
-    storageBucket: "weaversuta.appspot.com",
-    messagingSenderId: "748568964454",
-    appId: "1:748568964454:web:f53513d9afc7d25836eca7",
-    measurementId: "G-9B8XYP2Q68"
+    apiKey: "AIzaSyCmGMX9MoljOy6BngzVhs4PmtqhJtLnCrk",
+    authDomain: "ucsd-uta.firebaseapp.com",
+    projectId: "ucsd-uta",
+    storageBucket: "ucsd-uta.appspot.com",
+    messagingSenderId: "973883227678",
+    appId: "1:973883227678:web:c915a9a9b10a5773f6f80f",
+    measurementId: "G-MCPVDR0L3Q"
 };
 
 firebase.initializeApp(firebaseConfig);
