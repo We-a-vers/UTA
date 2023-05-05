@@ -1,0 +1,38 @@
+ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 55px;
+    margin-right: 70px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+  }
+  
+  .navbar {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    position: absolute;
+    background-color: black;
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .navbar > h1 {
+    margin-left: 147px;
+  }
+  
+  a:hover {
+    background-color: white;
+    color: black;
+  }
+  
