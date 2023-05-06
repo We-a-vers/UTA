@@ -1,3 +1,7 @@
+body {
+  padding-top: 80px; 
+}
+
 ul {
   display: flex;
   flex-direction: row;
@@ -22,7 +26,7 @@ li > a {
   top: 0;
   left: 0;
   width: 100vw;
-  position: absolute;
+  position:fixed;
   background-color: black;
   color: aliceblue;
   display: flex;
