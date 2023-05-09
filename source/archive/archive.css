@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+  
+h1 {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 77px;
+    line-height: 105px;
+
+    text-align: center;
+
+    color: #000000;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+  
+h2 {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 168.68%;
+    /* or 51px */
+
+    text-align: center;
+
+    color: #000000;
+}
+  
+.section {
+    margin-bottom: 50px;
+}
+  
+.section-title {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 150.18%;
+    color: #000000;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+  
+.image-container {
+    display: flex;
+    overflow: auto;
+    padding: 10px 0;
+    width: 100%; /* Adjust this value as needed */
+    height: 200px; /* Adjust this value as needed */
+}
+  
+.image-container img {
+    width: 200px;
+    height: auto;
+    margin-right: 10px;
+}
