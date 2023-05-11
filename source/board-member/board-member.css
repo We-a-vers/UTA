@@ -12,7 +12,6 @@ body{
     flex-direction: row;   
     justify-content:space-between;
     width: 100vw;
-    background-color: aqua;
     gap: 5%;
     margin: 0px;
 }
@@ -52,29 +51,42 @@ body{
 }
 
 .members{
-    margin-left: 8%;
+    margin-left: 5%;
+    margin-right: 5%;
+    border: 2px solid black;
+}
+
+.members > h1{
+    padding-left: 2rem;
 }
 
 .gallery{
     display: flex;
     flex-direction: column;
+    margin: 0 3rem 0 3rem;
+    margin-top: 10rem;
 }
 
 .gallery-image{
     display: flex;
     flex-direction: row;
+    margin-top: 2rem;
+    gap: 8rem;
 }
 
-.card{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
+.card {
+  display: inline-flex;
+  flex-direction: column;
+  max-width: 30%;
+  gap: 1.5rem;
 }
 
-.card > img{
-    width:50%;
-    
+.card > img {
+  max-width: 100%;
+  border: 2px solid black;
+}
+
+.card > h1{
+    padding-left: 1.5rem;
 }
 
