@@ -1,26 +1,41 @@
 window.addEventListener('DOMContentLoaded', (event) => {
     // Images for the first section
     const images1 = [
-      'image1.jpg',
-      'image2.jpg',
-      'image3.jpg',
-      // Add more images here
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
     ];
   
     // Images for the second section
     const images2 = [
-      'image4.jpg',
-      'image5.jpg',
-      'image6.jpg',
-      // Add more images here
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
     ];
   
     // Images for the third section
     const images3 = [
-      'image7.jpg',
-      'image8.jpg',
-      'image9.jpg',
-      // Add more images here
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
     ];
   
     // Populate image containers
@@ -37,5 +52,31 @@ window.addEventListener('DOMContentLoaded', (event) => {
       imgElement.alt = 'Event Image';
       container.appendChild(imgElement);
     });
+
+
+    const images = [
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200'
+    ];
+
+    let currentImageIndex = 0;
+
+    function prevImage() {
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        updateImageSrc();
+    }
+
+    function nextImage() {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        updateImageSrc();
+    }
+
+    function updateImageSrc() {
+        const image = document.querySelector('.image-with-border');
+        image.src = images[currentImageIndex];
+    }
 }
   

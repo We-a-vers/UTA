@@ -26,6 +26,24 @@
 
     color: #000000;
 }
+
+.past-event-highlights-title {
+    left: calc(50% - 403px/2 - 428.5px);
+    top: 513px;
+
+    font-family: 'Lora';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 51px;
+
+    color: #000000;
+}
+
+.past-event-highlights-container {
+    align-items: center;
+    justify-content: center;
+}
   
 .section {
     margin-bottom: 50px;
@@ -55,4 +73,28 @@
     width: 200px;
     height: auto;
     margin-right: 10px;
+}
+
+.image-with-border {
+    flex: auto;
+    border: 2px solid black;
+    justify-content: center;
+    align-items: center;
+}
+
+.prev-arrow, .next-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    text-decoration: none;
+    color: black;
+}
+
+.prev-arrow {
+    left: 100px;
+}
+
+.next-arrow {
+    right: 100px;
 }
