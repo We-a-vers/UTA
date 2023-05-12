@@ -1,15 +1,17 @@
-# Accessibility Decision
+# Firebase Usage
 
 ## Context and Problem Statement
 
-We have many website hosting options. Firebase provides hosting and realtime database that could be a good fit for the project. 
+We had many website hosting options and discussed which one was the most suitable for our project.
 
 ## Considered Options
 
-* Availabilities of different domain names
-* Various hosting options
+* All options: Wix, Firebase, Bluehost, GoDaddy, Ionos, Shopify, Netlify, Wordpress, Web, Google Cloud, GitHub Pages
+* Top 2 options: Firebase, Netlify
+* Things to take into account: availabilities of different domain names, connecting to GitHub, limitations under the free plan, accessibility for every team member... etc.
 
 ## Decision Outcome
+- We will host the UTA website on Firebase as it provides hosting and realtime database that could be a good fit for the project
 - Domain: Since 'ucsduta' is not available, we'll use 'ucsd-uta' followed by the default '.web.app'
 - Set up: The firebase project is already set up and connected to the repo. Follow [this](https://firebase.google.com/docs/cli) to download the Firebase CLI in order to use the firebase commands. Everyone should be able to access the Firebase project now.
 - Command Line Usage
