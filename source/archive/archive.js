@@ -42,16 +42,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     populateImageContainer('image-container1', images1);
     populateImageContainer('image-container2', images2);
     populateImageContainer('image-container3', images3);
-  });
-  
-  function populateImageContainer(containerId, images) {
-    const container = document.getElementById(containerId);
-    images.forEach((image) => {
-      const imgElement = document.createElement('img');
-      imgElement.src = image;
-      imgElement.alt = 'Event Image';
-      container.appendChild(imgElement);
-    });
 
 
     const images = [
@@ -63,20 +53,30 @@ window.addEventListener('DOMContentLoaded', (event) => {
     ];
 
     let currentImageIndex = 0;
+});
+  
+function populateImageContainer(containerId, images) {
+    const container = document.getElementById(containerId);
+    images.forEach((image) => {
+      const imgElement = document.createElement('img');
+      imgElement.src = image;
+      imgElement.alt = 'Event Image';
+      container.appendChild(imgElement);
+    });
+}
 
-    function prevImage() {
-        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-        updateImageSrc();
-    }
+function prevImage() {
+    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    updateImageSrc();
+}
 
-    function nextImage() {
-        currentImageIndex = (currentImageIndex + 1) % images.length;
-        updateImageSrc();
-    }
+function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    updateImageSrc();
+}
 
-    function updateImageSrc() {
-        const image = document.querySelector('.image-with-border');
-        image.src = images[currentImageIndex];
-    }
+function updateImageSrc() {
+    const image = document.querySelector('.image-with-border');
+    image.src = images[currentImageIndex];
 }
   

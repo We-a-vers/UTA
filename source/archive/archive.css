@@ -4,11 +4,8 @@
     font-weight: 400;
     font-size: 77px;
     line-height: 105px;
-
     text-align: center;
-
     color: #000000;
-
     flex: none;
     order: 0;
     flex-grow: 0;
@@ -20,29 +17,19 @@
     font-weight: 400;
     font-size: 30px;
     line-height: 168.68%;
-    /* or 51px */
-
     text-align: center;
-
     color: #000000;
 }
 
 .past-event-highlights-title {
     left: calc(50% - 403px/2 - 428.5px);
     top: 513px;
-
     font-family: 'Lora';
     font-style: normal;
     font-weight: 500;
     font-size: 40px;
     line-height: 51px;
-
     color: #000000;
-}
-
-.past-event-highlights-container {
-    align-items: center;
-    justify-content: center;
 }
   
 .section {
@@ -75,26 +62,25 @@
     margin-right: 10px;
 }
 
-.image-with-border {
-    flex: auto;
-    border: 2px solid black;
-    justify-content: center;
+.past-event-highlights-container {
+    display: flex;
     align-items: center;
+    justify-content: center;
 }
-
+  
 .prev-arrow, .next-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 24px;
     text-decoration: none;
     color: black;
 }
-
+  
 .prev-arrow {
-    left: 100px;
+    margin-right: 10px;
 }
-
+  
 .next-arrow {
-    right: 100px;
+    margin-left: 10px;
 }
