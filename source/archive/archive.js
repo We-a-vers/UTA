@@ -42,17 +42,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     populateImageContainer('image-container1', images1);
     populateImageContainer('image-container2', images2);
     populateImageContainer('image-container3', images3);
-
-
-    const images = [
-        'https://picsum.photos/200',
-        'https://picsum.photos/200',
-        'https://picsum.photos/200',
-        'https://picsum.photos/200',
-        'https://picsum.photos/200'
-    ];
-
-    let currentImageIndex = 0;
 });
   
 function populateImageContainer(containerId, images) {
@@ -64,6 +53,15 @@ function populateImageContainer(containerId, images) {
       container.appendChild(imgElement);
     });
 }
+
+const images = [
+    'https://picsum.photos/200',
+    'https://picsum.photos/200',
+    'https://picsum.photos/200',
+    'https://picsum.photos/200',
+    'https://picsum.photos/200'
+];
+let currentImageIndex = 0;
 
 function prevImage() {
     currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
