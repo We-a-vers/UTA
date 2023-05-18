@@ -1,0 +1,72 @@
+body{
+
+}
+
+.header{
+    text-align: center;
+    padding-top: 144px;
+    padding-bottom: 76px;
+}
+
+.history{
+    padding: 3rem;
+}
+
+.history div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    text-align: left;
+}
+
+.history div > img{
+    width: 50%;
+    border: 2px solid black;
+}
+
+.core-values{
+    padding: 3rem;
+}
+
+.gallery{
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+}
+
+.gallery div{
+    border: 2px solid black;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.culture{
+    padding: 3rem;
+}
+
+.culture div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact > h2{
+    margin-left: 2rem;
+}
+
+.contact div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap:3rem;
+}
