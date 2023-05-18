@@ -3,36 +3,53 @@
 <head>
 	<title>UTA Website</title>
 	<link rel="stylesheet" href="source/home/home.css">
+	<link rel="stylesheet" type="text/css" href="source/Navbar/navbar.css">
 </head>
 <body>
-	<header>
-		<nav>
-			<ul>
-				<!-- demo -->
-				<button type="button" class="log-in">Log In</button>
-			</ul>
-		</nav>
-	</header>
-	<main>
+    <!-- Navigation Bar -->
+	<div class="navbar">
+        <h1>LOGO</h1>
 
-		<!-- Pop out Modal -->
-		<div class="modal">
-			<!-- Modal content -->
-			<div class="modal-content">
-			  <span class="close">&times;</span>
-				
-				<form>
-					<label for="passcode">Passcode</label><br>
-					<input type="text" id="passcode" name="passcode" value=""><br>
-					<button type="button" id="submit-btn">Submit</button>
-				</form> 
-				
-			</div>
-		</div>
+        <ul>
+            <li><a href="">ABOUT</a></li>
+            <li class="drop-down">
+                <a class="prevent-select">TEAM</a>
+                <div class="drop-down-items">
+                    <a href="">TEAM 1</a>
+                    <a href="">TEAM 2</a>
+                </div>
+            </li>
+            <li class="drop-down">
+                <a class="prevent-select">EVENTS</a>
+                <div class="drop-down-items">
+                    <a href="">EVENT 1</a>
+                    <a href="">EVENT 2</a>
+                </div>
+            </li>
+            <li><a href="">SPONSORS</a></li>
+        </ul>
+    </div>
 
-		<h1>UTA</h1>
-		<p>Blah blah blah.</p>
-	</main>
+    <!-- Header -->
+    <div class="header">
+        <section id="header-left">
+            <h1>United Taiwanese Association (UTA)</h1>
+            <h3>We aim to provide a sense of home for oversease Taiwanese students and a platform for those interested in learning about Taiwan.</h2>
+            <button>Learn More</button>
+            <button>Explore Event</button>
+        </section>
+    </div>
+
+    <!-- Content -->
+    <section class="content">
+        <div class="stats">
+            <h2>Join Us!</h2>
+            <h3>Join one of UCSD's largest cultural organization.</h3>
+            <h3>200+ Members | 100+ Events</h3>
+        </div>
+    </section>
+
+    <!-- Footer -->
 	<footer>
 		<p>&copy; 2023 We@vers</p>
 		
