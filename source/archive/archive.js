@@ -1,41 +1,68 @@
 window.addEventListener('DOMContentLoaded', (event) => {
     // Images for the first section
     const images1 = [
-        'https://picsum.photos/580/350',
-        'https://picsum.photos/580/350',
-        'https://picsum.photos/580/350',
-        'https://picsum.photos/580/350',
-        'https://picsum.photos/580/350',
-        'https://picsum.photos/580/350',
-        'https://picsum.photos/580/350',
-        'https://picsum.photos/580/350',
-        'https://picsum.photos/580/350',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
     ];
   
     // Images for the second section
     const images2 = [
-        'https://picsum.photos/580/350',
-        'https://picsum.photos/580/350',
-        'https://picsum.photos/580/350',
-        'https://picsum.photos/580/350',
-        'https://picsum.photos/580/350',
-        'https://picsum.photos/580/350',
-        'https://picsum.photos/580/350',
-        'https://picsum.photos/580/350',
-        'https://picsum.photos/580/350',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
     ];
   
     // Images for the third section
     const images3 = [
-        'https://picsum.photos/580/350',
-        'https://picsum.photos/580/350',
-        'https://picsum.photos/580/350',
-        'https://picsum.photos/580/350',
-        'https://picsum.photos/580/350',
-        'https://picsum.photos/580/350',
-        'https://picsum.photos/580/350',
-        'https://picsum.photos/580/350',
-        'https://picsum.photos/580/350',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
+        './placeholder_image.png',
     ];
   
     // Populate image containers
@@ -44,11 +71,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
     populateImageContainer('image-container3', images3);
 
     const images = [
-        'https://picsum.photos/1150/630',
-        'https://picsum.photos/1150/630',
-        'https://picsum.photos/1150/630',
-        'https://picsum.photos/1150/630',
-        'https://picsum.photos/1150/630'
+        './placeholder_image.png',
+        './placeholder_image2.png',
     ];
     let currentImageIndex = 0;
     
