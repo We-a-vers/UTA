@@ -1,8 +1,8 @@
 body {
 	font-family: Arial, sans-serif;
 	background-color: #f0f0f0;
-	margin: 0;
-	padding: 0;
+	margin: 10%;
+	padding: 5%;
 }
 
 header {
@@ -12,40 +12,107 @@ header {
 }
 
 #header-left{
-    display: inline-block;
+    display: flex;
     flex-direction: column;
     align-items: start;
-    /*justify-content: space-between;*/
+    /* justify-content: space-between; */
 	max-width: 50%;
-    margin-left: 163px;
+	/* margin-top: 5%; */
+	/* padding: 2%; */
+}
+
+h2{
+	/* height: 164px;
+	width: 589px; */
+	font-size: 30px;
+}
+
+h3{
+	/* height: 164px;
+	width: 589px; */
+	font-size: 20px;
+	font-weight: normal;
 }
 
 #header-left h1{
-    /*justify-content: center;*/
+    justify-content: center;
     align-items: center;
-    margin-top: 286px;
-    height: 164px;
-    width: 584px;
-    font-size: 64px;
-	line-height: 81.92px;
+    /* height: 164px;
+    width: 584px; */
+    font-size: 50px;
+	/* line-height: 81.92px; */
 }
 
-#header-left h3{
-	height: 164px;
-	width: 589px;
-	font-size: 30px;
-	line-height: 40.85px;
-}
-
-#header-left button{
-	display: inline-block
+#header-buttons{
+	/* display: inline-block;
     padding: 20px 46px 20px 46px;
-    margin-bottom: 169px;
-    font-size: 30px;   
+    margin-bottom: 169px; */
+    font-size: 30px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 0px;
+	gap: 40px;
+	/* width: 442px;
+	height: 62px; */
 }
 
 #header-right{
-    
+	display: flex;
+	align-items: center;
+	position: absolute;
+	left: 50%;
+	top: 10%;
+}
+
+#join{
+	text-align: center;
+	margin-top: 5%;
+}
+
+#stats{
+	font-weight: bold;
+}
+
+#upcoming-events{
+	margin-top: 5%;
+}
+
+.events{
+	display: flex;
+	flex-direction: row;
+}
+
+.events img{
+	width: 80%;
+}
+
+.events div{
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.view-events{
+	text-align: center;
+}
+
+#sponsors{
+	margin-top: 5%;
+}
+
+.row-1, .row-2{
+	display: flex;
+	flex-direction: row;
+}
+
+.row-1 img, .row-2 img{
+	width: 35%;
+}
+
+.sponsor-benefits{
+	text-align: right;
+	padding: 5%;
 }
 
 nav ul {
