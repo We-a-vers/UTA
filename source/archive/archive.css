@@ -91,6 +91,7 @@ img {
 
 .view-more {
     text-decoration: underline;
+    font-size: 20px;
     color: #000;
     display: flex;
     justify-content: end;
