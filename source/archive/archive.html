@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Archive</title>
+
+        <script type="module" src="./archive.js"></script>
+        <link rel="stylesheet" type="text/css" href="./archive.css">
+        <link rel="stylesheet" type="text/css" href="./../Navbar/navbar.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <h1>LOGO</h1>
+    
+            <ul>
+                <li><a href="">ABOUT</a></li>
+                <li class="drop-down">
+                    <a class="prevent-select">TEAM</a>
+                    <div class="drop-down-items">
+                        <a href="">TEAM 1</a>
+                        <a href="">TEAM 2</a>
+                    </div>
+                </li>
+                <li class="drop-down">
+                    <a class="prevent-select">EVENTS</a>
+                    <div class="drop-down-items">
+                        <a href="">EVENT 1</a>
+                        <a href="">EVENT 2</a>
+                    </div>
+                </li>
+                <li><a href="">SPONSORS</a></li>
+            </ul>
+        </div>
+        <div>
+            <h1 class="title">Archive</h1>
+            <h2 class="subtitle">View our past events and the wonderful memories we made together with our members!</h2>
+            <h3 class="past-event-highlights-title">Past Event Highlights</h3>
+            
+            <div class="past-event-highlights-container">
+                <button class="prev-arrow" href="">&#8249;</button>
+                <img id="past-event-highlights-image" src="./placeholder_image.png" alt="image placeholder">
+                <button class="next-arrow" href="">&#8250;</button>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">2022-23</h3>
+                <div class="image-container" id="image-container1"></div>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">2021-22</h3>
+                <div class="image-container" id="image-container2"></div>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">2020-21</h3>
+                <div class="image-container" id="image-container3"></div>
+            </div>
+        </div>
+
+        <a href="" class="view-more">View more pictures from our past events here</a>
+    </body>
+</html>
