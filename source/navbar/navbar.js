@@ -106,30 +106,36 @@ class NavbarComponent extends HTMLElement{
             user-select: none; /* Standard syntax */
         }
 
-      </style>
+        .navbar-container {
+            margin-bottom: 100px;
+        }
+
+        </style>
         
 
-        <div class="navbar">
-            <h1>UCSD UTA</h1>
+        <div class="navbar-container">
+            <div class="navbar">
+                <h1>UCSD UTA</h1>
 
-            <ul>
-                <li><a href="">ABOUT</a></li>
-                <li class="drop-down">
-                    <a class="prevent-select">TEAM</a>
-                    <div class="drop-down-items">
-                        <a href="">TEAM 1</a>
-                        <a href="">TEAM 2</a>
-                    </div>
-                </li>
-                <li class="drop-down">
-                    <a class="prevent-select">EVENTS</a>
-                    <div class="drop-down-items">
-                        <a href="">EVENT 1</a>
-                        <a href="">EVENT 2</a>
-                    </div>
-                </li>
-                <li><a href="">SPONSORS</a></li>
-            </ul>
+                <ul>
+                    <li><a href="">ABOUT</a></li>
+                    <li class="drop-down">
+                        <a class="prevent-select">TEAM</a>
+                        <div class="drop-down-items">
+                            <a href="">TEAM 1</a>
+                            <a href="">TEAM 2</a>
+                        </div>
+                    </li>
+                    <li class="drop-down">
+                        <a class="prevent-select">EVENTS</a>
+                        <div class="drop-down-items">
+                            <a href="">EVENT 1</a>
+                            <a href="">EVENT 2</a>
+                        </div>
+                    </li>
+                    <li><a href="">SPONSORS</a></li>
+                </ul>
+            </div> 
         </div> 
         `
     }
