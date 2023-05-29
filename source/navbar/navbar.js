@@ -34,7 +34,7 @@ class NavbarComponent extends HTMLElement{
 
         li > a {
             margin: 0px;
-            color: white;
+            color: #172940;
             padding: 40px;
             display: flex;
         }
@@ -44,15 +44,21 @@ class NavbarComponent extends HTMLElement{
             left: 0;
             width: 100vw;
             position:fixed;
-            background-color: black;
-            color: aliceblue;
+            background-color: white;
+            color: #172940;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            filter: drop-shadow(0px 4px 4px rgba(29, 49, 89, 0.1));
         }
 
         .navbar h1 {
             margin-left: 147px;
+        }
+        
+        .navbar img{
+            margin-left: 80px;
+            width: 31%;
         }
 
         .drop-down {
@@ -63,6 +69,7 @@ class NavbarComponent extends HTMLElement{
             display: flex;
             flex-direction: column;
             position: absolute;
+            color: #172940;
             top: 100%;
             left: 0;
             opacity: 0;
@@ -71,29 +78,32 @@ class NavbarComponent extends HTMLElement{
             transform: translateY(-10px);
         }
 
-        .drop-down > a:hover + .drop-down-items {
-            opacity: 1;
-            transform: translateY(0px);
-            pointer-events: auto;
-        }
-
         .drop-down:hover .drop-down-items {
             opacity: 1;
             pointer-events: auto;
+            background-color: white;
             transform: translateY(0px);
         }
 
+        .drop-down:hover{
+            text-decoration: underline;
+        }
+
         .drop-down-items a:hover{
-            background-color: wheat;
-            color:black;
+            background-color: #3C4F75;
+            color:white;
         }
 
         .drop-down-items > a {
-            background-color: black;
+            color: #172940;
             width: 8rem;
-            color: white;
             padding: 40px 0;
             text-align: center;
+        }
+
+        .drop-down-items a:nth-child(2){
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
         }
 
         .drop-down + a{
@@ -115,25 +125,25 @@ class NavbarComponent extends HTMLElement{
 
         <div class="navbar-container">
             <div class="navbar">
-                <h1>UCSD UTA</h1>
+                <img src="/source/assets/UTA-logo.png" alt="">
 
                 <ul>
-                    <li><a href="">ABOUT</a></li>
+                    <li><a href="/source/about-us/about-us.html">ABOUT</a></li>
                     <li class="drop-down">
                         <a class="prevent-select">TEAM</a>
                         <div class="drop-down-items">
-                            <a href="">TEAM 1</a>
-                            <a href="">TEAM 2</a>
+                            <a href="/source/board-member/board-member.html">Board Member</a>
+                            <a href="/source/intern-program/intern.html">Intern Program</a>
                         </div>
                     </li>
                     <li class="drop-down">
                         <a class="prevent-select">EVENTS</a>
                         <div class="drop-down-items">
-                            <a href="">EVENT 1</a>
-                            <a href="">EVENT 2</a>
+                            <a href="/source/events/events.html">All</a>
+                            <a href="/source//archive/archive.html">Archive</a>
                         </div>
                     </li>
-                    <li><a href="">SPONSORS</a></li>
+                    <li><a href="/source/sponsors/sponsors.html">SPONSORS</a></li>
                 </ul>
             </div> 
         </div> 
