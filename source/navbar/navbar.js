@@ -23,9 +23,8 @@ class NavbarComponent extends HTMLElement{
             display: flex;
             flex-direction: row;
             list-style-type: none;
-            margin-right: 70px;
-            margin: 0;
-            padding: 0;
+            margin: 0 3% 0 0;
+            gap: 1.5rem;
         }
 
         a {
@@ -37,6 +36,10 @@ class NavbarComponent extends HTMLElement{
             color: #172940;
             padding: 40px;
             display: flex;
+            font-family: 'Lora';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
         }
 
         .navbar {
@@ -128,22 +131,22 @@ class NavbarComponent extends HTMLElement{
                 <img src="/source/assets/UTA-logo.png" alt="">
 
                 <ul>
-                    <li><a href="/source/about-us/about-us.html">ABOUT</a></li>
+                    <li><a href="/source/about-us/about-us.html">About Us</a></li>
                     <li class="drop-down">
-                        <a class="prevent-select">TEAM</a>
+                        <a class="prevent-select">Team</a>
                         <div class="drop-down-items">
                             <a href="/source/board-member/board-member.html">Board Member</a>
                             <a href="/source/intern-program/intern.html">Intern Program</a>
                         </div>
                     </li>
                     <li class="drop-down">
-                        <a class="prevent-select">EVENTS</a>
+                        <a class="prevent-select">Events</a>
                         <div class="drop-down-items">
                             <a href="/source/events/events.html">All</a>
                             <a href="/source//archive/archive.html">Archive</a>
                         </div>
                     </li>
-                    <li><a href="/source/sponsors/sponsors.html">SPONSORS</a></li>
+                    <li><a href="/source/sponsors/sponsors.html">Sponsors</a></li>
                 </ul>
             </div> 
         </div> 
