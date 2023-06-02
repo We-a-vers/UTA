@@ -19,7 +19,7 @@ a {
 
 li > a {
   margin: 0px;
-  color: white;
+  color: #172940;
   padding: 40px;
   display: flex;
 }
@@ -29,8 +29,8 @@ li > a {
   left: 0;
   width: 100vw;
   position:fixed;
-  background-color: black;
-  color: aliceblue;
+  background-color: white;
+  color: #172940;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -51,15 +51,10 @@ li > a {
   top: 100%;
   left: 0;
   opacity: 0;
+  background-color: white;
   pointer-events: none;
   transition: opacity 150ms ease-in-out, 150ms ease-in-out;
   transform: translateY(-10px);
-}
-
-.drop-down > a:hover + .drop-down-items {
-  opacity: 1;
-  transform: translateY(0px);
-  pointer-events: auto;
 }
 
 .drop-down:hover .drop-down-items {
@@ -69,14 +64,14 @@ li > a {
 }
 
 .drop-down-items a:hover{
-  background-color: wheat;
-  color:black;
+  background-color: #172940;
+  color:white;
 }
 
 .drop-down-items > a {
-  background-color: black;
   width: 8rem;
-  color: white;
+  height: fit-content;
+  color: #172940;
   padding: 40px 0;
   text-align: center;
 }
