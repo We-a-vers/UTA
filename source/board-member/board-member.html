@@ -2,10 +2,13 @@
 <html lang="en">
 <head>    
     <link rel="stylesheet" href="board-member.css">
-    <link rel="stylesheet" href="/source/navbar/navbar.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
+
     <title>Board Member</title>
 
 </head>
@@ -13,7 +16,7 @@
 
     <!-- Copy the following code for the html of the navigation bar -->
 
-    <div class="navbar">
+    <!-- <div class="navbar">
         <h1>UTA at UC San Diego</h1>
 
         <ul>
@@ -34,38 +37,48 @@
             </li>
             <li><a href="">SPONSORS</a></li>
         </ul>
-    </div>
+    </div> -->
 
+
+    <navbar-component></navbar-component> 
+    
+    
     <!-- Header -->
 
-    <div class="header">
+    <h1>Board Members</h1>
 
+    <div class="header">
+        
         <section id="header-left">
             <h1>
-                Description Here
+                Being a part of UTA board is like being in a family.<br> 
+                We grow together, plan together, and most importantly, 
+                have fun together! 
             </h1> 
 
-            <button>JOINT US!</button>
+            <button>Join our intern program</button>
         </section>
-        <img id="header-image" src="/source/assets/placeholder-image.png" alt="">
+        <div class="img-container">
+            <img id="header-image" src="/source/assets/board-member-header-image.png" alt="">
+        </div>
     </div>
 
     <!-- Content -->
     <section class="members">
-        <h1>20XX - 20XX BOARD</h1>
+        <h1>2023 - 2024 board</h1>
         
         <div class="gallery">
-            <h1>CO-PRESIDENTS</h1>
+            <h1>Co-presidents</h1>
             
             <div class="gallery-image">
                 <div class="card">
                     <img src="/source/assets/placeholder-image.png" alt="">
-                    <h1>Name</h1>
+                    <h2>Name</h2>
                 </div>
 
                 <div class="card">
                     <img src="/source/assets/placeholder-image.png" alt="">
-                    <h1>Name</h1>
+                    <h2>Name</h2>
                 </div>
             </div>
         </div>
@@ -77,17 +90,17 @@
             <div class="gallery-image">
                 <div class="card">
                     <img src="/source/assets/placeholder-image.png" alt="">
-                    <h1>Name</h1>
+                    <h2>Name</h2>
                 </div>
 
                 <div class="card">
                     <img src="/source/assets/placeholder-image.png" alt="">
-                    <h1>Name</h1>
+                    <h2>Name</h2>
                 </div>
 
                 <div class="card">
                     <img src="/source/assets/placeholder-image.png" alt="">
-                    <h1>Name</h1>
+                    <h2>Name</h2>
                 </div>
             </div>
         </div>
@@ -98,12 +111,12 @@
             <div class="gallery-image">
                 <div class="card">
                     <img src="/source/assets/placeholder-image.png" alt="">
-                    <h1>Name</h1>
+                    <h2>Name</h2>
                 </div>
 
                 <div class="card">
                     <img src="/source/assets/placeholder-image.png" alt="">
-                    <h1>Name</h1>
+                    <h2>Name</h2>
                 </div>
             </div>
         </div>
@@ -114,17 +127,17 @@
             <div class="gallery-image">
                 <div class="card">
                     <img src="/source/assets/placeholder-image.png" alt="">
-                    <h1>Name</h1>
+                    <h2>Name</h2>
                 </div>
 
                 <div class="card">
                     <img src="/source/assets/placeholder-image.png" alt="">
-                    <h1>Name</h1>
+                    <h2>Name</h2>
                 </div>
 
                 <div class="card">
                     <img src="/source/assets/placeholder-image.png" alt="">
-                    <h1>Name</h1>
+                    <h2>Name</h2>
                 </div>
             </div>
         </div>
@@ -135,12 +148,12 @@
             <div class="gallery-image">
                 <div class="card">
                     <img src="/source/assets/placeholder-image.png" alt="">
-                    <h1>Name</h1>
+                    <h2>Name</h2>
                 </div>
 
                 <div class="card">
                     <img src="/source/assets/placeholder-image.png" alt="">
-                    <h1>Name</h1>
+                    <h2>Name</h2>
                 </div>
             </div>
         </div>
@@ -149,5 +162,6 @@
         
     </section>
 
+    <script src="../navbar/navbar.js"></script>
 </body>
 </html>
