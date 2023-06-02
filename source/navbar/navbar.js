@@ -120,7 +120,7 @@ class NavbarComponent extends HTMLElement{
         }
 
         .navbar-container {
-            margin-bottom: 100px;
+            margin-bottom: 150px;
         }
 
         </style>
