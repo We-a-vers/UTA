@@ -3,32 +3,10 @@
 <head>
 	<title>UTA Website</title>
 	<link rel="stylesheet" href="source/home/home.css">
-	<link rel="stylesheet" type="text/css" href="source/navbar/navbar.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-	<div class="navbar">
-        <h1>LOGO</h1>
-
-        <ul>
-            <li><a href="">ABOUT</a></li>
-            <li class="drop-down">
-                <a class="prevent-select">TEAM</a>
-                <div class="drop-down-items">
-                    <a href="">TEAM 1</a>
-                    <a href="">TEAM 2</a>
-                </div>
-            </li>
-            <li class="drop-down">
-                <a class="prevent-select">EVENTS</a>
-                <div class="drop-down-items">
-                    <a href="">EVENT 1</a>
-                    <a href="">EVENT 2</a>
-                </div>
-            </li>
-            <li><a href="">SPONSORS</a></li>
-        </ul>
-    </div>
+    
+    <navbar-component></navbar-component>
 
     <!-- Header -->
     <div class="header">
@@ -97,6 +75,7 @@
 		<a href="/source/firebase-example.html" style="color: white">firebase</a>
 	</footer> -->
 	<script src="/source/home/home.js"></script>
+    <script src="./source/navbar/navbar.js"></script>
 </body>
 </html>
 
