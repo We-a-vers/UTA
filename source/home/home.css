@@ -1,15 +1,16 @@
 body {
 	font-family: Arial, sans-serif;
 	background-color: #f0f0f0;
-	margin: 10%;
 	padding: 5%;
 	border: 1px solid;
 }
 
-header {
+.header {
 	background-color: #333;
 	color: #fff;
-	padding: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 #header-left{
@@ -59,11 +60,8 @@ h3{
 }
 
 #header-right{
-	display: flex;
-	align-items: center;
-	position: absolute;
-	left: 50%;
-	top: 10%;
+	width: 40%;
+	border: 1px solid;
 }
 
 #join{
