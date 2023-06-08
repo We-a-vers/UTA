@@ -2,7 +2,7 @@
 
 ## Context and Problem Statement
 
-As mentioned in FirebaseUsage.md, we have decided on using Firebase for website hosting. The frequency of deployment is something that we discussed about.
+As mentioned in FirebaseUsage.md, we have decided on using Firebase for website hosting. The frequency of deployment was something that needed to be discussed.
 
 ## Considered Options
 
