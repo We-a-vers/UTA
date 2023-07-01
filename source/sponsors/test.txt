@@ -1,0 +1,13 @@
+<h1>
+        Sponsors
+    </h1> 
+
+    <h1>
+        View the past events and the wonderful memories we made together with our members!
+    </h1> 
+
+    .membership-card__content {
+    text-align: left; /* Align text to the left */
+    margin-left: 160px; /* Add left margin for spacing */
+    font-size: 28;
+}
