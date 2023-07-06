@@ -9,16 +9,18 @@
 
 .page-title {
     font-size: 24px;
-    margin-left: 23px;
+    margin: 24px 0px 21px 23px;
 }
 
 .section-title {
     font-size: 20px;
-    margin-left: 33px;
+    margin: 40px 0px 9px 33px;
 }
 
 .input-title {
     font-size: 16px;
+    margin-top: 14px;
+    margin-bottom: 4px;
 }
 
 .input-container {
@@ -47,6 +49,7 @@
 .text-row-container {
     display: flex;
     flex-direction: row;
+    align-items: flex-end;
     width: 100%;
 }
 
@@ -54,24 +57,40 @@
     font-size: 12px;
     margin-left: auto;
     color: #6B6F80;
+    margin-bottom: 4px;
 }
 
-#description-input-container {
+#upcoming-events-section {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    width: 60%;
+}
+
+#upcoming-events-sub-section {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 45%;
+}
+
+textarea {
+    box-sizing: border-box;
+    resize: none;
+    border: 1px solid #6B6F80;
+    border-radius: 4px;
+}
+
+#name-input, #link-input {
+    height: 48px;
+    padding: 12px 16px;
 }
 
 #description-input {
-    box-sizing: border-box;
-    resize: none;
-    height: 120px;
-    border: 1px solid #6B6F80;
-    border-radius: 4px;
-    padding: 12px 16px 12px 16px;
+    height: 204px;
+    padding: 12px 16px;
 }
 
-#description-input::placeholder {
+textarea::placeholder {
     font-size: 16px;
     color: #6B6F80;
     font-weight: 400;
