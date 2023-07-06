@@ -1,1 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Events Password Protected</title>
 
+    <link rel="stylesheet" type="text/css" href="./events-protected.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script type="module" src="./events-protected.js"></script>
+    <script src="../tabs/tabs.js"></script>
+</head>
+<body>
+    <div id="container">
+        <tab-component></tab-component>
+
+        <div>
+            <div class="page-title">Edit Event Page</div>
+            <hr>
+
+            <div class="section-title">Upcoming Events<span class="required">*</span></div>
+            <div id="upcoming-events-section">
+                <div id="event-name-and-description">
+                    <div class="text-row-container">
+                        <div class="input-title">Event Name</div>
+                        <div class="word-count">10/10</div>
+                    </div>
+                    <input class="value-input" placeholder="Insert Name..."></input>
+
+                    <div class="text-row-container">
+                        <div class="input-title">Event Description</div>
+                        <div class="word-count">10/10</div>
+                    </div>
+                    <textarea id="description-input" placeholder="Insert text..."></textarea>
+                </div>
+                <div id="event-image">
+                    <div class="input-title">Event Image<span class="required">*</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

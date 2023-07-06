@@ -1,0 +1,84 @@
+#container {
+    display: flex;
+    flex-direction: row;
+}
+
+.page-title {
+    font-size: 24px;
+    margin-left: 23px;
+}
+
+.section-title {
+    font-size: 20px;
+    margin-left: 33px;
+}
+
+.input-title {
+    font-size: 16px;
+}
+
+.input-container {
+    margin-bottom: 10px;
+}
+
+#upcoming-events-section {
+    display: flex;
+    flex-direction: row;
+    margin-left: 33px;
+}
+
+#event-name-and-description {
+    display: flex;
+    flex-direction: column;
+    width: 328px;
+}
+
+#event-image {
+    display: flex;
+    flex-direction: column;
+    width: 309px;
+    margin-left: 58px;
+}
+
+.text-row-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.word-count {
+    font-size: 12px;
+    margin-left: auto;
+    color: #6B6F80;
+}
+
+#description-input {
+    width: 328px;
+    height: 204px;
+    border: 1px solid #6B6F80;
+    border-radius: 4px;
+    padding: 12px 16px 12px 16px;
+}
+
+#description-input::placeholder {
+    font-size: 16px;
+    color: #6B6F80;
+    font-weight: 400;
+}
+
+.required {
+    color: red;
+}
+
+.value-input {
+    width: 328px;
+    height: 48px;
+    border: 1px solid #BBBFCC;
+    border-radius: 4px;
+}
+
+.value-input::placeholder {
+    font-size: 16px;
+    color: #6B6F80;
+    font-weight: 400;
+}
