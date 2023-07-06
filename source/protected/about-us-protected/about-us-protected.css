@@ -4,7 +4,7 @@
 }
 
 #content {
-    width: 100vw;
+    width: 100%;
 }
 
 .section {
@@ -13,6 +13,7 @@
 
 .page-title {
     font-size: 24px;
+    margin: 24px 0px 24px 23px;
 }
 
 .section-title {
@@ -21,7 +22,8 @@
 
 .input-title {
     font-size: 16px;
-    margin-top: 14px;
+    margin-top: 22px;
+    margin-bottom: 4px;
 }
 
 .input-container {
@@ -46,6 +48,7 @@
     font-size: 12px;
     margin-left: auto;
     color: #6B6F80;
+    margin-bottom: 4px;
 }
 
 #description-input-container {
@@ -76,6 +79,7 @@
 .help-text {
     font-size: 14px;
     color: #6B6F80;
+    margin-top: 4px;
 }
 
 .upload-button {
@@ -85,6 +89,10 @@
     border: 1px solid #000000;
     border-radius: 4px;
     padding: 8px 24px 8px 24px;
+}
+
+.upload-button {
+    cursor: pointer;
 }
 
 .value-input {
