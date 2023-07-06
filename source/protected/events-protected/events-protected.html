@@ -13,26 +13,29 @@
     <div id="container">
         <tab-component></tab-component>
 
-        <div>
+        <div id="content">
             <div class="page-title">Edit Event Page</div>
             <hr>
 
             <div class="section-title">Upcoming Events<span class="required">*</span></div>
             <div id="upcoming-events-section">
-                <div id="event-name-and-description">
+                <div id="upcoming-events-sub-section">
                     <div class="text-row-container">
                         <div class="input-title">Event Name</div>
                         <div class="word-count">10/10</div>
                     </div>
-                    <input class="value-input" placeholder="Insert Name..."></input>
+                    <textarea id="name-input" placeholder="Insert name..."></textarea>
 
                     <div class="text-row-container">
                         <div class="input-title">Event Description</div>
                         <div class="word-count">10/10</div>
                     </div>
                     <textarea id="description-input" placeholder="Insert text..."></textarea>
+
+                    <div class="input-title">Sign up Link</div>
+                    <textarea id="link-input" placeholder="Enter URL"></textarea>
                 </div>
-                <div id="event-image">
+                <div id="upcoming-events-sub-section">
                     <div class="input-title">Event Image<span class="required">*</span></div>
                 </div>
             </div>
