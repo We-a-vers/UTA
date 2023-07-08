@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="home-protected.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="home-protected.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Noto+Sans:wght@400;600&display=swap"
+        rel="stylesheet" />
     <title>Edit Home Page</title>
 </head>
-<body>
 
+<body>
     <!-- css:
         #container{
             display: flex;
@@ -15,7 +20,6 @@
         }
     -->
     <div id="container">
-
         <tab-component></tab-component>
 
         <div>
@@ -24,21 +28,67 @@
 
             <div id="main">
                 <div id="title-section">
-                    <h2>Title Section<span style="color:#D72525;">*</span></h2>
+                    <h2>Title Section<span style="color: #d72525">*</span></h2>
 
                     <form>
-                        <h3><label for="description">Description under title<span style="color:#D72525;">*</span></label></h3>
-                        <textarea name="description" rows="7" cols="120" required placeholder="Insert text..."></textarea>
+                        <h3>
+                            <label for="description">Description under title<span
+                                    style="color: #d72525">*</span></label>
+                        </h3>
+                        <textarea name="description" rows="7" cols="120" required
+                            placeholder="Insert text..."></textarea>
                     </form>
                     <p>Enter the description under title</p>
+                </div>
+                <div id="title-img">
+                    <h2>Title Image<span style="color: #d72525">*</span></h2>
+                    <div id="img-container">
+                        <img src="/source/assets/placeholder-image.png" />
 
+                        <button class="svg-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                fill="none">
+                                <path
+                                    d="M23.1816 11.0738L18.3891 6.18675L19.9678 4.55773C20.4001 4.11169 20.9312 3.88867 21.5612 3.88867C22.1912 3.88867 22.7219 4.11169 23.1534 4.55773L24.7322 6.18675C25.1644 6.63279 25.39 7.17115 25.4088 7.80181C25.4276 8.43247 25.2208 8.97044 24.7885 9.4157L23.1816 11.0738ZM21.5465 12.7901L9.59334 25.1241H4.80078V20.1789L16.754 7.84486L21.5465 12.7901Z"
+                                    fill="#505D68" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div id="upcoming-events">
+                    <h2>Upcoming Events<span style="color: #d72525">*</span></h2>
+
+                    <div id="event-container">
+                        <form>
+                            <h3><label for="event-name">Event name</label></h3>
+                            <textarea name="event-name" rows="1" cols="35" required placeholder="Insert name..."></textarea>
+                            <h3><label for="event-description">Event description</label></h3>
+                            <textarea name="event-description" rows="10" cols="35" required placeholder="Insert text..."></textarea>
+                        </form>
+
+                        <div id="event-img">
+                            <h3>Event Image<span style="color: #d72525">*</span></h3>
+                            <img src="/source/assets/placeholder-image.png" />
+                            
+                            <div id="event-btn">
+                                <button>Upload</button>
+                                <button style="color: #F61414;">Delete Image</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="sponsor-logos">
+                    <h2>Sponsor Logos<span style="color: #d72525">*</span></h2>
+                    <div id="add-img-box"></div>
+                    <div id="img-box"></div>
+                    <div id="img-box"></div>
+                    <div id="img-box"></div>
                 </div>
             </div>
-
         </div>
-
     </div>
 
     <script src="../tabs/tabs.js"></script>
 </body>
+
 </html>
