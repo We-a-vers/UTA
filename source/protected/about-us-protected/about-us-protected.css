@@ -14,16 +14,21 @@
 .page-title {
     font-size: 24px;
     margin: 24px 0px 24px 23px;
+    font-family: 'Inter', sans-serif;
 }
 
 .section-title {
     font-size: 20px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 600;
 }
 
 .input-title {
     font-size: 16px;
     margin-top: 22px;
     margin-bottom: 4px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
 }
 
 .input-container {
@@ -49,6 +54,8 @@
     margin-left: auto;
     color: #6B6F80;
     margin-bottom: 4px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
 }
 
 #description-input-container {
@@ -80,6 +87,8 @@
     font-size: 14px;
     color: #6B6F80;
     margin-top: 4px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
 }
 
 .upload-button {
@@ -89,10 +98,8 @@
     border: 1px solid #000000;
     border-radius: 4px;
     padding: 8px 24px 8px 24px;
-}
-
-.upload-button {
     cursor: pointer;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .value-input {
