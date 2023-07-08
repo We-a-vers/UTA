@@ -76,8 +76,16 @@
 textarea {
     box-sizing: border-box;
     resize: none;
-    border: 1px solid #6B6F80;
-    border-radius: 4px;
+    border-radius: 0.25rem;
+    border: 1px solid var(--neutral-neutral-30, #BBBFCC);
+    padding: 0.75rem 1rem;
+    align-items: center;
+}
+
+textarea::placeholder {
+    font-size: 16px;
+    color: #6B6F80;
+    font-weight: 400;
 }
 
 #name-input, #link-input {
@@ -88,12 +96,6 @@ textarea {
 #description-input {
     height: 204px;
     padding: 12px 16px;
-}
-
-textarea::placeholder {
-    font-size: 16px;
-    color: #6B6F80;
-    font-weight: 400;
 }
 
 .required {
@@ -112,6 +114,24 @@ textarea::placeholder {
     font-size: 16px;
     color: #6B6F80;
     font-weight: 400;
+}
+
+#upcoming-events-event-image {
+    display: flex;
+    justify-content: flex-end;
+    background: url("/source/assets/placeholder-image.png") center/cover ;
+    width: 19.30763rem;
+    height: 13.22038rem;
+    fill: linear-gradient(0deg, #FFF 0%, #FFF 100%), linear-gradient(0deg, #FFF 0%, #FFF 100%), #FFF;
+    border: 1px solid #BBBFCC;
+}
+
+.pencil-button {
+    width: min-content;
+    height: min-content;
+    border: none;
+    cursor: pointer;
+    background: none;
 }
 
 .past-events-section {
