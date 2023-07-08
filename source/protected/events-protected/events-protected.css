@@ -10,17 +10,22 @@
 .page-title {
     font-size: 24px;
     margin: 24px 0px 21px 23px;
+    font-family: 'Inter', sans-serif;
 }
 
 .section-title {
     font-size: 20px;
     margin: 40px 0px 9px 33px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 600;
 }
 
 .input-title {
     font-size: 16px;
     margin-top: 14px;
     margin-bottom: 4px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 600;
 }
 
 .input-container {
@@ -58,6 +63,8 @@
     margin-left: auto;
     color: #6B6F80;
     margin-bottom: 4px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
 }
 
 #upcoming-events-section {
@@ -85,6 +92,7 @@ textarea {
 textarea::placeholder {
     font-size: 16px;
     color: #6B6F80;
+    font-family: 'Noto Sans', sans-serif;
     font-weight: 400;
 }
 
