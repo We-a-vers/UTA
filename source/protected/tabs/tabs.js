@@ -67,11 +67,12 @@ class TabComponent extends HTMLElement{
             #tab-container{
                 background-color: #FCFCFD;
                 width: 17.5rem;
-                height: 100vh;
                 margin-top: 0;
                 padding-top: 1.5rem;
                 padding-left: 0.5rem;
                 padding-right: 0.5rem;
+                height: 100%;
+                border-right: 1px solid #DEE1EB;
             }
 
             #tab-header{

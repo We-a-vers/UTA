@@ -42,11 +42,7 @@ h3{
 
 #main{
     margin:0;
-    border-left: 1px solid #DEE1EB;
-    width: 100%;
-    height: 100%;
     padding: 2.44rem 3rem 2.44rem 3rem;
-    
 }
 
 
@@ -68,11 +64,8 @@ h3{
     margin-top: 1.25rem;
 }
 
-
-#img-container img{
-    margin: 0.5rem;
-    border: 1px solid;
-    width:50%;
+svg{
+    margin-top: 0.5rem;
 }
 
 .svg-btn{
@@ -81,13 +74,12 @@ h3{
     border: none;
     padding: 0;
     cursor: pointer;
-    left: 24rem;
-    top: 1rem;
+    left: 17.25rem;
+    top: 0.25rem;
 }
 
-#img-container{
+.img-container{
     position: relative;
-    display: inline-block;
 }
 
 
@@ -102,12 +94,37 @@ h3{
     margin-top: 2.53rem;
 }
 
-#upcoming-events textarea{
-    padding: 1rem;
-    margin: 0.3rem;
+textarea{
+    margin-top: 0.25rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--neutral-neutral-30, #BBBFCC);
+    padding: 0.75rem 1rem;
+    width: 18.5rem;
+    height: 12.75rem;
+
+    font-family: Noto Sans;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
+    letter-spacing: -0.01563rem;
 }
 
+input{
+    width: 18.5rem;
+    height: 1.5rem;
+    padding: 0.75rem 1rem;
+    margin-top: 0.25rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--neutral-neutral-30, #BBBFCC);
 
+    font-family: Noto Sans;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
+    letter-spacing: -0.01563rem;
+}
 
 #event-img img{
     margin: 0.3rem;
@@ -116,20 +133,22 @@ h3{
 }
 
 #event-btn{
+    margin-top: 1rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
 
 #event-btn button{
-    padding: 0.5rem 2.5rem;
+    padding: 0.5rem 2rem;
     border-radius: 0.25rem;
     border: 1px solid #DADADA;
     background: #FFF;
+    cursor: pointer;
 
     color: #000;
     text-align: center;
-    font-family: Ubuntu;
+    font-family: Noto Sans;
     font-size: 1rem;
     font-style: normal;
     font-weight: 300;
@@ -141,6 +160,42 @@ h3{
     margin-top: 2.53rem;
 }
 
-#sponsor-logos h2 {
-    
+#show-img{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3.31rem;
+    margin-top: 1.38rem;
+}
+
+.svg-btn-small{
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    left: 8.7rem;
+    top: 0.3rem;
+}
+
+#plus{
+    position: absolute;
+    width: 2rem;
+    height: 1.75rem;
+    color: #BBBFCC;
+    text-align: center;
+    font-family: Noto Sans;
+    font-size: 6rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.5rem;
+    letter-spacing: -0.01563rem;
+
+    left:3.5rem;
+    top:4rem;
+
+    background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
 }
