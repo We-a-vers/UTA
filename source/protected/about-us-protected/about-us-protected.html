@@ -8,7 +8,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Noto+Sans:wght@400;600&family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Noto+Sans:wght@400;600&family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
 
     <script type="module" src="./about-us-protected.js"></script>
     <script src="../tabs/tabs.js"></script>
@@ -94,22 +94,18 @@
 
         <div id="popupForm" class="popup-form">
             <form id="eventForm" class="event-form">
-                <!-- centered -->
                 <div id="form-image-preview-container">
-                    <div class="input-title">Image Preview</div>
+                    <div class="input-title" id="form-image-preview-title">Image Preview</div>
                     <div id="title-img-upload"></div>
                     <div id="form-img-buttons" class="buttons-row-container">
                         <button type="button" id="uploadTitleImg" class="form-image-button">Upload</button>
                         <button type="submit" id="deleteTitleImg" class="form-image-button">Delete Image</button>
                     </div>
                 </div>
-                
 
-
-                <!-- bottom right -->
-                <div class="buttons-row-container">
-                    <button class="cancel-button">Cancel</button>
-                    <button class="check-mark"><i class="fa fa-check-circle" style="color: #000000;"></i></button>
+                <div class="buttons-row-container" id="form-buttons">
+                    <button type="button" class="cancel-button" id="form-cancel-button">Cancel</button>
+                    <button type="button" class="check-mark" id="form-check-mark"><i class="fa fa-check-circle" style="color: #000000;"></i></button>
                 </div>  
             </form>
         </div>
