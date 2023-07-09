@@ -15,7 +15,6 @@ class TabComponent extends HTMLElement{
 
             html, body{
                 margin: 0;
-              
             }
         
             ul{
