@@ -83,10 +83,38 @@
                 </div>
             </div>
 
-            <div class="section-title">Title Section<span class="required">*</span></div>
-            <div class="image-title">Title Image<span class="required">*</span></div>
-            <div class="rectangle"></div>
+            <div class="section">
+                <div class="section-title">Title Section<span class="required">*</span></div>
+                <div class="input-title">Title Image<span class="required">*</span></div>
+                <div id="title-img-upload">
+                    <button id="pencilButton" class="pencil-button"><i class="fa fa-pencil" style="font-size:1.9rem;color:#505D68;"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div id="popupForm" class="popup-form">
+            <form id="eventForm" class="event-form">
+                <!-- centered -->
+                <div id="form-image-preview-container">
+                    <div class="input-title">Image Preview</div>
+                    <div id="title-img-upload"></div>
+                    <div id="form-img-buttons" class="buttons-row-container">
+                        <button type="button" id="uploadTitleImg" class="form-image-button">Upload</button>
+                        <button type="submit" id="deleteTitleImg" class="form-image-button">Delete Image</button>
+                    </div>
+                </div>
+                
+
+
+                <!-- bottom right -->
+                <div class="buttons-row-container">
+                    <button class="cancel-button">Cancel</button>
+                    <button class="check-mark"><i class="fa fa-check-circle" style="color: #000000;"></i></button>
+                </div>  
+            </form>
         </div>
     </div>
+
+    
 </body>
 </html>

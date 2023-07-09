@@ -134,10 +134,67 @@
     width: 328px;
 }
 
-.rectangle {
+
+#title-img-upload {
+    display: flex;
+    justify-content: flex-end;
+    background: url("/source/assets/placeholder-image.png") center/cover ;
+    width: 19.30763rem;
+    height: 13.22038rem;
+    fill: linear-gradient(0deg, #FFF 0%, #FFF 100%), linear-gradient(0deg, #FFF 0%, #FFF 100%), #FFF;
+    border: 1px solid #BBBFCC;
+}
+
+.pencil-button {
+    width: min-content;
+    height: min-content;
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+
+.popup-form {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+
+#form-image-preview-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: white;
-    border: 2px solid black;
-    width: 308.922px;
-    height: 211.526px;
-    flex-shrink: 0;
+}
+
+#form-img-buttons {
+    justify-content: space-between;
+}
+
+.form-image-button {
+    display: flex;
+    width: 9.41238rem;
+    padding: 0.5rem 1.5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid #DADADA;
+    background: #FFF;
+    margin-top: 0.9rem;
+    margin-bottom: 1.56rem;
+}
+
+#uploadTitleImg {
+    color: #000000;
+}
+
+#deleteTitleImg {
+    color: #F61414;
 }
