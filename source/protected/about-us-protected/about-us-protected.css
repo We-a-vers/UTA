@@ -203,6 +203,7 @@
     background: #FFF;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 300;
+    cursor: pointer;
 }
 
 #uploadTitleImg {
