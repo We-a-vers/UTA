@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Us Password Protected</title>
+
+    <link rel="stylesheet" type="text/css" href="./about-us-protected.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Noto+Sans:wght@400;600&family=Ubuntu&display=swap" rel="stylesheet">
+
+    <script type="module" src="./about-us-protected.js"></script>
+    <script src="../tabs/tabs.js"></script>
+</head>
+<body>
+    <div id="container">
+        <tab-component></tab-component>
+
+        <div id="content">
+            <!-- David -->
+            <div class="page-title">Edit About Us Page</div>
+            <hr>
+
+            <div class="section">
+                <div class="section-title">About Us</div>
+                <div id="description-input-container">
+                    <div class="text-row-container">
+                        <div class="input-title">Description under title<span class="required">*</span></div>
+                        <div class="word-count">10/10</div>
+                    </div>
+                    <textarea id="description-input" placeholder="Insert text..." ></textarea>
+                </div>
+                <div class="help-text">Enter the description under title</div>
+                <div class="input-title">Upload Image</div>
+                <button class="upload-button">Upload Image</button>
+            </div>
+
+
+            <!-- Yosen -->
+            <div class="section-title">Core Values</div>
+            <div class="upload-image-section">
+                <div class="input-title">Upload Image 1</div>
+                <button class="upload-button">Upload Image</button>
+                <div class="text-row-container">
+                    <div class="input-title">Value 1</div>
+                    <div class="word-count">10/10</div>
+                </div>
+                <input class="value-input" placeholder="Insert Name..."></input>
+                <div class="buttons-row-container">
+                    <button class="cancel-button">Cancel</button>
+                    <button class="check-mark"><i class="fa fa-check-circle" style="color: #000000;"></i></button>
+                </div>
+                <hr>
+            </div>
+            <div class="upload-image-section">
+                <div class="input-title">Upload Image 2</div>
+                <button class="upload-button">Upload Image</button>
+                <div class="text-row-container">
+                    <div class="input-title">Value 2</div>
+                    <div class="word-count">10/10</div>
+                </div>
+                <input class="value-input" placeholder="Insert Name..."></input>
+                <div class="buttons-row-container">
+                    <button class="cancel-button">Cancel</button>
+                    <button class="check-mark"><i class="fa fa-check-circle" style="color: #000000;"></i></button>
+                </div>
+                <hr>
+            </div>
+            <div class="upload-image-section">
+                <div class="input-title">Upload Image 3</div>
+                <button class="upload-button">Upload Image</button>
+                <div class="text-row-container">
+                    <div class="input-title">Value 3</div>
+                    <div class="word-count">10/10</div>
+                </div>
+                <input class="value-input" placeholder="Insert Name..."></input>
+                <div class="buttons-row-container">
+                    <button class="cancel-button">Cancel</button>
+                    <button class="check-mark"><i class="fa fa-check-circle" style="color: #000000;"></i></button>
+                </div>  
+            </div>
+            <div class="section-title">Title Section<span class="required">*</span></div>
+            <div class="image-title">Title Image<span class="required">*</span></div>
+            <div class="rectangle"></div>
+        </div>
+    </div>
+</body>
+</html>
