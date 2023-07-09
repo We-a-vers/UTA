@@ -57,9 +57,9 @@ body{
 }
 
 .members{
-    margin-left: 5%;
-    margin-right: 5%;
-    border: 2px solid black;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: #EDE9E2;
 }
 
 .members >  h1{
@@ -77,7 +77,7 @@ body{
 .gallery{
     display: flex;
     flex-direction: column;
-    border: 1px solid;
+    padding: 2rem;
 }
 
 .gallery > h1{
@@ -111,7 +111,7 @@ body{
 
 .card > img {
   max-width: 100%;
-  border: 2px solid black;
+  border: 1px solid;
 }
 
 .card > h1{
