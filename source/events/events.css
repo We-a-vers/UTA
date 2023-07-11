@@ -1,3 +1,7 @@
+header{
+  margin:5rem;
+}
+
 .Upcoming__title {
   font-family: "Lora";
   font-style: normal;
@@ -182,17 +186,8 @@
 }
 
 .middle__background {
-  display: flex;
-  flex-direction: row;
-  /* margin-bottom: 4rem; */
-  justify-content: center;
-  align-items: center;
+  
   padding: 20px 370px;
-  gap: 30px;
-
-  position: absolute;
-  left: 0px;
-
   /* Light Gold/50 */
 
   background: #F6F4F0;
@@ -204,7 +199,7 @@
 }
 
 body {
-  margin: 5rem;
+  margin: 0;
 }
 
 .event {
@@ -240,6 +235,7 @@ body {
 
 /* Entire past events section */
 .past__container {
+  margin: 5rem;
   display: flex;
   flex-wrap: wrap;
   margin-top: 15rem;
