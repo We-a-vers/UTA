@@ -123,12 +123,25 @@ class NavbarComponent extends HTMLElement{
             margin-bottom: 150px;
         }
 
+        #home-button{
+            display: inline-flex;
+        }
+
+        #home-button > img:hover{
+            cursor: pointer;
+        }
+
+        #home-button > img{
+            width: 100%;
+        }
+
         </style>
         
 
         <div class="navbar-container">
             <div class="navbar">
-                <img src="/source/assets/UTA-logo.png" alt="">
+
+                <a href="/" id="home-button"><img src="/source/assets/UTA-logo.png" alt=""></a>
 
                 <ul>
                     <li><a href="/source/about-us/about-us.html">About Us</a></li>
