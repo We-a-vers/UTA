@@ -47,54 +47,34 @@
                 </div>
             </div>
             <div class="section-title">Past Events<span class="required">*</span></div>
-            <div class="past-events-section">
-                <div class="box plus-box">
+            <div id="past-events-section">
+                <div id="past-events-add" class="box plus-box">
                   <span>+</span>
                 </div>
-                <div class="box">
-                    <button class="pencil-button"><i class="fa fa-pencil" style="font-size:1.4375rem;color:#505D68;"></i></button>
-                </div>
-                <div class="box">
-                    <button class="pencil-button"><i class="fa fa-pencil" style="font-size:1.4375rem;color:#505D68;"></i></button>
-                </div>
-                <div class="box">
-                    <button class="pencil-button"><i class="fa fa-pencil" style="font-size:1.4375rem;color:#505D68;"></i></button>
-                </div>
-                <div class="box">
-                    <button class="pencil-button"><i class="fa fa-pencil" style="font-size:1.4375rem;color:#505D68;"></i></button>
-                </div>
-                <div class="box">
-                    <button class="pencil-button"><i class="fa fa-pencil" style="font-size:1.4375rem;color:#505D68;"></i></button>
-                </div>
-                <div class="box">
-                    <button class="pencil-button"><i class="fa fa-pencil" style="font-size:1.4375rem;color:#505D68;"></i></button>
-                </div>
             </div>
 
-            <!-- form 1 -->
-            <div id="upcoming-events-form" class="upcoming-events-form">
-                <form id="upcomingEventsForm" class="event-form">
-                    <div id="form-image-preview-container">
-                        <div class="form-input-title" id="form-image-preview-title">Image Preview</div>
-                        <div id="title-img-upload"></div>
-                        <div id="form-img-buttons" class="buttons-row-container">
-                            <button type="button" id="uploadTitleImg" class="form-image-button">Upload</button>
-                            <button type="button" id="deleteTitleImg" class="form-image-button">Delete Image</button>
-                        </div>
-                    
-                        <!-- url -->
-                        <div id="form-image-url-container">
-                            <div class="form-input-title">Image URL</div>
-                            <textarea id="image-url-input"></textarea>
-                        </div>
+            <!-- pop-up form -->
+            <form id="past-events-form" class="eventForm">
+                <div id="form-input-container">
+                    <div class="form-input-title" id="form-image-preview-title">Image Preview</div>
+                    <div id="form-image-preview"></div>
+                    <div id="form-image-buttons" class="buttons-row-container">
+                        <!-- visible upload button  -->
+                        <button type="button" id="past-events-image-upload" class="form-image-button">Upload</button>
+                        <!-- hidden upload button that will be triggered when the visible upload button is clicked (done in js) -->
+                        <input type="file" id="past-events-image-upload-file" accept="image/*" style="display: none;">
+                        <button type="button" id="past-events-form-delete" class="form-image-button">Delete Image</button>
                     </div>
 
-                    <div class="buttons-row-container" id="form-buttons">
-                        <button type="button" id="upcoming-events-form-cancel" class="cancel-button" >Cancel</button>
-                        <button type="button" id="upcoming-events-form-check" class="check-mark" ><i class="fa fa-check-circle" style="color: #000000;"></i></button>
-                    </div>  
-                </form>
-            </div>
+                    <div class="form-input-title">Image URL</div>
+                    <textarea id="image-url-input"></textarea>
+                </div>
+
+                <div id="form-buttons" class="buttons-row-container" >
+                    <button type="button" id="past-events-form-cancel" class="cancel-button" >Cancel</button>
+                    <button type="submit" class="check-mark" ><i class="fa fa-check-circle" style="color: #000000;"></i></button>
+                </div>  
+            </form>
 
         </div>
     </div>
