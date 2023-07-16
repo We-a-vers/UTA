@@ -11,10 +11,11 @@ class TabComponent extends HTMLElement{
     render(){
         this.shadow.innerHTML = `
 
-        <style>
+    <style>
 
             html, body{
                 margin: 0;
+              
             }
         
             ul{
@@ -66,12 +67,11 @@ class TabComponent extends HTMLElement{
             #tab-container{
                 background-color: #FCFCFD;
                 width: 17.5rem;
+                height: 100vh;
                 margin-top: 0;
                 padding-top: 1.5rem;
                 padding-left: 0.5rem;
                 padding-right: 0.5rem;
-                height: 100%;
-                border-right: 1px solid #DEE1EB;
             }
 
             #tab-header{
@@ -87,24 +87,22 @@ class TabComponent extends HTMLElement{
 
         </style>
         
-        <div id="tab-container">
-            <!-- Add icon next to title -->
-            
-            <div id="tab-header">
-                <img src="../assets/admin-icon-tab.png" alt="">
-                <h1>Admin</h1>
-            </div>
-         
-            
-            <ul class="prevent-select">
-                <li tabindex="1">Home</li>
-                <li tabindex="2">About Us</li>
-                <li tabindex="3">Board Members</li>
-                <li tabindex="4">Intern Program</li>
-                <li tabindex="5">Events</li>
-                <li tabindex="6">Sponsors</li>
-            </ul>
-        </div>
+    <div id="tab-container">
+        <!-- Add icon next to title -->
+        
+        <img src="../assets/admin-icon-tab.png" alt="">
+        <h1>Admin</h1>
+    
+        <ul class="prevent-select">
+            <li tabindex="1"><a href="../home-protected/home-protected.html">Home</a></li>
+            <li tabindex="2"><a href="../about-us-protected/about-us-protected.html">About Us</a></li>
+            <li tabindex="3"><a href="../board-members-protected/board-members-protected.html">Board Members</a></li>
+            <li tabindex="4"><a href="../intern-program-protected/intern-program-protected.html">Intern Program</a></li>
+            <li tabindex="5"><a href="../events-protected/events-protected.html">Events</a></li>
+            <li tabindex="6"><a href="../sponsors-protected/sponsors-protected.html">Sponsors</a></li>
+            <li tabindex="7"><a id="log-out">Log Out</a></li>
+        </ul>
+    </div>
          
         `
     }
