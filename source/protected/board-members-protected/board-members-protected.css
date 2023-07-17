@@ -23,56 +23,47 @@
 }
 
 .section-title,.current-board-members {
-    font-size: 20px;
+    font-family: Noto Sans;
+    font-size: 1.5rem;
+    font-style: normal;
     font-weight: 600;
+    line-height: 1.5rem; /* 100% */
+    letter-spacing: -0.01563rem;
+}
+
+#url-input-container{
+    margin-top: 1rem;
 }
 
 .input-title, .signup-link {
-    font-size: 16px;
-    margin-top: 22px;
-    margin-bottom: 4px;
+    font-family: Noto Sans;
+    font-size: 1.2rem;
+    font-style: normal;
     font-weight: 600;
+    line-height: 1.5rem; /* 150% */
+    letter-spacing: -0.01563rem;
+    margin-bottom: 0.5rem;
 }
 
 .input-container {
     margin-bottom: 10px;
 }
 
-.text-row-container {
+
+#description-input-container{
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
-}
-
-.buttons-row-container {
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: row;
-    width: 328px;
-    height: 30px;
-}
-
-.word-count {
-    font-size: 12px;
-    margin-left: auto;
-    color: #6B6F80;
-    margin-bottom: 4px;
-    font-weight: 400;
-}
-
-#description-input-container, #url-input-container {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
+    align-items: center;
+    gap: 5rem;
 }
 
 #description-input {
-    box-sizing: border-box;
-    resize: none;
-    height: 120px;
+    height: 7.5rem;
+    width: 29.25rem;
     border: 1px solid #6B6F80;
     border-radius: 4px;
     padding: 12px 16px 12px 16px;
+    font-size: 1rem;
 }
 
 #description-input::placeholder {
@@ -105,19 +96,52 @@
     font-weight: 400;
 }
 
+#button-container{
+    display: flex;
+    gap: 0.5rem;
+}
+
+#button-container button{
+    background: none;
+	color: inherit;
+    cursor: pointer;
+    width: 9.5rem;
+    height: 2.5rem;
+
+    border-radius: 0.25rem;
+    border: 1px solid #DADADA;
+    background: #FFF;
+    padding: 0.5rem 1.5rem;
+
+    color: black;
+    text-align: center;
+    font-family: Ubuntu;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.5rem; /* 150% */
+    letter-spacing: -0.01563rem;
+}
+
+#member-image{
+    display: flex;
+    flex-direction: column;
+    gap: 0.88rem;
+}
+
 .url-input {
-    width: 328px;
-    height: 48px;
+    width: 18.5rem;
+    height: 1.5rem;
     border: 1px solid #BBBFCC;
     border-radius: 4px;
-    
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
 }
 
 .url-input::placeholder {
     font-size: 16px;
     color: #6B6F80;
     font-weight: 400;
-    padding: 0.75rem 1rem;
     font-family: 'Noto Sans', sans-serif;
 }
 
