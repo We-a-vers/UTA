@@ -25,6 +25,16 @@ li{
     line-height: 140%;
 }
 
+li > a{
+    text-decoration: none;
+    color: black;
+}
+
+li > a:visited{
+    color: black;
+    background-color: none;
+}
+
 li:hover{
     cursor: pointer;
 }
