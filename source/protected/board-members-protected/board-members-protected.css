@@ -16,6 +16,10 @@
     font-family: 'Noto Sans', sans-serif;
 }
 
+.photos{
+    margin-top: 10rem;
+}
+
 .page-title {
     font-size: 24px;
     margin: 24px 0px 24px 23px;
@@ -84,24 +88,12 @@
     font-weight: 400;
 }
 
-.upload-button {
-    width: 193px;
-    height: 40px;
-    background-color: #FFFFFF;
-    border: 1px solid #000000;
-    border-radius: 4px;
-    padding: 8px 24px 8px 24px;
-    cursor: pointer;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 400;
-}
-
 #button-container{
     display: flex;
     gap: 0.5rem;
 }
 
-#button-container button{
+button{
     background: none;
 	color: inherit;
     cursor: pointer;
@@ -121,6 +113,14 @@
     font-weight: 300;
     line-height: 1.5rem; /* 150% */
     letter-spacing: -0.01563rem;
+}
+
+#save-btn{
+    overflow: hidden;
+    float: right;
+    margin: 2.62rem 5.15rem 0 0;
+    color: #FFF;
+    background: var(--light-blue-400, #3C4F75);
 }
 
 #member-image{
