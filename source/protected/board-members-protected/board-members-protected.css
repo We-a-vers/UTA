@@ -7,10 +7,6 @@
     width: 100%;
 }
 
-.section{
-   
-}
-
 .section, .photos {
     margin: 28px 0px 28px 33px;
     font-family: 'Noto Sans', sans-serif;
@@ -35,7 +31,7 @@
     letter-spacing: -0.01563rem;
 }
 
-#url-input-container{
+.url-input-container{
     margin-top: 1rem;
 }
 
@@ -54,23 +50,33 @@
 }
 
 
-#description-input-container{
+.description-input-container{
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 5rem;
+    margin-top: 1rem;
 }
 
-#description-input {
-    height: 7.5rem;
-    width: 29.25rem;
+input{
+    border: 1px solid #6B6F80;
+    border-radius: 4px;
+    width: 15.5rem;
+    height: 1.5rem;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+}
+
+.description-input {
+    height: 6rem;
+    width:  25.25rem;
     border: 1px solid #6B6F80;
     border-radius: 4px;
     padding: 12px 16px 12px 16px;
     font-size: 1rem;
 }
 
-#description-input::placeholder {
+.description-input::placeholder {
     font-size: 16px;
     color: #6B6F80;
     font-weight: 400;
@@ -99,12 +105,12 @@ button{
     cursor: pointer;
     width: 9.5rem;
     height: 2.5rem;
-
+    
     border-radius: 0.25rem;
     border: 1px solid #DADADA;
     background: #FFF;
     padding: 0.5rem 1.5rem;
-
+    
     color: black;
     text-align: center;
     font-family: Ubuntu;
@@ -293,15 +299,15 @@ button{
     font-weight: 300;
     line-height: 1.5rem;
     letter-spacing: -0.01563rem;
-
+    
     left: 3.5rem;
     top: 4.1rem;
-
+    
     background: none;
 	border: none;
 	padding: 0;
 	cursor: pointer;
-
+    
 }
 
 .box{
@@ -310,12 +316,45 @@ button{
     border: 1px solid;
 }
 
+.modal{
+    padding: 4rem 5rem 2.75rem 5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--dark-gray-300, #D5DAE4);    
+}
+
+.modal::backdrop{
+    background-color: black;
+    opacity: 0.4;
+}
+
+#modal-btn-container{
+    display: flex;
+    gap: 2.75rem;
+    justify-content: end;
+}
+
+#modal-btn-container > button{
+    color: #000;
+    font-family: Ubuntu;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#modal-btn-container button{
+    border: 0;
+    padding: 0;
+    width: auto;
+    height: auto;
+}
+
 /*
 .svg-container {
     display: inline-block;
     position: relative;
 }
-  
+
 .centered-text {
     font-size: 16px;
     dominant-baseline: middle;
