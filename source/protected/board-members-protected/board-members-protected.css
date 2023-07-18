@@ -67,7 +67,7 @@ input{
     font-size: 1rem;
 }
 
-.description-input {
+#description-input {
     height: 6rem;
     width:  25.25rem;
     border: 1px solid #6B6F80;
@@ -135,7 +135,7 @@ button{
     gap: 0.88rem;
 }
 
-.url-input {
+#url-input {
     width: 18.5rem;
     height: 1.5rem;
     border: 1px solid #BBBFCC;
