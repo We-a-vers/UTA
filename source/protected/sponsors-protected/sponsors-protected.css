@@ -8,7 +8,7 @@
 }
 
 .section, .section-2, .photos {
-    margin: 28px 0px 28px 33px;
+    margin: 2.5rem 0px 28px 33px;
     font-family: 'Noto Sans', sans-serif;
 }
 
@@ -70,15 +70,24 @@
     align-items: center;
     gap: 5rem;
     margin-top: 1rem;
+    align-items: start;
+    
 }
 
-input{
+input, textarea{
     border: 1px solid #6B6F80;
     border-radius: 4px;
     width: 15.5rem;
     height: 1.5rem;
     padding: 0.75rem 1rem;
     font-size: 1rem;
+}
+
+input::placeholder, textarea::placeholder{
+    font-size: 16px;
+    color: #6B6F80;
+    font-weight: 400;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 #description-input {
@@ -141,6 +150,12 @@ button{
     margin: 2.62rem 5.15rem 0 0;
     color: #FFF;
     background: var(--light-blue-400, #3C4F75);
+}
+
+#member-image{
+    display: flex;
+    flex-direction: column;
+    gap: 0.88rem;
 }
 
 #sponsors-image{
