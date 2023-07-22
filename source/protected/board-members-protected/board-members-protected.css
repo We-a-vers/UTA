@@ -7,12 +7,12 @@
     width: 100%;
 }
 
-.section, .section-2, .photos {
+.section, .photos {
     margin: 28px 0px 28px 33px;
     font-family: 'Noto Sans', sans-serif;
 }
 
-.section-2, .photos{
+.photos{
     margin-top: 10rem;
 }
 
@@ -22,7 +22,7 @@
     font-family: 'Inter', sans-serif;
 }
 
-.section-title, .current-sponsors {
+.section-title,.current-board-members {
     font-family: Noto Sans;
     font-size: 1.5rem;
     font-style: normal;
@@ -31,25 +31,11 @@
     letter-spacing: -0.01563rem;
 }
 
-.benefit-info-container{
+.url-input-container{
     margin-top: 1rem;
 }
 
-#benefit-info{
-    height: 4rem;
-}
-
-.input-title, .url-input-container{
-    margin-top: 1rem;
-}
-
-.popup-right-container {
-    display: flex;
-    flex-direction: column;
-    margin-top: 0rem;
-}
-
-.input-title, .sponsor-title, .price, .signup-link {
+.input-title, .signup-link {
     font-family: Noto Sans;
     font-size: 1.2rem;
     font-style: normal;
@@ -64,7 +50,7 @@
 }
 
 
-.description-input-container {
+.description-input-container{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -143,13 +129,13 @@ button{
     background: var(--light-blue-400, #3C4F75);
 }
 
-#sponsors-image{
+#member-image{
     display: flex;
     flex-direction: column;
     gap: 0.88rem;
 }
 
-#price-input, #url-input {
+#url-input {
     width: 18.5rem;
     height: 1.5rem;
     border: 1px solid #BBBFCC;
@@ -274,7 +260,7 @@ button{
     margin-right: 1.31rem;
 }
 
-#current-sponsors {
+#current-board-members {
     margin-top: 2.53rem;
 }
 

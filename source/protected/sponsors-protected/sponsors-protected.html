@@ -25,7 +25,7 @@
             <!-- This part is the first section -->
             
             <div class="section">
-                <div class="section-title">Sponsors<span class="required">*</span></div>
+                <div class="section-title">Membership Card Info<span class="required">*</span></div>
 
                 <div class="description-input-container">
                     
@@ -40,6 +40,11 @@
                     </div>
                     
                     <div>
+                        <div class="price-container">
+                            <div class="price">Price</div>
+                            <textarea id="price-input" placeholder="Price" ></textarea>
+                        </div>
+
                         <div class="input-title">Description under title<span class="required">*</span></div>
                         <textarea id="description-input" placeholder="Insert text..." ></textarea>
                         <div class="help-text">Enter the description under title</div>
@@ -59,7 +64,7 @@
             <!-- This part is the second section (a copy of the first section) -->
             
             <div class="section-2">
-                <div class="section-title">History<span class="required">*</span></div>
+                <div class="section-title">Merch<span class="required">*</span></div>
 
                 <div class="description-input-container">
                     
@@ -74,6 +79,11 @@
                     </div>
                     
                     <div>
+                        <div class="price-container">
+                            <div class="price">Price</div>
+                            <textarea id="price-input" placeholder="Price" ></textarea>
+                        </div>
+                        
                         <div class="input-title">Description under title<span class="required">*</span></div>
                         <textarea id="description-input" placeholder="Insert text..." ></textarea>
                         <div class="help-text">Enter the description under title</div>
@@ -93,7 +103,7 @@
             <!-- Third section: photo gallery -->
 
             <div class="photos">
-                <div class="current-board-members">Current Board Members<span class="required">*</span></div>
+                <div class="current-sponsors">Current Sponsors<span class="required">*</span></div>
             
                     <div id="show-img">
             
@@ -116,7 +126,7 @@
     
                     <div class="description-input-container">
                         
-                        <div id="member-image">
+                        <div id="sponsors-image">
     
                             <img width="312" height="234" src="/source/protected/assets/placeholder-image.png" alt="">
                             <div id="button-container">
@@ -127,12 +137,14 @@
                         </div>
                         
                         <form id="modal-form">
-                            <div class="input-title">Role<span class="required">*</span></div>
-                            <input type="text" name="role" placeholder="Insert Role Name..." >
-            
-                            <div class="url-input-container">
-                                <div class="signup-link">Board Member’s Name</div>
-                                <input type="text" name="name" placeholder="Insert Name..." >
+                            <div class="popup-right-container">
+                                <div class="sponsor-title">Sponsor<span class="required">*</span></div>
+                                <input type="text" name="sponsor" placeholder="Insert Sponsor Name..." >
+                                
+                                <div class="benefit-info-container">
+                                    <div class="input-title">Benefit Info<span class="required">*</span></div>
+                                    <input type="text" id="benefit-info" name="benefit" placeholder="Insert Benefit Name...">
+                                </div>
                             </div>
                         </form>
                     </div>
