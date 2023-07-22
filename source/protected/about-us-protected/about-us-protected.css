@@ -7,14 +7,14 @@
     width: 100%;
 }
 
-.section /*, .photos*/ {
+.section, .section-2 {
     margin: 28px 0px 28px 33px;
     font-family: 'Noto Sans', sans-serif;
 }
 
-/* .photos{
+.section-2{
     margin-top: 10rem;
-} */
+}
 
 .page-title {
     font-size: 24px;
@@ -22,7 +22,7 @@
     font-family: 'Inter', sans-serif;
 }
 
-.section-title /*, .current-board-members*/ {
+.section-title /*,.current-board-members*/ {
     font-family: Noto Sans;
     font-size: 1.5rem;
     font-style: normal;
