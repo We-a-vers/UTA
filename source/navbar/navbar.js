@@ -156,7 +156,7 @@ class NavbarComponent extends HTMLElement{
                     <a class="prevent-select">Events</a>
                     <div class="drop-down-items">
                         <a href="/source/events/events.html">All</a>
-                        <a href="/source//archive/archive.html">Archive</a>
+                        <a href="/source/archive/archive.html">Archive</a>
                     </div>
                 </li>
                 <li><a href="/source/sponsors/sponsors.html">Sponsors</a></li>

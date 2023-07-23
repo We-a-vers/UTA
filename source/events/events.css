@@ -239,6 +239,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   margin-top: 15rem;
+  margin-bottom: 6rem;
 }
 
 /* View Event Gallery hover */
