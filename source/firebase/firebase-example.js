@@ -1,16 +1,21 @@
-import { firebase, database, ref, set, get, push, remove, storage, storageRef, uploadBytesResumable, getDownloadURL, deleteObject } from './firebase.js';
+import { firebase, database, ref, set, get, push, remove, storage, storageRef, uploadBytes, getDownloadURL, deleteObject } from './firebase.js';
 
 const pencilButton = document.getElementById("pencilButton");
 const popupForm = document.getElementById("popupForm");
 const eventForm = document.getElementById("eventForm");
 const eventTitleInput = document.getElementById("eventTitle");
 const eventPictureInput = document.getElementById("eventPicture");
+const uploadBtn = document.getElementById("uploadBtn");
 const cancelBtn = document.getElementById("cancelBtn");
 const eventsContainer = document.getElementById("eventsContainer");
 
 
 pencilButton.addEventListener("click", () => {
     popupForm.style.display = "block";
+});
+
+uploadBtn.addEventListener("click", () => {
+  eventPictureInput.click();
 });
 
 eventForm.addEventListener("submit", async (e) => {
@@ -34,7 +39,7 @@ eventForm.addEventListener("submit", async (e) => {
         const blob = await response.blob();
         const filePath = "eventPictures/" + newEventId + ".png";
         const sRef = storageRef(storage, filePath);
-        const uploadTask = uploadBytesResumable(sRef, blob);
+        const uploadTask = uploadBytes(sRef, blob);
   
         uploadTask.on(
           "state_changed",
