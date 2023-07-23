@@ -25,37 +25,37 @@
 
             <!-- This part is the first section -->
             
-            <div class="section">
+            <form class="section" id="board-member-header-form">
                 <div class="section-title">Board Member<span class="required">*</span></div>
 
                 <div class="description-input-container">
                     
                     <div id="member-image">
 
-                        <img width="312" height="234" src="/source/protected/assets/placeholder-image.png" alt="">
+                        <img id="board-member-image" width="312" height="234" src="/source/assets/placeholder-image.png" alt="No Image">
                         <div id="button-container">
-                            <button>Upload</button>
-                            <button style="color: red;">Delete Image</button>
+                            <button id="board-member-upload">Upload</button>
+                            <input type="file" id="board-member-image-upload-file" accept="image/*" style="display: none;">
                         </div>
 
                     </div>
                     
                     <div>
                         <div class="input-title">Description under title<span class="required">*</span></div>
-                        <textarea id="description-input" placeholder="Insert text..." ></textarea>
+                        <textarea id="description-input" placeholder="Insert text..."  required></textarea>
                         <div class="help-text">Enter the description under title</div>
         
                         <div class="url-input-container">
                             <div class="signup-link">Sign Up Link</div>
-                            <textarea id="url-input" placeholder="Enter URL" ></textarea>
+                            <textarea id="url-input" placeholder="Enter URL" required></textarea>
                         </div>
                     </div>
                 </div>
 
                 <!-- Save button for the first section -->
-                <button id="save-btn">Save</button>
+                <button type="submit" id="save-btn">Save</button>
 
-            </div>
+            </form>
 
             <!-- Section section for photo gallery -->
 
@@ -85,7 +85,7 @@
                         
                         <div id="member-image">
     
-                            <img width="312" height="234" src="/source/protected/assets/placeholder-image.png" alt="">
+                            <img width="312" height="234" src="/source/assets/placeholder-image.png" alt="">
                             <div id="button-container">
                                 <button>Upload</button>
                                 <button style="color: red;">Delete Image</button>

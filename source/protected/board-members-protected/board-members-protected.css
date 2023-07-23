@@ -264,6 +264,10 @@ button{
     margin-top: 2.53rem;
 }
 
+img{
+    border: 1px solid;
+}
+
 #show-img{
     display: flex;
     flex-direction: row;
