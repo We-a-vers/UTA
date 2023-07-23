@@ -286,7 +286,7 @@ img{
     top: 0.3rem;
 }
 
-.img-container{
+#img-container{
     position: relative;
     display: flex;
     gap: 3.31rem;
