@@ -7,12 +7,12 @@
     width: 100%;
 }
 
-.section, .photos {
+.section, #photos {
     margin: 28px 0px 28px 33px;
     font-family: 'Noto Sans', sans-serif;
 }
 
-.photos{
+#photos{
     margin-top: 10rem;
 }
 
@@ -317,7 +317,18 @@ img{
 .box{
     width: 10.25rem;
     height: 10rem;
-    border: 1px solid;
+    margin-right: 2.3rem;
+    margin-bottom: 2.3rem;
+    justify-content: flex-end;
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    background: url("/source/assets/placeholder-image.png") center/cover ;
+    border: 1px solid #BBBFCC;
+}
+
+#plus-box{
+    background: none;
 }
 
 .modal{

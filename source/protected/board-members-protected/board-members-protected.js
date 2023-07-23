@@ -158,14 +158,14 @@ modalForm.addEventListener("submit", async (e) => {
   
     // generate firebase database reference
     const membersRef = ref(database, 'boardMembers');
-    const newEventRef = push(membersRef); // Generate a new child reference with an auto-generated ID
-    const newEventId = newEventRef.key; // Get the auto-generated ID
+    const newMembertRef = push(membersRef); // Generate a new child reference with an auto-generated ID
+    const newMemberId = newMembertRef.key; // Get the auto-generated ID
 
 
     // initialize data
     const date = new Date()
     const membersData = {
-        id: newEventId,
+        id: newMemberId,
         role: roleValue,
         name: nameValue,
         createdAt: date.toUTCString(),
@@ -177,13 +177,13 @@ modalForm.addEventListener("submit", async (e) => {
         const fileURL = URL.createObjectURL(modalImageUploadFileValue);
         const response = await fetch(fileURL);
         const blob = await response.blob();
-        const filePath = "memberPictures/" + newEventId + ".png";
+        const filePath = "memberPictures/" + newMemberId + ".png";
         const sRef = storageRef(storage, filePath);
 
         // upload
         uploadBytes(sRef, blob).then((snapshot) => {
             // add data to database after upload is completed
-            set(membersRef, membersData)
+            set(newMembertRef, membersData)
             .then(() => {
                 console.log("Board member info stored successfully");
                 // hide pop-up and reset input fields
@@ -199,7 +199,7 @@ modalForm.addEventListener("submit", async (e) => {
             });
         });
     } else if (modalImage.alt != "No Image") {
-        set(membersRef, membersData);
+        set(newMembertRef, membersData);
         console.log('Updated text only')
     } else{
         console.log('Failed')
@@ -216,23 +216,24 @@ window.addEventListener("load", async () => {
         // retrieve data
         const membersInfo = snapshot.val();
 
+        console.log(membersInfo)
+
         // sort data by created date
         const membersArray = [];
-        // for (const eventId in membersInfo) {
-        //     const member = membersInfo[eventId];
-        //     membersArray.push(member);
-        // }
-        membersArray.push(membersInfo);
+        for (const eventId in membersInfo) {
+            const member = membersInfo[eventId];
+            member.createdAt = new Date(member.createdAt)
+            membersArray.push(member);
+        }
         membersArray.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
         // get the section/div where the data/image will be displayed
-        const memberInfoSection = document.querySelector("#photos");
+        const memberInfoSection = document.querySelector("#show-img");
 
         // helper function that creates the corresponding html elements and append them to the section defined above
         async function processEvent(eventId) {
             try {
                 // get storage reference with path
-                console.log(eventId);
                 const sRef = storageRef(storage, `memberPictures/${eventId}.png`);
                 const url = await getDownloadURL(sRef);
             
