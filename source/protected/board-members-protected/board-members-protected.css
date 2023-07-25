@@ -266,6 +266,7 @@ button{
 
 img{
     border: 1px solid;
+    object-fit: cover;
 }
 
 #show-img{
@@ -294,24 +295,47 @@ img{
 
 #plus{
     position: absolute;
-    width: 2rem;
-    height: 1.75rem;
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
     color: #BBBFCC;
-    text-align: center;
     font-size: 6rem;
     font-style: normal;
     font-weight: 300;
+    
+    left: 3.5rem;
+    top: 3.7rem;
+    
+    background: none;
+	border: none;
+	padding: 0.4rem 0 1.2rem 0;
+	cursor: pointer;
+}
+
+.cross{
+    position: absolute;
+    width: auto;
+    height: auto;
+    color: black;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 500;
     line-height: 1.5rem;
     letter-spacing: -0.01563rem;
     
-    left: 3.5rem;
-    top: 4.1rem;
+    left: 9rem;
+    top: 0rem;
     
     background: none;
 	border: none;
 	padding: 0;
 	cursor: pointer;
-    
+}
+
+.cross:hover{
+    background-color: gray;
+    color: white;
 }
 
 .box{

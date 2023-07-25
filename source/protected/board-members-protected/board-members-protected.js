@@ -216,8 +216,6 @@ window.addEventListener("load", async () => {
         // retrieve data
         const membersInfo = snapshot.val();
 
-        console.log(membersInfo)
-
         // sort data by created date
         const membersArray = [];
         for (const eventId in membersInfo) {
@@ -231,7 +229,7 @@ window.addEventListener("load", async () => {
         const memberInfoSection = document.querySelector("#show-img");
 
         // helper function that creates the corresponding html elements and append them to the section defined above
-        async function processEvent(eventId) {
+        async function processMember(eventId) {
             try {
                 // get storage reference with path
                 const sRef = storageRef(storage, `memberPictures/${eventId}.png`);
@@ -239,11 +237,17 @@ window.addEventListener("load", async () => {
             
                 // create element, add class, add style
                 const memberContainer = document.createElement("div");
+                const crossElement = document.createElement("button");
+                crossElement.setAttribute('id', eventId)
+                crossElement.textContent = 'x'
+                crossElement.classList.add('cross');
                 memberContainer.classList.add("box");
                 memberContainer.style.backgroundImage = `url('${url}')`;
             
                 // append child element to parent element
+                memberContainer.appendChild(crossElement);
                 memberInfoSection.appendChild(memberContainer);
+                
             } catch (error) {
                 console.error("Error loading member picture:", error);
             }
@@ -251,8 +255,38 @@ window.addEventListener("load", async () => {
 
         // iterate through each data and call the helper function
         for (const member of membersArray) {
-            await processEvent(member.id);
+            await processMember(member.id);
         }
     }
 });
+
+
+// delete the member info by clicking the x on the top right corner
+addEventListener('click', (e) => {
+    const target = e.target.closest('.cross');
+
+    if(target){
+
+        const eventId = target.id;
+
+        // Create a reference to the file to delete 
+        const sRef = storageRef(storage, `memberPictures/${eventId}.png`);
+        const dbRef = ref(database, `boardMembers/${eventId}`);
+        
+        // Delete the file
+        deleteObject(sRef).then(() => {
+            console.log('File deleted photo successfully')
+        }).catch((error) => {
+            console.error('Failed to delete the photo')
+        })
+
+        remove(dbRef).then(() => {
+            console.log('Member info delete successfully')
+        }).catch(() => {
+            console.error('Failed to delete member info')
+        })
+        
+    }
+
+})
 
