@@ -114,6 +114,8 @@ openModal.addEventListener('click', () => {
 
 // close the modal by clicking the cancel button
 closeModal.addEventListener('click', () => {
+    modalForm.reset();
+    modalImage.src = "/source/assets/placeholder-image.png";
     modal.close();
 })
 
@@ -275,15 +277,15 @@ addEventListener('click', (e) => {
         
         // Delete the file
         deleteObject(sRef).then(() => {
-            console.log('File deleted photo successfully')
+            console.log('File deleted photo successfully');
         }).catch((error) => {
-            console.error('Failed to delete the photo')
+            console.error('Failed to delete the photo');
         })
 
         remove(dbRef).then(() => {
-            console.log('Member info delete successfully')
+            console.log('Member info delete successfully');
         }).catch(() => {
-            console.error('Failed to delete member info')
+            console.error('Failed to delete member info');
         })
         
     }
