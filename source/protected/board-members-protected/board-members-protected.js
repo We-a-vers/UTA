@@ -159,7 +159,7 @@ modalForm.addEventListener("submit", async (e) => {
     const nameValue = nameInput.value;
   
     // generate firebase database reference
-    const membersRef = ref(database, 'boardMembers');
+    const membersRef = ref(database, `boardMembers/${roleValue}`);
     const newMembertRef = push(membersRef); // Generate a new child reference with an auto-generated ID
     const newMemberId = newMembertRef.key; // Get the auto-generated ID
 
@@ -179,7 +179,8 @@ modalForm.addEventListener("submit", async (e) => {
         const fileURL = URL.createObjectURL(modalImageUploadFileValue);
         const response = await fetch(fileURL);
         const blob = await response.blob();
-        const filePath = "memberPictures/" + newMemberId + ".png";
+        const filePath = `memberPictures/${membersData.role}/${newMemberId}.png`;
+        
         const sRef = storageRef(storage, filePath);
 
         // upload
@@ -208,41 +209,44 @@ modalForm.addEventListener("submit", async (e) => {
     }
 });
 
-// window load listener
-window.addEventListener("load", async () => {
+async function reloadData() {
     // create database reference
     const dbRef = ref(database, 'boardMembers');
     const snapshot = await get(dbRef);
   
     if (snapshot.exists()) {
         // retrieve data
-        const membersInfo = snapshot.val();
-
-        // sort data by created date
         const membersArray = [];
-        for (const eventId in membersInfo) {
-            const member = membersInfo[eventId];
-            member.createdAt = new Date(member.createdAt)
-            membersArray.push(member);
-        }
+
+        snapshot.forEach((positionSnap) => {
+            const membersInfo = positionSnap.val();
+            // sort data by created date
+            for (const memberId in membersInfo) {
+                const member = membersInfo[memberId];
+                member.createdAt = new Date(member.createdAt)
+                membersArray.push(member);
+            }
+        })
+
         membersArray.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
         // get the section/div where the data/image will be displayed
         const memberInfoSection = document.querySelector("#show-img");
 
         // helper function that creates the corresponding html elements and append them to the section defined above
-        async function processMember(eventId) {
+        async function processMember(memberId, memberRole) {
             try {
                 // get storage reference with path
-                const sRef = storageRef(storage, `memberPictures/${eventId}.png`);
+                const sRef = storageRef(storage, `memberPictures/${memberRole}/${memberId}.png`);
                 const url = await getDownloadURL(sRef);
             
                 // create element, add class, add style
                 const memberContainer = document.createElement("div");
                 const crossElement = document.createElement("button");
-                crossElement.setAttribute('id', eventId)
-                crossElement.textContent = 'x'
+                crossElement.textContent = 'x';
                 crossElement.classList.add('cross');
+                crossElement.setAttribute('memberRole', memberRole);
+                crossElement.setAttribute('memberId', memberId);
                 memberContainer.classList.add("box");
                 memberContainer.style.backgroundImage = `url('${url}')`;
             
@@ -257,38 +261,42 @@ window.addEventListener("load", async () => {
 
         // iterate through each data and call the helper function
         for (const member of membersArray) {
-            await processMember(member.id);
+            await processMember(member.id, member.role);
         }
     }
-});
+}
+
+// window load listener
+document.addEventListener("DOMContentLoaded", reloadData);
 
 
 // delete the member info by clicking the x on the top right corner
-addEventListener('click', (e) => {
+addEventListener('click', async (e) => {
     const target = e.target.closest('.cross');
 
     if(target){
 
-        const eventId = target.id;
+        const eventId = target.getAttribute('memberId');
+        const memberRole = target.getAttribute('memberRole');
 
         // Create a reference to the file to delete 
-        const sRef = storageRef(storage, `memberPictures/${eventId}.png`);
-        const dbRef = ref(database, `boardMembers/${eventId}`);
+        const sRef = storageRef(storage, `memberPictures/${memberRole}/${eventId}.png`);
+        const dbRef = ref(database, `boardMembers/${memberRole}/${eventId}`);
         
-        // Delete the file
-        deleteObject(sRef).then(() => {
+        try {
+            // Delete the file from Firebase Storage
+            await deleteObject(sRef);
             console.log('File deleted photo successfully');
-        }).catch((error) => {
-            console.error('Failed to delete the photo');
-        })
 
-        remove(dbRef).then(() => {
-            console.log('Member info delete successfully');
-        }).catch(() => {
-            console.error('Failed to delete member info');
-        })
-        
+            // Remove the member info from the Realtime Database
+            await remove(dbRef);
+            console.log('Member info deleted successfully');
+
+            // Reload the data to update the displayed content
+            //await reloadData();
+        } catch (error) {
+            console.error('Failed to delete the photo or member info', error);
+        }
     }
-
 })
 
