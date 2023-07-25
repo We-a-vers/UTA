@@ -314,15 +314,12 @@ img{
 }
 
 .cross{
-    position: absolute;
-    width: auto;
-    height: auto;
+    width: 2rem;
+    height: 2rem;
     color: black;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-style: normal;
     font-weight: 500;
-    line-height: 1.5rem;
-    letter-spacing: -0.01563rem;
     
     left: 9rem;
     top: 0rem;

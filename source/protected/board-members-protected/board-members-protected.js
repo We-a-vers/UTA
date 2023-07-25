@@ -72,6 +72,7 @@ boardMemberHeaderForm.addEventListener("submit", async (e) => {
             // add data to database after upload is completed
             set(boardMembersHeaderRef, boardMembersHeaderData)
             .then(() => {
+                window.alert("Board member info saved!");
                 console.log("Board member header stored successfully");
             })
             .catch((error) => {
@@ -80,6 +81,7 @@ boardMemberHeaderForm.addEventListener("submit", async (e) => {
         });
     } else if (boardMemberImage.alt != "No Image") {
         set(boardMembersHeaderRef, boardMembersHeaderData);
+        window.alert("Board member info saved!");
         console.log('Updated text only')
     } else{
         console.log('Failed')
@@ -126,6 +128,8 @@ const roleInput = document.querySelector('#modal-role-input')
 const nameInput = document.querySelector('#modal-name-input')
 const uploadModalrFile = document.querySelector('#modal-image-upload-file')
 const modalForm = document.querySelector('#modal-form')
+// get the section/div where the data/image will be displayed
+const memberInfoSection = document.querySelector("#show-img");
 
 // click listener for the upload button
 modalUpload.addEventListener('click', () => {
@@ -195,19 +199,44 @@ modalForm.addEventListener("submit", async (e) => {
                 nameInput.value = "";
                 uploadBoardMemberFile.value = null;
                 modalImage.src = "/source/assets/placeholder-image.png";
-                
+                addMemberToHtml(membersData.id, membersData.role);
             })
             .catch((error) => {
                 console.error("Error storing board member info:", error);
             });
         });
-    } else if (modalImage.alt != "No Image") {
-        set(newMembertRef, membersData);
-        console.log('Updated text only')
-    } else{
-        console.log('Failed')
+    } else {
+        window.alert("Please upload an image");
+        console.log('Failed to add board member')
     }
 });
+
+// helper function that creates the corresponding html elements and append them to the section defined above
+async function addMemberToHtml(memberId, memberRole) {
+    try {
+        // get storage reference with path
+        const sRef = storageRef(storage, `memberPictures/${memberRole}/${memberId}.png`);
+        const url = await getDownloadURL(sRef);
+    
+        // create element, add class, add style
+        const memberContainer = document.createElement("div");
+        const crossElement = document.createElement("button");
+        crossElement.textContent = 'x';
+        crossElement.classList.add('cross');
+        crossElement.setAttribute('memberRole', memberRole);
+        crossElement.setAttribute('memberId', memberId);
+        memberContainer.classList.add("box");
+        memberContainer.style.backgroundImage = `url('${url}')`;
+        memberContainer.setAttribute('memberId', memberId);
+    
+        // append child element to parent element
+        memberContainer.appendChild(crossElement);
+        memberInfoSection.appendChild(memberContainer);
+        
+    } catch (error) {
+        console.error("Error loading member picture:", error);
+    }
+}
 
 async function reloadData() {
     // create database reference
@@ -228,40 +257,11 @@ async function reloadData() {
             }
         })
 
-        membersArray.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-
-        // get the section/div where the data/image will be displayed
-        const memberInfoSection = document.querySelector("#show-img");
-
-        // helper function that creates the corresponding html elements and append them to the section defined above
-        async function processMember(memberId, memberRole) {
-            try {
-                // get storage reference with path
-                const sRef = storageRef(storage, `memberPictures/${memberRole}/${memberId}.png`);
-                const url = await getDownloadURL(sRef);
-            
-                // create element, add class, add style
-                const memberContainer = document.createElement("div");
-                const crossElement = document.createElement("button");
-                crossElement.textContent = 'x';
-                crossElement.classList.add('cross');
-                crossElement.setAttribute('memberRole', memberRole);
-                crossElement.setAttribute('memberId', memberId);
-                memberContainer.classList.add("box");
-                memberContainer.style.backgroundImage = `url('${url}')`;
-            
-                // append child element to parent element
-                memberContainer.appendChild(crossElement);
-                memberInfoSection.appendChild(memberContainer);
-                
-            } catch (error) {
-                console.error("Error loading member picture:", error);
-            }
-        }
+        membersArray.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
 
         // iterate through each data and call the helper function
         for (const member of membersArray) {
-            await processMember(member.id, member.role);
+            await addMemberToHtml(member.id, member.role);
         }
     }
 }
@@ -275,27 +275,30 @@ addEventListener('click', async (e) => {
     const target = e.target.closest('.cross');
 
     if(target){
+        if (window.confirm("Delete this board member")){
+            const memberId = target.getAttribute('memberId');
+            const memberRole = target.getAttribute('memberRole');
 
-        const eventId = target.getAttribute('memberId');
-        const memberRole = target.getAttribute('memberRole');
+            // Create a reference to the file to delete 
+            const sRef = storageRef(storage, `memberPictures/${memberRole}/${memberId}.png`);
+            const dbRef = ref(database, `boardMembers/${memberRole}/${memberId}`);
+            
+            try {
+                // Delete the file from Firebase Storage
+                await deleteObject(sRef);
+                console.log('File deleted photo successfully');
 
-        // Create a reference to the file to delete 
-        const sRef = storageRef(storage, `memberPictures/${memberRole}/${eventId}.png`);
-        const dbRef = ref(database, `boardMembers/${memberRole}/${eventId}`);
-        
-        try {
-            // Delete the file from Firebase Storage
-            await deleteObject(sRef);
-            console.log('File deleted photo successfully');
+                // Remove the member info from the Realtime Database
+                await remove(dbRef);
+                console.log('Member info deleted successfully');
 
-            // Remove the member info from the Realtime Database
-            await remove(dbRef);
-            console.log('Member info deleted successfully');
-
-            // Reload the data to update the displayed content
-            //await reloadData();
-        } catch (error) {
-            console.error('Failed to delete the photo or member info', error);
+                // Reload the data to update the displayed content
+                //await reloadData();
+                const memberToBeRemoved = document.querySelector(`[memberId="${memberId}"]`);
+                memberToBeRemoved.remove();
+            } catch (error) {
+                console.error('Failed to delete the photo or member info', error);
+            }
         }
     }
 })
