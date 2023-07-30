@@ -8,7 +8,7 @@
 }
 
 .section, .section-2, .photos {
-    margin: 2.5rem 0px 28px 33px;
+    margin: 28px 0px 28px 33px;
     font-family: 'Noto Sans', sans-serif;
 }
 
@@ -22,7 +22,7 @@
     font-family: 'Inter', sans-serif;
 }
 
-.section-title, .current-sponsors {
+.section-title,.current-board-members {
     font-family: Noto Sans;
     font-size: 1.5rem;
     font-style: normal;
@@ -31,25 +31,11 @@
     letter-spacing: -0.01563rem;
 }
 
-.benefit-info-container{
+.url-input-container{
     margin-top: 1rem;
 }
 
-#benefit-info{
-    height: 4rem;
-}
-
-.input-title, .url-input-container{
-    margin-top: 1rem;
-}
-
-.popup-right-container {
-    display: flex;
-    flex-direction: column;
-    margin-top: 0rem;
-}
-
-.input-title, .sponsor-title, .price, .signup-link {
+.input-title, .signup-link {
     font-family: Noto Sans;
     font-size: 1.2rem;
     font-style: normal;
@@ -64,30 +50,21 @@
 }
 
 
-.description-input-container {
+.description-input-container{
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 5rem;
     margin-top: 1rem;
-    align-items: start;
-    
 }
 
-input, textarea{
+input{
     border: 1px solid #6B6F80;
     border-radius: 4px;
     width: 15.5rem;
     height: 1.5rem;
     padding: 0.75rem 1rem;
     font-size: 1rem;
-}
-
-input::placeholder, textarea::placeholder{
-    font-size: 16px;
-    color: #6B6F80;
-    font-weight: 400;
-    font-family: 'Noto Sans', sans-serif;
 }
 
 #description-input {
@@ -158,13 +135,7 @@ button{
     gap: 0.88rem;
 }
 
-#sponsors-image{
-    display: flex;
-    flex-direction: column;
-    gap: 0.88rem;
-}
-
-#price-input, #url-input {
+#url-input {
     width: 18.5rem;
     height: 1.5rem;
     border: 1px solid #BBBFCC;
@@ -289,7 +260,7 @@ button{
     margin-right: 1.31rem;
 }
 
-#current-sponsors {
+#current-board-members {
     margin-top: 2.53rem;
 }
 
