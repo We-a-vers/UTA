@@ -1,85 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>    
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="intern.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Open+Sans:ital,wght@0,400;1,700&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+    
+    <title>UTA Internship Program</title>
 
 </head>
 <body>
+    <navbar-component></navbar-component>
     
-    <div class="main">
-        <div class="main__container"></div>
-        <div class="main__content">
-            <h1>UTA Internship Program</h1>
-            <p>View our past event and the wonderful memories we</p>
-            <p>made together with our members!</p>
-            <button class="main__btn"><a href = "/">Check Back Early Spring</a></button>
-        </div>
-    </div>
+    <h1 id="header-title">UTA Internship Program</h1>
 
-    <div class="navbar">
-        <h1>LOGO</h1>
-
-        <ul>
-            <li><a href="">ABOUT</a></li>
-            <li class="drop-down">
-                <a class="prevent-select">TEAM</a>
-                <div class="drop-down-items">
-                    <a href="">TEAM 1</a>
-                    <a href="">TEAM 2</a>
-                </div>
-            </li>
-            <li class="drop-down">
-                <a class="prevent-select">EVENTS</a>
-                <div class="drop-down-items">
-                    <a href="">EVENT 1</a>
-                    <a href="">EVENT 2</a>
-                </div>
-            </li>
-            <li><a href="">SPONSORS</a></li>
-        </ul>
-    </div>
-
-    <div class="join">
-        <div class="join__container"></div>
-        <div class="join__content">
-            <h2>Join Us!</h2>
-            <p>Being a UTA intern</p>
-            <p>blah blah blah blah</p>
-        </div>
-        <div class="join__img--container">
-            <img src="../assets/placeholder-image.png" alt="pic" id="join__img", width="800", height="500">
-        </div>
-    </div>
-
-    <div class="service">
-        <div class="service__container"></div>
-        <div class="service__content">
-            <h2>How does it work?</h2>
-        </div>
-        <div class="service__img--container">
-            <img src="../assets/placeholder-image.png" alt="pic" id="service__img", width="1000", height="500">
-        </div>
-        <div class="service__content2">
-            <h3>Description Description Description</h3>
-        </div>
-    </div>
-
-    <div class="program">
-        <div class="program__container"></div>
-        <div class="program__content">
-            <h2>Program</h2>
-        </div>
-        <div class="program__img--container">
-            <img src="../assets/placeholder-image.png" alt="pic" id="program__img", width="300">
-            <img src="../assets/placeholder-image.png" alt="pic" id="program__img", width="300">
-            <img src="../assets/placeholder-image.png" alt="pic" id="program__img", width="300">
-        </div>
+    <div class="header">
         
+        <section id="join">
+            <h2>
+                Join Us!
+            </h2> 
+            <p>
+                Being a UTA intern can help you gain hands-on experience in a student organization. 
+                If you liked our event and want to be a part of our family, come apply!
+            </p>
+            <button>Check Back Early Spring</button>
+            
+        </section>
+    
+        <img id="join-image" src="/source/assets/placeholder-image.png" alt="">
+    
     </div>
+
+        <section id="intro">
+            <h2>How does it work?</h2>
+            
+            <p>The UTA intern program is a quarter-long program that includes shadowship and team 
+                projects. We want to provide the best experience for each intern to learn.
+            </p>
+
+            <img id="join-image" src="/source/assets/placeholder-image.png" alt="">
+                
+        </section>
+
+
+        <section id = 'show'>
+
+                <h2>Past Projects</h2>
+                
+                <div class="show-image">
+                    
+                    <img src="/source/assets/placeholder-image.png" alt="">
+                    <img src="/source/assets/placeholder-image.png" alt="">
+                    <img src="/source/assets/placeholder-image.png" alt="">
+
+                </div>
+
+        </section>
+
+       
+
+    <script src="/source/navbar/navbar.js"></script>
    
 </body>
 </html>

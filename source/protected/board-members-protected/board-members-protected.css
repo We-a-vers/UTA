@@ -12,6 +12,10 @@
     font-family: 'Noto Sans', sans-serif;
 }
 
+.photos{
+    margin-top: 10rem;
+}
+
 .page-title {
     font-size: 24px;
     margin: 24px 0px 24px 23px;
@@ -19,59 +23,60 @@
 }
 
 .section-title,.current-board-members {
-    font-size: 20px;
+    font-family: Noto Sans;
+    font-size: 1.5rem;
+    font-style: normal;
     font-weight: 600;
+    line-height: 1.5rem; /* 100% */
+    letter-spacing: -0.01563rem;
+}
+
+.url-input-container{
+    margin-top: 1rem;
 }
 
 .input-title, .signup-link {
-    font-size: 16px;
-    margin-top: 22px;
-    margin-bottom: 4px;
+    font-family: Noto Sans;
+    font-size: 1.2rem;
+    font-style: normal;
     font-weight: 600;
+    line-height: 1.5rem; /* 150% */
+    letter-spacing: -0.01563rem;
+    margin-bottom: 0.5rem;
 }
 
 .input-container {
     margin-bottom: 10px;
 }
 
-.text-row-container {
+
+.description-input-container{
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: center;
+    gap: 5rem;
+    margin-top: 1rem;
 }
 
-.buttons-row-container {
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: row;
-    width: 328px;
-    height: 30px;
-}
-
-.word-count {
-    font-size: 12px;
-    margin-left: auto;
-    color: #6B6F80;
-    margin-bottom: 4px;
-    font-weight: 400;
-}
-
-#description-input-container, #url-input-container {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
+input{
+    border: 1px solid #6B6F80;
+    border-radius: 4px;
+    width: 15.5rem;
+    height: 1.5rem;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
 }
 
 #description-input {
-    box-sizing: border-box;
-    resize: none;
-    height: 120px;
+    height: 6rem;
+    width:  25.25rem;
     border: 1px solid #6B6F80;
     border-radius: 4px;
     padding: 12px 16px 12px 16px;
+    font-size: 1rem;
 }
 
-#description-input::placeholder {
+.description-input::placeholder {
     font-size: 16px;
     color: #6B6F80;
     font-weight: 400;
@@ -89,31 +94,60 @@
     font-weight: 400;
 }
 
-.upload-button {
-    width: 193px;
-    height: 40px;
-    background-color: #FFFFFF;
-    border: 1px solid #000000;
-    border-radius: 4px;
-    padding: 8px 24px 8px 24px;
-    cursor: pointer;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 400;
+#button-container{
+    display: flex;
+    gap: 0.5rem;
 }
 
-.url-input {
-    width: 328px;
-    height: 48px;
+button{
+    background: none;
+	color: inherit;
+    cursor: pointer;
+    width: 9.5rem;
+    height: 2.5rem;
+    
+    border-radius: 0.25rem;
+    border: 1px solid #DADADA;
+    background: #FFF;
+    padding: 0.5rem 1.5rem;
+    
+    color: black;
+    text-align: center;
+    font-family: Ubuntu;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.5rem; /* 150% */
+    letter-spacing: -0.01563rem;
+}
+
+#save-btn{
+    overflow: hidden;
+    float: right;
+    margin: 2.62rem 5.15rem 0 0;
+    color: #FFF;
+    background: var(--light-blue-400, #3C4F75);
+}
+
+#member-image{
+    display: flex;
+    flex-direction: column;
+    gap: 0.88rem;
+}
+
+#url-input {
+    width: 18.5rem;
+    height: 1.5rem;
     border: 1px solid #BBBFCC;
     border-radius: 4px;
-    
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
 }
 
 .url-input::placeholder {
     font-size: 16px;
     color: #6B6F80;
     font-weight: 400;
-    padding: 0.75rem 1rem;
     font-family: 'Noto Sans', sans-serif;
 }
 
@@ -248,6 +282,12 @@
     top: 0.3rem;
 }
 
+.img-container{
+    position: relative;
+    display: flex;
+    gap: 3.31rem;
+}
+
 #plus{
     position: absolute;
     width: 2rem;
@@ -259,15 +299,54 @@
     font-weight: 300;
     line-height: 1.5rem;
     letter-spacing: -0.01563rem;
-
-    left:24.59rem;
-    top:40.37rem;
-
+    
+    left: 3.5rem;
+    top: 4.1rem;
+    
     background: none;
 	border: none;
 	padding: 0;
 	cursor: pointer;
+    
+}
 
+.box{
+    width: 10.25rem;
+    height: 10rem;
+    border: 1px solid;
+}
+
+.modal{
+    padding: 4rem 5rem 2.75rem 5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--dark-gray-300, #D5DAE4);    
+}
+
+.modal::backdrop{
+    background-color: black;
+    opacity: 0.4;
+}
+
+#modal-btn-container{
+    display: flex;
+    gap: 2.75rem;
+    justify-content: end;
+}
+
+#modal-btn-container > button{
+    color: #000;
+    font-family: Ubuntu;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#modal-btn-container button{
+    border: 0;
+    padding: 0;
+    width: auto;
+    height: auto;
 }
 
 /*
@@ -275,7 +354,7 @@
     display: inline-block;
     position: relative;
 }
-  
+
 .centered-text {
     font-size: 16px;
     dominant-baseline: middle;

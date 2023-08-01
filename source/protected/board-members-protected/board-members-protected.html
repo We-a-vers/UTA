@@ -4,7 +4,7 @@
     <title>Board Members Password Protected</title>
 
     <link rel="stylesheet" type="text/css" href="./board-members-protected.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/aa44cb4455.js" crossorigin="anonymous"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,27 +22,41 @@
             <div class="page-title">Edit Board Members Page</div>
             <hr>
 
+            <!-- This part is the first section -->
             
             <div class="section">
                 <div class="section-title">Board Member<span class="required">*</span></div>
-                <div id="description-input-container">
-                    <div class="text-row-container">
-                        <div class="input-title">Description under title<span class="required">*</span></div>
-                        <div class="word-count">10/10</div>
+
+                <div class="description-input-container">
+                    
+                    <div id="member-image">
+
+                        <img width="312" height="234" src="/source/protected/assets/placeholder-image.png" alt="">
+                        <div id="button-container">
+                            <button>Upload</button>
+                            <button style="color: red;">Delete Image</button>
+                        </div>
+
                     </div>
-                    <textarea id="description-input" placeholder="Insert text..." ></textarea>
+                    
+                    <div>
+                        <div class="input-title">Description under title<span class="required">*</span></div>
+                        <textarea id="description-input" placeholder="Insert text..." ></textarea>
+                        <div class="help-text">Enter the description under title</div>
+        
+                        <div class="url-input-container">
+                            <div class="signup-link">Sign Up Link</div>
+                            <textarea id="url-input" placeholder="Enter URL" ></textarea>
+                        </div>
+                    </div>
                 </div>
-                <div class="help-text">Enter the description under title</div>
 
-                <div id="url-input-container">
-                    <div class="signup-link">Sign Up Link</div>
-                    <textarea class="url-input" placeholder="Enter URL" ></textarea>
-                </div>
+                <!-- Save button for the first section -->
+                <button id="save-btn">Save</button>
 
-                
-                <div class="input-title">Upload Image</div>
-                <button class="upload-button">Upload Image</button>
             </div>
+
+            <!-- Section section for photo gallery -->
 
             <div class="photos">
                 <div class="current-board-members">Current Board Members<span class="required">*</span></div>
@@ -50,80 +64,55 @@
                     <div id="show-img">
             
                         <div class="img-container">
-                            
-                            <svg class="svg-container" xmlns="http://www.w3.org/2000/svg" width="164" height="160" viewBox="0 0 164 160" fill="none">
-                                <path d="M1.125 0.544922H163.498V159.5H1.125V0.544922Z" fill="white"/>
-                                <path d="M1.125 0.544922H163.498V159.5H1.125V0.544922Z" fill="white"/>
-                                <path d="M1.125 0.544922H163.498V159.5H1.125V0.544922Z" fill="white"/>
-                                <path d="M1.125 0.544922H163.498V159.5H1.125V0.544922Z" stroke="#BBBFCC"/>
-
-                                <rect x="0" y="0" width="200" height="100" />
-                                <text class="centered-text" x="50%" y="50%" text-anchor="middle" alignment-baseline="central">Button</text>
-                            </svg>
-            
-                            <!--<button id="plus">+</button> -->
-                            
+                            <div class="box"></div>
+                            <button id="plus">+</button>
                         </div>
-            
-                        <div class="img-container">
-                                
-                            <svg xmlns="http://www.w3.org/2000/svg" width="166" height="161" viewBox="0 0 166 161" fill="none">
-                                <path d="M3.11719 1.54492H164.5V160.5H3.11719V1.54492Z" fill="white"/>
-                                <path d="M3.11719 1.54492H164.5V160.5H3.11719V1.54492Z" fill="white"/>
-                                <path d="M3.11719 1.54492H164.5V160.5H3.11719V1.54492Z" fill="white"/>
-                                <path d="M3.11719 1.54492H164.5V160.5H3.11719V1.54492Z" stroke="#BBBFCC"/>
-                                <line y1="-0.5" x2="227.934" y2="-0.5" transform="matrix(0.71241 0.701763 -0.500919 0.865494 2.61719 1.04492)" stroke="#BBBFCC"/>
-                                <line y1="-0.5" x2="227.131" y2="-0.5" transform="matrix(0.72195 -0.691945 0.490677 0.871342 1 158.162)" stroke="#BBBFCC"/>
-                            </svg>
-                            
-                            <button class="svg-btn-small">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
-                                    <path d="M16.9726 7.88953L13.3396 4.29418L14.5363 3.09574C14.864 2.76759 15.2666 2.60352 15.7442 2.60352C16.2217 2.60352 16.6241 2.76759 16.9512 3.09574L18.1479 4.29418C18.4756 4.62233 18.6466 5.01839 18.6608 5.48236C18.6751 5.94633 18.5183 6.34211 18.1907 6.66968L16.9726 7.88953ZM15.7331 9.15218L6.67203 18.2262H3.03906V14.588L12.1001 5.51404L15.7331 9.15218Z" fill="#505D68"/>
-                                </svg>
-                            </button>
-                        </div> 
-                        <div class="img-container">
-                                
-                            <svg xmlns="http://www.w3.org/2000/svg" width="166" height="161" viewBox="0 0 166 161" fill="none">
-                                <path d="M3.11719 1.54492H164.5V160.5H3.11719V1.54492Z" fill="white"/>
-                                <path d="M3.11719 1.54492H164.5V160.5H3.11719V1.54492Z" fill="white"/>
-                                <path d="M3.11719 1.54492H164.5V160.5H3.11719V1.54492Z" fill="white"/>
-                                <path d="M3.11719 1.54492H164.5V160.5H3.11719V1.54492Z" stroke="#BBBFCC"/>
-                                <line y1="-0.5" x2="227.934" y2="-0.5" transform="matrix(0.71241 0.701763 -0.500919 0.865494 2.61719 1.04492)" stroke="#BBBFCC"/>
-                                <line y1="-0.5" x2="227.131" y2="-0.5" transform="matrix(0.72195 -0.691945 0.490677 0.871342 1 158.162)" stroke="#BBBFCC"/>
-                            </svg>
-                            
-                            <button class="svg-btn-small">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
-                                    <path d="M16.9726 7.88953L13.3396 4.29418L14.5363 3.09574C14.864 2.76759 15.2666 2.60352 15.7442 2.60352C16.2217 2.60352 16.6241 2.76759 16.9512 3.09574L18.1479 4.29418C18.4756 4.62233 18.6466 5.01839 18.6608 5.48236C18.6751 5.94633 18.5183 6.34211 18.1907 6.66968L16.9726 7.88953ZM15.7331 9.15218L6.67203 18.2262H3.03906V14.588L12.1001 5.51404L15.7331 9.15218Z" fill="#505D68"/>
-                                </svg>
-                            </button>
-                        </div> 
-            
-                        <div class="img-container">
-                                
-                            <svg xmlns="http://www.w3.org/2000/svg" width="166" height="161" viewBox="0 0 166 161" fill="none">
-                                <path d="M3.11719 1.54492H164.5V160.5H3.11719V1.54492Z" fill="white"/>
-                                <path d="M3.11719 1.54492H164.5V160.5H3.11719V1.54492Z" fill="white"/>
-                                <path d="M3.11719 1.54492H164.5V160.5H3.11719V1.54492Z" fill="white"/>
-                                <path d="M3.11719 1.54492H164.5V160.5H3.11719V1.54492Z" stroke="#BBBFCC"/>
-                                <line y1="-0.5" x2="227.934" y2="-0.5" transform="matrix(0.71241 0.701763 -0.500919 0.865494 2.61719 1.04492)" stroke="#BBBFCC"/>
-                                <line y1="-0.5" x2="227.131" y2="-0.5" transform="matrix(0.72195 -0.691945 0.490677 0.871342 1 158.162)" stroke="#BBBFCC"/>
-                            </svg>
-                            
-                            <button class="svg-btn-small">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
-                                    <path d="M16.9726 7.88953L13.3396 4.29418L14.5363 3.09574C14.864 2.76759 15.2666 2.60352 15.7442 2.60352C16.2217 2.60352 16.6241 2.76759 16.9512 3.09574L18.1479 4.29418C18.4756 4.62233 18.6466 5.01839 18.6608 5.48236C18.6751 5.94633 18.5183 6.34211 18.1907 6.66968L16.9726 7.88953ZM15.7331 9.15218L6.67203 18.2262H3.03906V14.588L12.1001 5.51404L15.7331 9.15218Z" fill="#505D68"/>
-                                </svg>
-                            </button>
-                        </div> 
-            
+
+                        <div class="box"></div>
                     </div>
-                    
                 </div>
             </div>
 
             
+            <!-- Pop up modal -->
+
+            <dialog class="modal">
+            
+                <div class="section">
+    
+                    <div class="description-input-container">
+                        
+                        <div id="member-image">
+    
+                            <img width="312" height="234" src="/source/protected/assets/placeholder-image.png" alt="">
+                            <div id="button-container">
+                                <button>Upload</button>
+                                <button style="color: red;">Delete Image</button>
+                            </div>
+    
+                        </div>
+                        
+                        <form id="modal-form">
+                            <div class="input-title">Role<span class="required">*</span></div>
+                            <input type="text" name="role" placeholder="Insert Role Name..." >
+            
+                            <div class="url-input-container">
+                                <div class="signup-link">Board Member’s Name</div>
+                                <input type="text" name="name" placeholder="Insert Name..." >
+                            </div>
+                        </form>
+                    </div>
+    
+                </div>
+                
+                <div id="modal-btn-container">
+                    <button id="close-btn">Cancel</button>
+                    <button type="submit" id="submit-btn" form="modal-form"><i class="fa-solid fa-circle-check fa-2xl"></i></button>
+                </div>
+
+            </dialog>
+            
+
         </div>
     </div>
 </body>

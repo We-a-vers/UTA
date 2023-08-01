@@ -1,1 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Events Password Protected</title>
 
+    <link rel="stylesheet" type="text/css" href="./events-protected.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Noto+Sans:wght@400;600&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+    <script type="module" src="./events-protected.js"></script>
+    <script src="../tabs/tabs.js"></script>
+</head>
+<body>
+    <div id="container">
+        <tab-component></tab-component>
+
+        <div id="content">
+            <div class="page-title">Edit Event Page</div>
+            <hr>
+
+            <div class="section-title">Upcoming Events<span class="required">*</span></div>
+            <div id="upcoming-events-section">
+                <div id="upcoming-events-sub-section">
+                    <div class="text-row-container">
+                        <div class="input-title">Event Name</div>
+                        <div class="word-count">10/10</div>
+                    </div>
+                    <textarea id="name-input" placeholder="Insert name..."></textarea>
+
+                    <div class="text-row-container">
+                        <div class="input-title">Event Description</div>
+                        <div class="word-count">10/10</div>
+                    </div>
+                    <textarea id="description-input" placeholder="Insert text..."></textarea>
+
+                    <div class="input-title">Sign up Link</div>
+                    <textarea id="link-input" placeholder="Enter URL"></textarea>
+                </div>
+                <div id="upcoming-events-sub-section">
+                    <div class="input-title">Event Image<span class="required">*</span></div>
+                    <div id="upcoming-events-event-image">
+                        <button id="upcoming-events-image-pencil" class="pencil-button"><i class="fa fa-pencil" style="font-size:1.9rem;color:#505D68;"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="section-title">Past Events<span class="required">*</span></div>
+            <div class="past-events-section">
+                <div class="box plus-box">
+                  <span>+</span>
+                </div>
+                <div class="box">
+                    <button class="pencil-button"><i class="fa fa-pencil" style="font-size:1.4375rem;color:#505D68;"></i></button>
+                </div>
+                <div class="box">
+                    <button class="pencil-button"><i class="fa fa-pencil" style="font-size:1.4375rem;color:#505D68;"></i></button>
+                </div>
+                <div class="box">
+                    <button class="pencil-button"><i class="fa fa-pencil" style="font-size:1.4375rem;color:#505D68;"></i></button>
+                </div>
+                <div class="box">
+                    <button class="pencil-button"><i class="fa fa-pencil" style="font-size:1.4375rem;color:#505D68;"></i></button>
+                </div>
+                <div class="box">
+                    <button class="pencil-button"><i class="fa fa-pencil" style="font-size:1.4375rem;color:#505D68;"></i></button>
+                </div>
+                <div class="box">
+                    <button class="pencil-button"><i class="fa fa-pencil" style="font-size:1.4375rem;color:#505D68;"></i></button>
+                </div>
+            </div>
+
+            <!-- form 1 -->
+            <div id="upcoming-events-form" class="upcoming-events-form">
+                <form id="upcomingEventsForm" class="event-form">
+                    <div id="form-image-preview-container">
+                        <div class="form-input-title" id="form-image-preview-title">Image Preview</div>
+                        <div id="title-img-upload"></div>
+                        <div id="form-img-buttons" class="buttons-row-container">
+                            <button type="button" id="uploadTitleImg" class="form-image-button">Upload</button>
+                            <button type="button" id="deleteTitleImg" class="form-image-button">Delete Image</button>
+                        </div>
+                    
+                        <!-- url -->
+                        <div id="form-image-url-container">
+                            <div class="form-input-title">Image URL</div>
+                            <textarea id="image-url-input"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="buttons-row-container" id="form-buttons">
+                        <button type="button" id="upcoming-events-form-cancel" class="cancel-button" >Cancel</button>
+                        <button type="button" id="upcoming-events-form-check" class="check-mark" ><i class="fa fa-check-circle" style="color: #000000;"></i></button>
+                    </div>  
+                </form>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
