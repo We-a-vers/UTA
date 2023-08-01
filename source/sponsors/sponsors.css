@@ -220,7 +220,7 @@ button{
 
 .uta-sponsors__logo-wrapper .tooltiptext {
   visibility: hidden;
-  width: 19.1875rem; 
+  width: 19.1875rem;
   height: 17.625rem;
   background-color: #1D3159;
   /* color: #fff; */
@@ -230,7 +230,7 @@ button{
 
   /* Position the tooltip */
   position: relative;
-  z-index: 1;
+  z-index: 1;   
 }
 
 .uta-sponsors__logo-wrapper:hover .tooltiptext {
