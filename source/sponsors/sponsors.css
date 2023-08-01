@@ -1,288 +1,216 @@
 body {
-    padding: 10rem;
-  }
+  padding: 10rem;
+}
 
 .main__content h1{
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 77px;
-  line-height: 105px;
-  /* identical to box height */
-  
-  text-align: center;
-  
-  color: #000000;
-  
-  
-  /* Inside auto layout */
-  
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 77px;
+line-height: 105px;
+/* identical to box height */
+
+text-align: center;
+
+color: #000000;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
 }
 
 .main__content p{
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24;
-  line-height: 168.68%;
-  
-  text-align: center;
-  color: #000000;
-  
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 24;
+line-height: 168.68%;
+
+text-align: center;
+color: #000000;
+
 }
 
 .main__btn{
-    text-align: center;
-    margin: auto;
-    display: flex;
-    display: grid;
-    font-size:1rem;
-    padding: 14px 32px;
-    border: none;
-    border-radius: 4px;
-    color: #fff;
-    margin-top: 2rem;
-    cursor: pointer;
-    position: relative;
-    transition: all 0.35s;
-    outline: none;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  display: grid;
+  font-size:1rem;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  margin-top: 2rem;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.35s;
+  outline: none;
 }
 
 #member-card-container{
-  display: flex;
-  flex-direction: row;
-  gap: 5rem;
+display: flex;
+flex-direction: row;
+gap: 5rem;
 }
 
 .membership-card__content{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+text-align: left;
 }
 
 .membership-card__content h1{
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: bold;
-  font-size: 30px;
-  line-height: 52px;
-  /* identical to box height */
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: bold;
+font-size: 30px;
+line-height: 52px;
+/* identical to box height */
 
-  text-align: center;
-  text-transform: uppercase;
+text-align: center;
+text-transform: uppercase;
 
-  white-space: nowrap;
-  overflow: visible;
+white-space: nowrap;
+overflow: visible;
 
-  color: #000000;
+color: #000000;
 
-  display: block;
+display: block;
 }
 
 .membership-card__content img {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
-  margin-top: 10px;
-  width: 400px;
-  height: auto;
-  align-self: flex-start;
+display: block;
+margin: 0 auto;
+max-width: 100%;
+margin-top: 10px;
+width: 400px;
+height: auto;
+align-self: flex-start;
 }
 
 .membership-card__price {
-  display: flex;
-  flex-direction: column;
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-size: 20px;
-  line-height: 41px;
+display: flex;
+flex-direction: column;
+font-family: 'Open Sans';
+font-style: normal;
+font-size: 20px;
+line-height: 41px;
 
 }
 
 .membership-card__price h3 {
-  font-weight: 600;
-  text-transform: capitalize;
-  color: #0C1424;
-  margin-bottom: 0;
+font-weight: 600;
+text-transform: capitalize;
+color: #0C1424;
+margin-bottom: 0;
 }
 
 .membership-card__price p {
-  font-weight: 400;
-  color: #000000;
-  margin-top:0;
+font-weight: 400;
+color: #000000;
+margin-top:0;
 }
 
 
 .uta-sponsors__content {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  margin-top: 5rem;
-  color: #000000;
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+margin-top: 5rem;
+color: #000000;
 }
 
 .uta-sponsors__content h1{
-  font-size: 30px;
-  line-height: 52px;
-  text-transform: uppercase;
+font-size: 30px;
+line-height: 52px;
+text-transform: uppercase;
 }
 
 .uta-sponsors__logos {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 30px; /* Optional: Add spacing between images */
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-gap: 30px; /* Optional: Add spacing between images */
 }
 
 .uta-sponsors__logo-wrapper{
-  text-align: center;
+text-align: center;
 }
 
 .uta-sponsors__logo-wrapper img {
-  max-width: 100%;
+max-width: 100%;
 }
 
 .uta-sponsors__discount {
-  margin-top: 5px;
+margin-top: 5px;
 }
 
 .merch__content {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  margin-top: 5rem;
-  color: #000000;
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+margin-top: 5rem;
+color: #000000;
 }
 
 .merch__content h1{
-  font-size: 30px;
-  line-height: 52px;
-  text-transform: uppercase;
+font-size: 30px;
+line-height: 52px;
+text-transform: uppercase;
 }
 
 .merch__price img {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
-  margin-top: 10px;
-  align-self: flex-start;
+display: block;
+margin: 0 auto;
+max-width: 100%;
+margin-top: 10px;
+align-self: flex-start;
 }
 
 .merch__price h3 {
-  font-weight: 600;
-  text-transform: capitalize;
-  color: #0C1424;
+font-weight: 600;
+text-transform: capitalize;
+color: #0C1424;
 }
 
 .merch__price p {
-  font-weight: 400;
-  color: #000000;
+font-weight: 400;
+color: #000000;
 }
 
 button{
-  margin-top: 2rem;
-  
-  
+margin-top: 2rem;
 
-  background: #3C4F75;
-  box-shadow: 0px 4px 8px -2px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.06);
-  border-radius: 10px;
 
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 33px;
-  
-  text-align: center;
-  
-  color: #FFFFFF;
+
+background: #3C4F75;
+box-shadow: 0px 4px 8px -2px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+border-radius: 10px;
+
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 33px;
+
+text-align: center;
+
+color: #FFFFFF;
 }
 
 #merch__price-button{
-  margin-left: 85%;
-  padding: 1rem 2rem 1rem 2rem;
+margin-left: 85%;
+padding: 1rem 2rem 1rem 2rem;
 }
 
 #membership-card__purchase-button{
-  margin-left: 60%;
-  padding: 0.75rem 0.85rem 0.75rem 0.85rem;
+margin-left: 60%;
+padding: 0.75rem 0.85rem 0.75rem 0.85rem;
 }
-
-/* .uta-sponsors__logo-wrapper {
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted black;
-} */
-
-.uta-sponsors__logo-wrapper .tooltiptext {
-  visibility: hidden;
-  width: 19.1875rem;
-  height: 17.625rem;
-  background-color: #1D3159;
-  /* color: #fff; */
-  text-align: center;
-  border-radius: 10px;
-  padding: 5px 0;
-
-  /* Position the tooltip */
-  position: relative;
-  z-index: 1;   
-}
-
-.uta-sponsors__logo-wrapper:hover .tooltiptext {
-  visibility: visible;
-}
-
-.uta-sponsors__logo-wrapper .tooltiptext-title{
-  color: #A6926D;
-  font-family: 'Noto Sans Bengali', sans-serif;
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-
-  width: 9.625rem;
-  height: 1.5625rem;
-  flex-shrink: 0;
-  margin-top: 3.5rem;
-  margin-left: 1.63rem;
-  margin-right: 7.94rem;
-  margin-bottom: 1rem;
-}
-
-.uta-sponsors__logo-wrapper .tooltiptext-body{
-  color: #FFF;
-  font-family: 'Noto Sans Bengali', sans-serif;
-  font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.uta-sponsors__logo-wrapper .tooltiptext-discount{
-  width: 9.625rem;
-  height: 1.5625rem;
-  flex-shrink: 0;
-  margin-left: 1.6rem;
-}
-
-
-.uta-sponsors__logo-wrapper ul.tooltiptext-content{
-  margin-left: 1.94rem;
-  margin-right: 1.56rem;
-  margin-bottom: 1.06rem;
-}
-
-li {
-  position: relative;
-  left: -5px;
-}
-
-
   
 
 
