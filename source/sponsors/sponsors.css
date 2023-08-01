@@ -211,6 +211,78 @@ button{
   margin-left: 60%;
   padding: 0.75rem 0.85rem 0.75rem 0.85rem;
 }
+
+/* .uta-sponsors__logo-wrapper {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+} */
+
+.uta-sponsors__logo-wrapper .tooltiptext {
+  visibility: hidden;
+  width: 19.1875rem; 
+  height: 17.625rem;
+  background-color: #1D3159;
+  /* color: #fff; */
+  text-align: center;
+  border-radius: 10px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: relative;
+  z-index: 1;
+}
+
+.uta-sponsors__logo-wrapper:hover .tooltiptext {
+  visibility: visible;
+}
+
+.uta-sponsors__logo-wrapper .tooltiptext-title{
+  color: #A6926D;
+  font-family: 'Noto Sans Bengali', sans-serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  width: 9.625rem;
+  height: 1.5625rem;
+  flex-shrink: 0;
+  margin-top: 3.5rem;
+  margin-left: 1.63rem;
+  margin-right: 7.94rem;
+  margin-bottom: 1rem;
+}
+
+.uta-sponsors__logo-wrapper .tooltiptext-body{
+  color: #FFF;
+  font-family: 'Noto Sans Bengali', sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.uta-sponsors__logo-wrapper .tooltiptext-discount{
+  width: 9.625rem;
+  height: 1.5625rem;
+  flex-shrink: 0;
+  margin-left: 1.6rem;
+}
+
+
+.uta-sponsors__logo-wrapper ul.tooltiptext-content{
+  margin-left: 1.94rem;
+  margin-right: 1.56rem;
+  margin-bottom: 1.06rem;
+}
+
+li {
+  position: relative;
+  left: -5px;
+}
+
+
   
 
 
