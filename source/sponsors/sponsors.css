@@ -152,6 +152,7 @@ font-size: 1.125rem;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
+margin-bottom: 2.07rem;
 }
 
 .merch__content {
@@ -217,11 +218,6 @@ margin-left: 60%;
 padding: 0.75rem 0.85rem 0.75rem 0.85rem;
 }
 
-/* .uta-sponsors__logo-wrapper {
-position: relative;
-display: inline-block;
-border-bottom: 1px dotted black;
-} */
 
 .uta-sponsors__logo-wrapper .tooltiptext {
 visibility: hidden;
@@ -234,8 +230,10 @@ border-radius: 10px;
 padding: 5px 0;
 
 /* Position the tooltip */
-position: relative;
-z-index: 1;   
+position: relative; 
+z-index: 1;  
+transform: translateY(-100%);
+
 }
 
 .uta-sponsors__logo-wrapper:hover .tooltiptext {
