@@ -266,22 +266,12 @@ line-height: normal;
 .uta-sponsors__logo-wrapper .tooltiptext-discount{
 width: 9.625rem;
 height: 1.5625rem;
-flex-shrink: 0;
 margin-left: 1.6rem;
 }
 
-
-.uta-sponsors__logo-wrapper ul.tooltiptext-content{
-  margin-left: 1.94rem;
-  margin-right: 1.56rem;
-  margin-bottom: 1.06rem;
+.tooltiptext-content{
+  text-align: start;
 }
-
-li {
-  position: relative;
-  left: -5px;
-}
-
 
 
 
