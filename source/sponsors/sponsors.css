@@ -220,7 +220,7 @@ padding: 0.75rem 0.85rem 0.75rem 0.85rem;
 
 
 .uta-sponsors__logo-wrapper .tooltiptext {
-visibility: hidden;
+display: none;
 width: 19.1875rem;
 height: 17.625rem;
 background-color: #1D3159;
@@ -237,7 +237,7 @@ transform: translateY(-100%);
 }
 
 .uta-sponsors__logo-wrapper:hover .tooltiptext {
-visibility: visible;
+display: contents;
 }
 
 .uta-sponsors__logo-wrapper .tooltiptext-title{
