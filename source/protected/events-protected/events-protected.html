@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Events Password Protected</title>
+
+    <link rel="stylesheet" type="text/css" href="./events-protected.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Noto+Sans:wght@400;600&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+    <script type="module" src="./events-protected.js"></script>
+    <script src="../tabs/tabs.js"></script>
+</head>
+<body>
+    <div id="container">
+        <tab-component></tab-component>
+
+        <div id="content">
+            <div class="page-title">Edit Event Page</div>
+            <hr>
+
+            <div class="section-title">Upcoming Events<span class="required">*</span></div>
+            <div id="upcoming-events-section">
+                <div id="upcoming-events-sub-section">
+                    <div class="text-row-container">
+                        <div class="input-title">Event Name</div>
+                        <div class="word-count">10/10</div>
+                    </div>
+                    <textarea id="name-input" placeholder="Insert name..."></textarea>
+
+                    <div class="text-row-container">
+                        <div class="input-title">Event Description</div>
+                        <div class="word-count">10/10</div>
+                    </div>
+                    <textarea id="description-input" placeholder="Insert text..."></textarea>
+
+                    <div class="input-title">Sign up Link</div>
+                    <textarea id="link-input" placeholder="Enter URL"></textarea>
+                </div>
+                <div id="upcoming-events-sub-section">
+                    <div class="input-title">Event Image<span class="required">*</span></div>
+                    <div id="upcoming-events-event-image">
+                        <button id="upcoming-events-image-pencil" class="pencil-button"><i class="fa fa-pencil" style="font-size:1.9rem;color:#505D68;"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="section-title">Past Events<span class="required">*</span></div>
+            <div id="past-events-section">
+                <div id="past-events-add" class="box plus-box">
+                  <span>+</span>
+                </div>
+            </div>
+
+            <!-- pop-up form -->
+            <form id="past-events-form" class="eventForm">
+                <div id="form-input-container">
+                    <div class="form-input-title" id="form-image-preview-title">Image Preview</div>
+                    <div id="form-image-preview"></div>
+                    <div id="form-image-buttons" class="buttons-row-container">
+                        <!-- visible upload button  -->
+                        <button type="button" id="past-events-image-upload" class="form-image-button">Upload</button>
+                        <!-- hidden upload button that will be triggered when the visible upload button is clicked (done in js) -->
+                        <input type="file" id="past-events-image-upload-file" accept="image/*" style="display: none;">
+                        <button type="button" id="past-events-form-delete" class="form-image-button">Delete Image</button>
+                    </div>
+
+                    <div class="form-input-title">Image URL</div>
+                    <textarea id="image-url-input"></textarea>
+                </div>
+
+                <div id="form-buttons" class="buttons-row-container" >
+                    <button type="button" id="past-events-form-cancel" class="cancel-button" >Cancel</button>
+                    <button type="submit" class="check-mark" ><i class="fa fa-check-circle" style="color: #000000;"></i></button>
+                </div>  
+            </form>
+
+        </div>
+    </div>
+</body>
+</html>

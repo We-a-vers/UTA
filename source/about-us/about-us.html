@@ -4,96 +4,91 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/source/navbar/navbar.css">
     <link rel="stylesheet" href="about-us.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Open+Sans:ital,wght@0,400;1,700&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
     <title>About Us</title>
-
-    <!-- Navbar -->
-
-    <div class="navbar">
-        <h1>LOGO</h1>
-
-        <ul>
-            <li><a href="">ABOUT</a></li>
-            <li class="drop-down">
-                <a class="prevent-select">TEAM</a>
-                <div class="drop-down-items">
-                    <a href="">TEAM 1</a>
-                    <a href="">TEAM 2</a>
-                </div>
-            </li>
-            <li class="drop-down">
-                <a class="prevent-select">EVENTS</a>
-                <div class="drop-down-items">
-                    <a href="">EVENT 1</a>
-                    <a href="">EVENT 2</a>
-                </div>
-            </li>
-            <li><a href="">SPONSORS</a></li>
-        </ul>
-    </div>
-
-    <!-- End of Navbar -->
+</head>
+    
+<body>
+    
+    <navbar-component></navbar-component> 
 
     <div class="header">
         <h1>About Us</h1>
         <p>Learn about our history, mission, and values we hold at UTA</p>
+        <img src="/source/assets/about-us-image.png" alt="">
     </div>
+    <div class="content">
+        <div class="history">
+            <h2>Our History</h2>
 
-    <div class="history">
-        <h2>Our History</h2>
-
-        <div>
-            <img src="/source/assets/placeholder-image.png" alt="">
-            <h4>UTA was established in 19xx with the vision to create an inclusive environment for Taiwanese students.</h4>
+            <div>
+                <img src="/source/assets/placeholder-image.png" alt="">
+                <h4>UTA was established in 19xx with the vision to create an inclusive environment for Taiwanese students. UTA aims to provide a sense of home for overseas Taiwanese students and a platform for those interested in learning about Taiwan.</h4>
+            </div>
         </div>
-    </div>
 
-    <div class="core-values">
-        <h2>Core Values</h2>
+        <div class="core-values">
+            <h2>Core Values</h2>
 
-        <div class="gallery">
-            <div>
-                <img src="/source/assets/placeholder-image.png" alt="" width="100%">
-                <p>Family System</p>
-            </div>
-    
-            <div>
-                <img src="/source/assets/placeholder-image.png" alt="" width="100%">
-                <p>Intern program</p>
-            </div>
-    
-            <div>
-                <img src="/source/assets/placeholder-image.png" alt="" width="100%">
-                <p>Board Members</p>
+            <div class="gallery">
+                <div>
+                    <img src="/source/assets/about-us-icon-1.png" alt="">
+                    <p>Community</p>
+                </div>
+        
+                <div>
+                    <img src="/source/assets/about-us-icon-2.png" alt="">
+                    <p>Network</p>
+                </div>
+        
+                <div>
+                    <img src="/source/assets/about-us-icon-3.png" alt="">
+                    <p>Inclusivity</p>
+                </div>
             </div>
         </div>
 
 
         <div class="culture">
-            <h2>Culture</h2>
+                <h2>Culture</h2>
 
-            <div>
-                <h4>What reminds you of Taiwan? 
-                    Taiwan Taiwan Taiwan Taiwan Taiwan Taiwan Taiwan Taiwan Taiwan Taiwan Taiwan Taiwan Taiwan Taiwan Taiwan Taiwan   
-                </h4>
-                <img src="/source/assets/placeholder-image.png" alt="" width="50%">
-            </div>
-
+                <div>
+                    <div class="culture-text">
+                        <h3>“The Most Beautiful Scenery of Taiwan Is Its People” </h2>
+                        <h4>Located on the Western Pacific Ocean, Taiwan is an island that breeds vibrant cultures, innovative technology, remarkable talents, breathtaking natural landscapes and so much more.</h4>
+                    </div>
+                    <img src="/source/assets/about-us-taiwan-image.png" alt="">
+                </div>
         </div>
+    </div>    
 
-        <div class="contact">
-            <h2>Contact Us</h2>
+    <img id="image-gallery" src="/source/assets/about-us-image-gallery.png" alt="">
 
-            <div>
-                <h3>Instagram</h3>
-                <h3>Facebook</h3>
-                <h3>Email</h3>
+    <div class="contact">
+        <h2>Contact Us</h2>
+
+        <div>
+            <div class="contact-item">
+                <img src="/source/assets/about-us-instagram-logo.png" alt="">
+                <h3>@ucsduta</h3>
+            </div>
+            <div class="contact-item">
+                <img src="/source/assets/about-us-facebook-logo.png" alt="">
+                <h3>United Taiwanese Association at 
+                    UC San Diego</h3>
+            </div>
+            <div class="contact-item">
+                <img src="/source/assets/about-us-email-logo.png" alt="">
+                <h3>@utaucsd</h3>
             </div>
         </div>
     </div>
 
-</head>
+    <script src="../navbar/navbar.js"></script>
+
 <body>
     
 </body>
