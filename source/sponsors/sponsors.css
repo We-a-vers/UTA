@@ -147,6 +147,11 @@ max-width: 100%;
 
 .uta-sponsors__discount {
 margin-top: 5px;
+font-family: Open Sans;
+font-size: 1.125rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
 }
 
 .merch__content {
