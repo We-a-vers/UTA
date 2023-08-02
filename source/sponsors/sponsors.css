@@ -237,7 +237,7 @@ transform: translateY(-100%);
 }
 
 .uta-sponsors__logo-wrapper:hover .tooltiptext {
-display: contents;
+display: inline-block;
 }
 
 .uta-sponsors__logo-wrapper .tooltiptext-title{
