@@ -24,80 +24,82 @@
 
             <!-- This part is the first section -->
             
-            <div class="section">
+            <form class="section" id="intern-header-form">
                 <div class="section-title">Intern Program<span class="required">*</span></div>
 
                 <div class="description-input-container">
                     
-                    <div id="member-image">
+                    <div id="intern-image">
 
-                        <img width="312" height="234" src="/source/protected/assets/placeholder-image.png" alt="">
+                        <img id="intern-image" width="312" height="234" src="/source/protected/assets/placeholder-image.png" alt="">
                         <div id="button-container">
-                            <button>Upload</button>
-                            <button style="color: red;">Delete Image</button>
+                            <button id="intern-upload">Upload</button>
+                            <input type="file" id="intern-image-upload-file" accept="image/*" style="display: none;">
+                            <button id="intern-delete" style="color: red;">Delete Image</button>
                         </div>
 
                     </div>
                     
                     <div>
                         <div class="input-title">Description under title<span class="required">*</span></div>
-                        <textarea id="description-input" placeholder="Insert text..." ></textarea>
+                        <textarea id="intern-description-input" placeholder="Insert text..." ></textarea>
                         <div class="help-text">Enter the description under title</div>
         
                         <div class="url-input-container">
                             <div class="signup-link">Sign Up Link</div>
-                            <textarea id="url-input" placeholder="Enter URL" ></textarea>
+                            <textarea id="intern-url-input" placeholder="Enter URL" ></textarea>
                         </div>
                     </div>
-                </div>
+                </form>
 
                 <!-- Save button for the first section -->
-                <button id="save-btn">Save</button>
+                <button type="submit" id="save-btn">Save</button>
 
             </div>
 
             <!-- This part is the second section (a copy of the first section) -->
             
-            <div class="section-2">
+            <form class="section-2" id="how-does-it-work-form">
                 <div class="section-title">How does it work<span class="required">*</span></div>
 
                 <div class="description-input-container">
                     
-                    <div id="member-image">
+                    <div id="how-does-it-work-image">
 
-                        <img width="312" height="234" src="/source/protected/assets/placeholder-image.png" alt="">
+                        <img id="work-image" width="312" height="234" src="/source/protected/assets/placeholder-image.png" alt="">
                         <div id="button-container">
-                            <button>Upload</button>
-                            <button style="color: red;">Delete Image</button>
+                            <button id="work-upload">Upload</button>
+                            <input type="file" id="work-image-upload-file" accept="image/*" style="display: none;">
+                            <button id="wo-delete" style="color: red;">Delete Image</button>
                         </div>
 
                     </div>
                     
                     <div>
                         <div class="input-title">Description under title<span class="required">*</span></div>
-                        <textarea id="description-input" placeholder="Insert text..." ></textarea>
+                        <textarea id="work-description-input" placeholder="Insert text..." ></textarea>
                         <div class="help-text">Enter the description under title</div>
         
                         <div class="url-input-container">
                             <div class="signup-link">Sign Up Link</div>
-                            <textarea id="url-input" placeholder="Enter URL" ></textarea>
+                            <textarea id="work-url-input" placeholder="Enter URL" ></textarea>
                         </div>
                     </div>
                 </div>
 
                 <!-- Save button for the second section -->
                 <button id="save-btn">Save</button>
-            </div>
+            </form>
 
             <!-- Section section for photo gallery -->
 
             <div class="photos">
-                <div class="current-board-members">Past Projects<span class="required">*</span></div>
+                <div class="current-interns">Past Projects<span class="required">*</span></div>
             
                     <div id="show-img">
             
                         <div class="img-container">
-                            <div class="box"></div>
+                            <div class="box" id="plus-box"></div>
                             <button id="plus">+</button>
                         </div>
 
@@ -111,27 +113,27 @@
 
             <dialog class="modal">
             
-                <div class="section">
+                <form  class="section" id="modal-form">
     
                     <div class="description-input-container">
                         
-                        <div id="member-image">
+                        <div id="intern-image">
     
-                            <img width="312" height="234" src="/source/protected/assets/placeholder-image.png" alt="">
+                            <img id="modal-image" width="312" height="234" src="/source/protected/assets/placeholder-image.png" alt="">
                             <div id="button-container">
-                                <button>Upload</button>
-                                <button style="color: red;">Delete Image</button>
+                                <button id="modal-upload">Upload</button>
+                                <button id="modal-delete" style="color: red;">Delete Image</button>
                             </div>
     
                         </div>
                         
                         <form id="modal-form">
                             <div class="input-title">Event Instagram Post Link</div>
-                            <input type="text" name="name" placeholder="Enter URL" >
+                            <input id="modal-instPost-input" type="text" name="name" placeholder="Enter URL" >
                         </form>
                     </div>
     
-                </div>
+                </form>
                 
                 <div id="modal-btn-container">
                     <button id="close-btn">Cancel</button>

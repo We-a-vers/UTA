@@ -22,7 +22,7 @@
     font-family: 'Inter', sans-serif;
 }
 
-.section-title,.current-board-members {
+.section-title, .current-board-interns {
     font-family: Noto Sans;
     font-size: 1.5rem;
     font-style: normal;
@@ -67,7 +67,7 @@ input{
     font-size: 1rem;
 }
 
-#description-input {
+#intern-description-input, #work-description-input {
     height: 6rem;
     width:  25.25rem;
     border: 1px solid #6B6F80;
@@ -76,7 +76,7 @@ input{
     font-size: 1rem;
 }
 
-.description-input::placeholder {
+.intern-description-input::placeholder, .work-description-input::placeholder {
     font-size: 16px;
     color: #6B6F80;
     font-weight: 400;
@@ -129,13 +129,19 @@ button{
     background: var(--light-blue-400, #3C4F75);
 }
 
-#member-image{
+#intern-image{
     display: flex;
     flex-direction: column;
     gap: 0.88rem;
 }
 
-#url-input {
+#how-does-it-work-image{
+    display: flex;
+    flex-direction: column;
+    gap: 0.88rem;
+}
+
+#intern-url-input, #work-url-input {
     width: 18.5rem;
     height: 1.5rem;
     border: 1px solid #BBBFCC;
@@ -144,7 +150,7 @@ button{
     padding: 0.75rem 1rem;
 }
 
-.url-input::placeholder {
+.intern-url-input::placeholder, .work-url-input::placeholder {
     font-size: 16px;
     color: #6B6F80;
     font-weight: 400;
@@ -260,7 +266,7 @@ button{
     margin-right: 1.31rem;
 }
 
-#current-board-members {
+#current-interns {
     margin-top: 2.53rem;
 }
 
@@ -314,6 +320,10 @@ button{
     width: 10.25rem;
     height: 10rem;
     border: 1px solid;
+}
+
+#plus-box{
+    background: none;
 }
 
 .modal{
