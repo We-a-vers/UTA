@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Form</title>
+
+    <link rel="stylesheet" type="text/css" href="./firebase-example.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script type="module" src="./firebase-example.js"></script>
+    <script src="./../navbar/navbar.js"></script>
+</head>
+<body>
+    <navbar-component></navbar-component>
+    
+    <button id="pencilButton" class="pencil-button"><i class="fa fa-pencil"></i></button>
+
+    <div id="popupForm" class="popup-form">
+        <form id="eventForm" class="event-form">
+            <h2>Create New Event</h2>
+            <p>Title</p>
+            <input type="text" id="eventTitle" required>
+            <button type="button" id="uploadBtn">Upload</button>
+            <input type="file" id="eventPicture" accept="image/*" style="display: none;">
+            <button type="button" id="cancelBtn">Cancel</button>
+            <button type="submit" id="submitBtn">Submit</button>
+        </form>
+    </div>
+
+    <p>Events: </p>
+    <div id="eventsContainer"></div>
+</body>
+</html>

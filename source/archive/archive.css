@@ -2,10 +2,10 @@
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 77px;
+    font-size: 64px;
     line-height: 105px;
     text-align: center;
-    color: #000000;
+    color: #1D3159;
     flex: none;
     order: 0;
     flex-grow: 0;
@@ -18,10 +18,10 @@
     font-size: 30px;
     line-height: 168.68%;
     text-align: center;
-    color: #000000;
+    color: #241E14;
 }
 
-.past-event-highlights-title {
+/* .past-event-highlights-title {
     left: calc(50% - 403px/2 - 428.5px);
     top: 513px;
     font-family: 'Lora';
@@ -95,4 +95,4 @@ img {
     color: #000;
     display: flex;
     justify-content: end;
-}
+} */
