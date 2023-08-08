@@ -6,6 +6,17 @@ const openModal = document.querySelector('#plus');
 const closeModal = document.querySelector('#close-btn');
 const modal = document.querySelector('.modal');
 
+// open the modal by clicking the plus icon
+openModal.addEventListener('click', () => {
+    modal.showModal();
+})
+
+// close the modal by clicking the cancel button
+closeModal.addEventListener('click', () => {
+    modal.close();
+})
+
+
 // Firebase for section 1
 const internUpload = document.querySelector('#intern-upload')
 const internDelete = document.querySelector('#intern-delete')
@@ -47,7 +58,7 @@ internHeaderForm.addEventListener("submit", async (e) => {
     const urlValue = internUrlInput.value;
   
     // generate firebase database reference
-    const internsHeaderRef = ref(database, 'internsHeader');
+    const internsHeaderRef = ref(database, 'interns/internsHeader');
 
     // initialize data
     const date = new Date()
@@ -63,7 +74,7 @@ internHeaderForm.addEventListener("submit", async (e) => {
         const fileURL = URL.createObjectURL(internImageUploadFileValue);
         const response = await fetch(fileURL);
         const blob = await response.blob();
-        const filePath = "internsHeaderPicture.png";
+        const filePath = "interns/internsHeaderPicture.png";
         const sRef = storageRef(storage, filePath);
 
         // upload
@@ -78,35 +89,15 @@ internHeaderForm.addEventListener("submit", async (e) => {
                 console.error("Error storing intern header:", error);
             });
         });
-    } else if (internImage.alt != "No Image") {
+    } else if (internImage.alt != "") {
         set(internsHeaderRef, internsHeaderData);
-        window.alert("Intern info saved!");
+        // window.alert("Intern info saved!");
         console.log('Updated text only')
     } else{
-        console.log('Failed')
+        window.alert("Please upload an image");
+        console.log('Image missing')
     }
 });
-
-// window load listener
-window.addEventListener("load", async () => {
-    // create database reference
-    const dbRef = ref(database, 'internsHeader');
-    const snapshot = await get(dbRef);
-  
-    if (snapshot.exists()) {
-        // retrieve data
-        const internsHeader = snapshot.val();
-
-        const sRef = storageRef(storage, "internsHeaderPicture.png");
-        const imageUrl = await getDownloadURL(sRef);
-
-        internImage.src = imageUrl;
-        internImage.alt = 'Intern Image';
-        internDescriptionInput.value = internsHeader.description;
-        internUrlInput.value = internsHeader.url;
-    }
-});
-
 
 
 
@@ -151,7 +142,7 @@ workHeaderForm.addEventListener("submit", async (e) => {
     const urlValue = workUrlInput.value;
   
     // generate firebase database reference
-    const worksHeaderRef = ref(database, 'worksHeader');
+    const worksHeaderRef = ref(database, 'interns/worksHeader');
 
     // initialize data
     const date = new Date()
@@ -167,7 +158,7 @@ workHeaderForm.addEventListener("submit", async (e) => {
         const fileURL = URL.createObjectURL(workImageUploadFileValue);
         const response = await fetch(fileURL);
         const blob = await response.blob();
-        const filePath = "worksHeaderPicture.png";
+        const filePath = "interns/worksHeaderPicture.png";
         const sRef = storageRef(storage, filePath);
 
         // upload
@@ -182,45 +173,51 @@ workHeaderForm.addEventListener("submit", async (e) => {
                 console.error("Error storing how does it work header:", error);
             });
         });
-    } else if (workImage.alt != "No Image") {
+    } else if (workImage.alt != "") {
         set(worksHeaderRef, worksHeaderData);
-        window.alert("How does it work info saved!");
+        // window.alert("How does it work info saved!");
         console.log('Updated text only')
     } else{
-        console.log('Failed')
+        window.alert("Please upload an image");
+        console.log('Image missing')
     }
 });
 
 // window load listener
 window.addEventListener("load", async () => {
-    // create database reference
-    const dbRef = ref(database, 'worksHeader');
-    const snapshot = await get(dbRef);
-  
-    if (snapshot.exists()) {
-        // retrieve data
-        const worksHeader = snapshot.val();
 
-        const sRef = storageRef(storage, "worksHeaderPicture.png");
+    // create database reference
+    const internHeaderRef = ref(database, 'interns/internsHeader')
+    const internHeaderSapshot = await get(internHeaderRef);
+    const workHeaderRef = ref(database, 'interns/worksHeader');
+    const workHeaderSapshot = await get(workHeaderRef);
+  
+    if (internHeaderSapshot.exists()) {
+        // retrieve data
+        const internsHeader = internHeaderSapshot.val();
+
+        const sRef = storageRef(storage, "interns/internsHeaderPicture.png");
+        const imageUrl = await getDownloadURL(sRef);
+
+        internImage.src = imageUrl;
+        internImage.alt = 'Intern Image';
+        internDescriptionInput.value = internsHeader.description;
+        internUrlInput.value = internsHeader.link;
+    }
+
+    if (workHeaderSapshot.exists()) {
+        // retrieve data
+        const worksHeader = workHeaderSapshot.val();
+
+        const sRef = storageRef(storage, "interns/worksHeaderPicture.png");
         const imageUrl = await getDownloadURL(sRef);
 
         workImage.src = imageUrl;
         workImage.alt = 'How Does It Work Image';
         workDescriptionInput.value = worksHeader.description;
-        workUrlInput.value = worksHeader.url;
+        workUrlInput.value = worksHeader.link;
     }
 });
-
-// open the modal by clicking the plus icon
-openModal.addEventListener('click', () => {
-    modal.showModal();
-})
-
-// close the modal by clicking the cancel button
-closeModal.addEventListener('click', () => {
-    modal.close();
-})
-
 
 
 
