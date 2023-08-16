@@ -2,6 +2,7 @@
 const memberImageUploadBtn = document.getElementById("member-image-upload");
 const memberImageFile = document.getElementById("member-image-file");
 const memberImage = document.getElementById("member-input-image");
+const memberImageFileDel = document.getElementById("member-image-del");
 
 
 
