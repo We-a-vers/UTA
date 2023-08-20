@@ -51,7 +51,7 @@ boardMemberHeaderForm.addEventListener("submit", async (e) => {
     }
   
     // generate firebase database reference
-    const boardMembersHeaderRef = ref(database, 'boardMembersHeader');
+    const boardMembersHeaderRef = ref(database, 'boardMembers/memberHeader');
 
     // initialize data
     const date = new Date()
@@ -166,7 +166,7 @@ modalForm.addEventListener("submit", async (e) => {
     const nameValue = nameInput.value;
   
     // generate firebase database reference
-    const membersRef = ref(database, `boardMembers/${roleValue}`);
+    const membersRef = ref(database, `boardMembers/members/${roleValue}`);
     const newMembertRef = push(membersRef); // Generate a new child reference with an auto-generated ID
     const newMemberId = newMembertRef.key; // Get the auto-generated ID
 
