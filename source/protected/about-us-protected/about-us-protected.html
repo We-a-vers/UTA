@@ -24,69 +24,59 @@
 
             <!-- This part is the first section -->
             
-            <div class="section">
+            <form class="section" id="member-header-form">
                 <div class="section-title">About Us<span class="required">*</span></div>
 
                 <div class="description-input-container">
                     
-                    <div id="member-image">
+                    <div class="member-image">
 
-                        <img width="312" height="234" src="/source/protected/assets/placeholder-image.png" alt="">
-                        <div id="button-container">
-                            <button>Upload</button>
-                            <button style="color: red;">Delete Image</button>
+                        <img id="member-img" width="312" height="234" src="/source/assets/placeholder-image.png" alt="No Image">
+                        <div class="button-container">
+                            <button id="member-upload">Upload</button>
+                            <input type="file" id="member-image-upload-file" accept="image/*" style="display: none;">
                         </div>
 
                     </div>
                     
                     <div>
                         <div class="input-title">Description under title<span class="required">*</span></div>
-                        <textarea id="description-input" placeholder="Insert text..." ></textarea>
+                        <textarea id="member-description-input" placeholder="Insert text..." required></textarea>
                         <div class="help-text">Enter the description under title</div>
-        
-                        <div class="url-input-container">
-                            <div class="signup-link">Sign Up Link</div>
-                            <textarea id="url-input" placeholder="Enter URL" ></textarea>
-                        </div>
                     </div>
                 </div>
 
                 <!-- Save button for the first section -->
-                <button id="save-btn">Save</button>
+                <button type="submit" id="member-save-btn">Save</button>
 
-            </div>
+            </form>
 
             <!-- This part is the second section (a copy of the first section) -->
             
-            <div class="section-2">
+            <form class="section-2" id="history-header-form">
                 <div class="section-title">History<span class="required">*</span></div>
 
                 <div class="description-input-container">
                     
-                    <div id="member-image">
+                    <div class="member-image">
 
-                        <img width="312" height="234" src="/source/protected/assets/placeholder-image.png" alt="">
-                        <div id="button-container">
-                            <button>Upload</button>
-                            <button style="color: red;">Delete Image</button>
+                        <img id="history-img" width="312" height="234" src="/source/assets/placeholder-image.png" alt="">
+                        <div class="button-container">
+                            <button id="history-upload">Upload</button>
+                            <input type="file" id="history-image-upload-file" accept="image/*" style="display: none;">
                         </div>
 
                     </div>
                     
                     <div>
                         <div class="input-title">Description under title<span class="required">*</span></div>
-                        <textarea id="description-input" placeholder="Insert text..." ></textarea>
+                        <textarea id="history-description-input" placeholder="Insert text..." ></textarea>
                         <div class="help-text">Enter the description under title</div>
-        
-                        <div class="url-input-container">
-                            <div class="signup-link">Sign Up Link</div>
-                            <textarea id="url-input" placeholder="Enter URL" ></textarea>
-                        </div>
                     </div>
                 </div>
 
                 <!-- Save button for the second section -->
-                <button id="save-btn">Save</button>
+                <button type="submit" id="history-save-btn">Save</button>
 
             </div>
 
