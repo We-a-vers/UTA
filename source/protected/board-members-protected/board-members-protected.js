@@ -45,7 +45,10 @@ boardMemberHeaderForm.addEventListener("submit", async (e) => {
     // get the image file and url
     const boardMemberImageUploadFileValue = uploadBoardMemberFile.files[0];
     const descriptionValue = descriptionInput.value;
-    const urlValue = urlInput.value;
+    let urlValue = "";
+    if(urlInput.value){
+        urlValue = urlInput.value;
+    }
   
     // generate firebase database reference
     const boardMembersHeaderRef = ref(database, 'boardMembersHeader');
