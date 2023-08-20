@@ -3,169 +3,245 @@
 <html lang="en">
 <head>    
     <link rel="stylesheet" href="sponsors.css">
-    <link rel="stylesheet" href="/source/navbar/navbar.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sponsors</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;700&family=Noto+Sans:wght@400;600&family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <title>Sponsors</title>
 </head>
 <body>
 
+    <navbar-component></navbar-component>
 
-    <div class="navbar">
-        <h1>LOGO</h1>
-
-        <ul>
-            <li><a href="">ABOUT</a></li>
-            <li class="drop-down">
-                <a class="prevent-select">TEAM</a>
-                <div class="drop-down-items">
-                    <a href="">TEAM 1</a>
-                    <a href="">TEAM 2</a>
-                </div>
-            </li>
-            <li class="drop-down">
-                <a class="prevent-select">EVENTS</a>
-                <div class="drop-down-items">
-                    <a href="">EVENT 1</a>
-                    <a href="">EVENT 2</a>
-                </div>
-            </li>
-            <li><a href="">SPONSORS</a></li>
-        </ul>
-    </div>
-
-    <div class="main">
-        <div class="main__container"></div>
-        <div class="main__content">
-            <h1>Sponsors</h1>
-            <p>View our past event and the wonderful memories we</p>
-            <p>made together with our members!</p>
-        </div>
+    <div class="main__content">
+        <h1>Sponsors</h1>
+        <p>Purchase our UTA Membership Card to gain benefits from our sponsors! </p>
     </div>
     
-    <div class="membership-card">
-        <div class="membership-card__container"></div>
-        <div class="membership-card__content">
-          <h2>UTA Membership Card</h2>
-          <p>SMALL DESCRIPTION</p>
+
+    <!-- <div class="membership-card__container"></div> -->
+    <div class="membership-card__content">
+        <h1>UTA Membership Card</h1>
+
+        <div id="member-card-container">
+            <img src="Screenshot 2023-05-24 at 8.29 1.png" alt="UTA Card">
+
+            <div class="membership-card__price">
+                <h3>Price $15</h3>
+                <p>Getting a membership card gives you exclusive access to a variety of discounts to numerous authentic San Diego restaurants both on campus and off campus! Don’t miss out and purchase now!</p>
+                <button id="membership-card__purchase-button">Purchase</button>
+            </div>
         </div>
-        <div class="membership-card__box">
-          <h1>UTA Card Photo</h1>
+        
+    </div>
+
+        
+    <div class="uta-sponsors__content">
+        <h1>UTA Sponsors</h1>
+        <p>UTA partners with these restaurants below to offer our members exclusive benefits. Hover on the pictures below to learn about how you can utilize the benefits!</p>  
+    </div>
+
+    <div class="uta-sponsors__logos">
+        <div class="uta-sponsors__logo-wrapper">
+            <img src="Background.png" alt="Sponsor">
+            <div class="uta-sponsors__discount">10% off</div>
+            <div class="tooltiptext">
+                <div class="tooltiptext-title">Meet Fresh</div>
+
+                <div class="tooltiptext-body">
+                    <div class="tooltiptext-discount">Discount: 10% Off</div>
+                    <ul class="tooltiptext-content">
+                        <li>Meet Fresh is THE BEST Taiwanese dessert place ever! They are best known for their hand-made dessert such as icy grass jelly and many more!</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="membership-card__intro">
-          <p>Short intro for UTA Card</p>
-          <button class="membership-card-btn"><a href = "/">Purchase</a></button>
+        <div class="uta-sponsors__logo-wrapper">
+            <img src="Background (1).png" alt="Sponsor">
+            <div class="uta-sponsors__discount">10% off</div>
+
+            <div class="tooltiptext">
+                <div class="tooltiptext-title">Tasty Pot</div>
+
+                <div class="tooltiptext-body">
+                    <div class="tooltiptext-discount">Discount: 10% Off</div>
+                    <ul class="tooltiptext-content">
+                        <li>Meet Fresh is THE BEST Taiwanese dessert place ever! They are best known for their hand-made dessert such as icy grass jelly and many more!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="uta-sponsors__logo-wrapper">
+            <img src="Background (2).png" alt="Sponsor">
+            <div class="uta-sponsors__discount">7% off</div>
+
+            <div class="tooltiptext">
+                <div class="tooltiptext-title">Fan-Fan</div>
+
+                <div class="tooltiptext-body">
+                    <div class="tooltiptext-discount">Discount: 7% Off</div>
+                    <ul class="tooltiptext-content">
+                        <li>Meet Fresh is THE BEST Taiwanese dessert place ever! They are best known for their hand-made dessert such as icy grass jelly and many more!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="uta-sponsors__logo-wrapper">
+            <img src="Background (3).png" alt="Sponsor">
+            <div class="uta-sponsors__discount">7% off</div>
+
+            <div class="tooltiptext">
+                <div class="tooltiptext-title">Spot KTV</div>
+
+                <div class="tooltiptext-body">
+                    <div class="tooltiptext-discount">Discount: 7% Off</div>
+                    <ul class="tooltiptext-content">
+                        <li>Meet Fresh is THE BEST Taiwanese dessert place ever! They are best known for their hand-made dessert such as icy grass jelly and many more!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="uta-sponsors__logo-wrapper">
+            <img src="Background (4).png" alt="Sponsor">
+            <div class="uta-sponsors__discount">10% off</div>
+
+            <div class="tooltiptext">
+                <div class="tooltiptext-title">Cui House</div>
+
+                <div class="tooltiptext-body">
+                    <div class="tooltiptext-discount">Discount: 10% Off</div>
+                    <ul class="tooltiptext-content">
+                        <li>Meet Fresh is THE BEST Taiwanese dessert place ever! They are best known for their hand-made dessert such as icy grass jelly and many more!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="uta-sponsors__logo-wrapper">
+            <img src="Background (5).png" alt="Sponsor">
+            <div class="uta-sponsors__discount">10% off</div>
+
+            <div class="tooltiptext">
+                <div class="tooltiptext-title">Yin Tang</div>
+
+                <div class="tooltiptext-body">
+                    <div class="tooltiptext-discount">Discount: 10% Off</div>
+                    <ul class="tooltiptext-content">
+                        <li>Meet Fresh is THE BEST Taiwanese dessert place ever! They are best known for their hand-made dessert such as icy grass jelly and many more!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="uta-sponsors__logo-wrapper">
+            <img src="Background (6).png" alt="Sponsor">
+            <div class="uta-sponsors__discount">10% off</div>
+
+            <div class="tooltiptext">
+                <div class="tooltiptext-title">Tapioca Express</div>
+
+                <div class="tooltiptext-body">
+                    <div class="tooltiptext-discount">Discount: 10% Off</div>
+                    <ul class="tooltiptext-content">
+                        <li>Meet Fresh is THE BEST Taiwanese dessert place ever! They are best known for their hand-made dessert such as icy grass jelly and many more!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+            <div class="uta-sponsors__logo-wrapper">
+            <img src="Background (7).png" alt="Sponsor">
+            <div class="uta-sponsors__discount">10% off</div>
+
+            <div class="tooltiptext">
+                <div class="tooltiptext-title">Formoosa</div>
+
+                <div class="tooltiptext-body">
+                    <div class="tooltiptext-discount">Discount: 10% Off</div>
+                    <ul class="tooltiptext-content">
+                        <li>Meet Fresh is THE BEST Taiwanese dessert place ever! They are best known for their hand-made dessert such as icy grass jelly and many more!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="uta-sponsors__logo-wrapper">
+            <img src="Background (8).png" alt="Sponsor">
+            <div class="uta-sponsors__discount">7% off</div>
+
+            <div class="tooltiptext">
+                <div class="tooltiptext-title">Shen Tan</div>
+
+                <div class="tooltiptext-body">
+                    <div class="tooltiptext-discount">Discount: 7% Off</div>
+                    <ul class="tooltiptext-content">
+                        <li>Meet Fresh is THE BEST Taiwanese dessert place ever! They are best known for their hand-made dessert such as icy grass jelly and many more!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="uta-sponsors__logo-wrapper">
+            <img src="Background (9).png" alt="Sponsor">
+            <div class="uta-sponsors__discount">7% off</div>
+
+            <div class="tooltiptext">
+                <div class="tooltiptext-title">Blue Pepper</div>
+
+                <div class="tooltiptext-body">
+                    <div class="tooltiptext-discount">Discount: 7% Off</div>
+                    <ul class="tooltiptext-content">
+                        <li>Meet Fresh is THE BEST Taiwanese dessert place ever! They are best known for their hand-made dessert such as icy grass jelly and many more!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="uta-sponsors__logo-wrapper">
+            <img src="Background (10).png" alt="Sponsor">
+            <div class="uta-sponsors__discount">7% off</div>
+
+            <div class="tooltiptext">
+                <div class="tooltiptext-title">Wushiland</div>
+
+                <div class="tooltiptext-body">
+                    <div class="tooltiptext-discount">Discount: 7% Off</div>
+                    <ul class="tooltiptext-content">
+                        <li>Meet Fresh is THE BEST Taiwanese dessert place ever! They are best known for their hand-made dessert such as icy grass jelly and many more!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+            <div class="uta-sponsors__logo-wrapper">
+            <img src="Background (11).png" alt="Sponsor">
+            <div class="uta-sponsors__discount">7% off</div>
+
+            <div class="tooltiptext">
+                <div class="tooltiptext-title">Pho Mignon</div>
+
+                <div class="tooltiptext-body">
+                    <div class="tooltiptext-discount">Discount: 7% Off</div>
+                    <ul class="tooltiptext-content">
+                        <li>Meet Fresh is THE BEST Taiwanese dessert place ever! They are best known for their hand-made dessert such as icy grass jelly and many more!</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="gallery">
-        <h1>DIAMOND</h1>
-        
-        <div class="gallery-image">
-            <div class="card">
-                <img src="/source/assets/placeholder-image.png" alt="">
-            </div>
+    <div class="merch__content">
+        <h1>UTA Merch</h1>
+   
 
-            <div class="card">
-                <img src="/source/assets/placeholder-image.png" alt="">
-            </div>
-
-            <div class="card">
-                <img src="/source/assets/placeholder-image.png" alt="">
-            </div>
-        </div>
-
-        <h1>GOLD</h1>
-        
-        <div class="gallery-image">
-            <div class="card">
-                <img src="/source/assets/placeholder-image.png" alt="">
-            </div>
-
-            <div class="card">
-                <img src="/source/assets/placeholder-image.png" alt="">
-            </div>
-
-            <div class="card">
-                <img src="/source/assets/placeholder-image.png" alt="">
-            </div>
-
-            <div class="card">
-                <img src="/source/assets/placeholder-image.png" alt="">
-            </div>
-        </div>
-
-        <h1>SILVER</h1>
-        
-        <div class="gallery-image">
-            <div class="card">
-                <img src="/source/assets/placeholder-image.png" alt="">
-            </div>
-
-            <div class="card">
-                <img src="/source/assets/placeholder-image.png" alt="">
-            </div>
-
-            <div class="card">
-                <img src="/source/assets/placeholder-image.png" alt="">
-            </div>
-        </div>
-
-        <h1>SAPPHIRE</h1>
-        
-        <div class="gallery-image">
-            <div class="card">
-                <img src="/source/assets/placeholder-image.png" alt="">
-            </div>
-
-            <div class="card">
-                <img src="/source/assets/placeholder-image.png" alt="">
-            </div>
-
-            <div class="card">
-                <img src="/source/assets/placeholder-image.png" alt="">
-            </div>
-        </div>
-
-        <h1>BENEFACTORS</h1>
-        
-        <div class="gallery-image">
-            <div class="card">
-                <img src="/source/assets/placeholder-image.png" alt="">
-            </div>
-
-            <div class="card">
-                <img src="/source/assets/placeholder-image.png" alt="">
-            </div>
-
-            <div class="card">
-                <img src="/source/assets/placeholder-image.png" alt="">
-            </div>
-
-            <div class="card">
-                <img src="/source/assets/placeholder-image.png" alt="">
-            </div>
-
-            <div class="card">
-                <img src="/source/assets/placeholder-image.png" alt="">
-            </div>
+        <div class="merch__price">
+            <h3>Price: Crew t-shirt: $12.99/ Bundle (Card+t-shirt): $23.99</h3>
+            <p>Become a part of the UTA family and purchase our crew t-shirt. Purchase now to show everyone that you are part of UTA!</p>
+            <img src="1 1.png" alt="UTA Merch Demo">
+            
+            <button id="merch__price-button">Purchase</button>
         </div>
     </div>
-
-    <div class="merch">
-        <div class="merch__container"></div>
-        <div class="merch__content">
-          <h1>UTA Merch</h1>
-          <p>SMALL DESCRIPTION</p>
-          <h2>UTA Crew T-Shirt</h2>
-        </div>
-        <div class="merch__btn">
-          <button class="merch-btn"><a href = "/">Purchase</a></button>
-        </div>
-    </div>
-      
+        
+    <script src="/source/navbar/navbar.js"></script>
 </body>
 </html>
 
