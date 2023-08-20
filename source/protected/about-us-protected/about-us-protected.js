@@ -40,7 +40,7 @@ aboutUsHeaderForm.addEventListener("submit", async (e) => {
     const descriptionValue = descriptionInput.value;
   
     // generate firebase database reference
-    const memberHeaderRef = ref(database, 'memberHeader');
+    const memberHeaderRef = ref(database, 'aboutUs/memberHeader');
 
     // initialize data
     const date = new Date()
@@ -120,7 +120,7 @@ historyHeaderForm.addEventListener("submit", async (e) => {
     const hDescriptionValue = hDescriptionInput.value;
   
     // generate firebase database reference
-    const historyHeaderRef = ref(database, 'hisotryHeader');
+    const historyHeaderRef = ref(database, 'aboutUs/historyHeader');
 
     // initialize data
     const date = new Date()
