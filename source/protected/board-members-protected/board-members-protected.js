@@ -95,7 +95,7 @@ boardMemberHeaderForm.addEventListener("submit", async (e) => {
 // window load listener
 window.addEventListener("load", async () => {
     // create database reference
-    const dbRef = ref(database, 'boardMembersHeader');
+    const dbRef = ref(database, 'boardMembers/memberHeader');
     const snapshot = await get(dbRef);
   
     if (snapshot.exists()) {
@@ -243,7 +243,7 @@ async function addMemberToHtml(memberId, memberRole) {
 
 async function reloadData() {
     // create database reference
-    const dbRef = ref(database, 'boardMembers/Activities');
+    const dbRef = ref(database, 'boardMembers/members');
     const snapshot = await get(dbRef);
   
     if (snapshot.exists()) {
@@ -252,7 +252,6 @@ async function reloadData() {
 
         snapshot.forEach((positionSnap) => {
             const membersInfo = positionSnap.val();
-            console.log(membersInfo)
             // sort data by created date
             for (const memberId in membersInfo) {
                 const member = membersInfo[memberId];

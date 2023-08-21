@@ -1,6 +1,48 @@
 // import everything from firebase.js
 import { firebase, database, ref, set, get, push, remove, storage, storageRef, uploadBytes, getDownloadURL, deleteObject } from '../firebase/firebase.js';
 
+const boardMemberImage = document.querySelector('#header-image');
+const headerText = document.querySelector('#headerText');
+
+// window load listener
+window.addEventListener("load", async () => {
+    // create database reference
+    const dbRef = ref(database, 'boardMembers/memberHeader');
+    const snapshot = await get(dbRef);
+  
+    if (snapshot.exists()) {
+        // retrieve data
+        const boardMembersHeader = snapshot.val();
+
+        const sRef = storageRef(storage, "boardMembersHeaderPicture.png");
+        const imageUrl = await getDownloadURL(sRef);
+
+        boardMemberImage.src = imageUrl;
+        boardMemberImage.alt = 'Board Member Image';
+        headerText.textContent = boardMembersHeader.description;
+
+        const signUpButton = document.createElement('button');
+        const link = document.createElement('a');
+
+        if(boardMembersHeader.url != ""){
+            signUpButton.textContent = "Join our intern program";
+            signUpButton.className = 'link';
+
+            link.href = boardMembersHeader.url;
+            link.appendChild(signUpButton);
+        }
+        else{
+            signUpButton.textContent = "No Link Provided";
+            signUpButton.className = 'no-link';
+        }
+
+        headerText.insertAdjacentElement('afterend',link);
+    }
+});
+
+
+const memberContainer = document.querySelector('.members');
+let galleryContainer;
 // helper function that creates the corresponding html elements and append them to the section defined above
 async function addMemberToHtml(memberId, memberRole, memberName) {
     try {
@@ -9,8 +51,7 @@ async function addMemberToHtml(memberId, memberRole, memberName) {
         const url = await getDownloadURL(sRef);
     
         // create element, add class, add style
-        const memberContainer = document.querySelector('.members');
-        let galleryContainer = document.querySelector(`#${memberRole}`);
+        galleryContainer = memberContainer.querySelector(`#${memberRole}`)
 
         if(!galleryContainer){
             galleryContainer = document.createElement("div");
@@ -18,7 +59,7 @@ async function addMemberToHtml(memberId, memberRole, memberName) {
             galleryContainer.id = memberRole;
 
             memberContainer.appendChild(galleryContainer);
-
+            
             const galleryTitle = document.createElement("h1");
             galleryTitle.textContent = memberRole.charAt(0).toUpperCase() + memberRole.slice(1);
             galleryContainer.appendChild(galleryTitle);
@@ -28,7 +69,7 @@ async function addMemberToHtml(memberId, memberRole, memberName) {
             galleryContainer.appendChild(imageContainer);
         }
 
-        const imageContainer = document.querySelector('.gallery-image');
+        const imageContainer = galleryContainer.querySelector('.gallery-image');
 
         const cardItem = document.createElement('div');
         cardItem.classList.add('card');
@@ -50,7 +91,7 @@ async function addMemberToHtml(memberId, memberRole, memberName) {
 
 async function reloadData() {
     // create database reference
-    const dbRef = ref(database, 'boardMembers');
+    const dbRef = ref(database, 'boardMembers/members');
     const snapshot = await get(dbRef);
   
     if (snapshot.exists()) {
