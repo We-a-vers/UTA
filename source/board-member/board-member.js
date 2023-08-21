@@ -48,4 +48,33 @@ async function addMemberToHtml(memberId, memberRole, memberName) {
     }
 }
 
-addMemberToHtml("-NcGRUoA0KbPKHPvE8-Y", "asdd","sd");
+async function reloadData() {
+    // create database reference
+    const dbRef = ref(database, 'boardMembers');
+    const snapshot = await get(dbRef);
+  
+    if (snapshot.exists()) {
+        // retrieve data
+        const membersArray = [];
+
+        snapshot.forEach((positionSnap) => {
+            const membersInfo = positionSnap.val();
+            // sort data by created date
+            for (const memberId in membersInfo) {
+                const member = membersInfo[memberId];
+                member.createdAt = new Date(member.createdAt)
+                membersArray.push(member);
+            }
+        })
+
+        membersArray.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+
+        // iterate through each data and call the helper function
+        for (const member of membersArray) {
+            await addMemberToHtml(member.id, member.role, member.name);
+        }
+    }
+}
+
+// window load listener
+document.addEventListener("DOMContentLoaded", reloadData);
