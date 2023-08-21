@@ -284,7 +284,7 @@ addEventListener('click', async (e) => {
 
             // Create a reference to the file to delete 
             const sRef = storageRef(storage, `memberPictures/${memberRole}/${memberId}.png`);
-            const dbRef = ref(database, `boardMembers/${memberRole}/${memberId}`);
+            const dbRef = ref(database, `boardMembers/members/${memberRole}/${memberId}`);
             
             try {
                 // Delete the file from Firebase Storage
