@@ -29,13 +29,13 @@ window.addEventListener("load", async () => {
             signUpButton.className = 'link';
 
             link.href = boardMembersHeader.url;
-            link.appendChild(signUpButton);
         }
         else{
             signUpButton.textContent = "No Link Provided";
             signUpButton.className = 'no-link';
         }
 
+        link.appendChild(signUpButton);
         headerText.insertAdjacentElement('afterend',link);
     }
 });
