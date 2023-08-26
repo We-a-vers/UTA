@@ -1,9 +1,21 @@
-body {
+* {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+#content-container {
 	font-family: Arial, sans-serif;
 	background-color: #f0f0f0;
 	margin: 10%;
 	padding: 5%;
 }
+
+/* body {
+	font-family: Arial, sans-serif;
+	background-color: #f0f0f0;
+	margin: 10%;
+	padding: 5%;
+} */
 
 header {
 	background-color: #333;
@@ -63,6 +75,7 @@ h3{
 	position: absolute;
 	left: 50%;
 	top: 10%;
+	max-width: 50%;
 }
 
 #join{
