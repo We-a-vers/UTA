@@ -24,86 +24,86 @@
 
             <!-- This part is the first section -->
             
-            <form class="section" id="intern-header-form">
-                <div class="section-title">Intern Program<span class="required">*</span></div>
+            <form id="intern-program-form" class="section">
 
                 <div class="description-input-container">
                     
                     <div id="intern-image">
 
-                        <img id="intern-image" width="312" height="234" src="/source/protected/assets/placeholder-image.png" alt="">
+                        <div class="section-title">Intern Program</div>
+
+                        <img id="intern-program-image" width="312" height="234" src="/source/assets/placeholder-image.png" alt="No Image">
                         <div id="button-container">
-                            <button id="intern-upload">Upload</button>
-                            <input type="file" id="intern-image-upload-file" accept="image/*" style="display: none;">
-                            <button id="intern-delete" style="color: red;">Delete Image</button>
+                            <button type="button" id="intern-program-image-upload">Upload</button>
+                            <input type="file" id="intern-program-image-file" accept="image/*" style="display: none;">
                         </div>
 
                     </div>
                     
                     <div>
-                        <div class="input-title">Description under title<span class="required">*</span></div>
-                        <textarea id="intern-description-input" placeholder="Insert text..." ></textarea>
+                        <div class="intern-description-title">Description under title<span class="required">*</span></div>
+                        <textarea id="intern-program-description" class="description-input" placeholder="Insert text..." required></textarea>
                         <div class="help-text">Enter the description under title</div>
         
                         <div class="url-input-container">
-                            <div class="signup-link">Sign Up Link</div>
-                            <textarea id="intern-url-input" placeholder="Enter URL" ></textarea>
+                            <div class="signup-link">Sign Up Link<span style="color:red;">*</span></div>
+                            <textarea id="intern-program-link" class="url-input" placeholder="Enter URL" required></textarea>
                         </div>
                     </div>
-                </form>
+                </div>
 
                 <!-- Save button for the first section -->
-                <button type="submit" id="save-btn">Save</button>
+                <button id="intern-program-save" class="save-btn" type="submit">Save</button>
 
-            </div>
+            </form>
 
             <!-- This part is the second section (a copy of the first section) -->
             
-            <form class="section-2" id="how-does-it-work-form">
-                <div class="section-title">How does it work<span class="required">*</span></div>
-
+            <form id="how-dows-it-work-form" class="section-2">
+                
                 <div class="description-input-container">
                     
-                    <div id="how-does-it-work-image">
+                    <div id="intern-image">
 
-                        <img id="work-image" width="312" height="234" src="/source/protected/assets/placeholder-image.png" alt="">
+                        <div class="section-title">How does it work<span class="required">*</span></div>
+
+                        <img id="how-dows-it-work-image" width="312" height="234" src="/source/assets/placeholder-image.png" alt="No Image">
                         <div id="button-container">
-                            <button id="work-upload">Upload</button>
-                            <input type="file" id="work-image-upload-file" accept="image/*" style="display: none;">
-                            <button id="wo-delete" style="color: red;">Delete Image</button>
+                            <button type="button" id="how-image-upload">Upload</button>
+                            <input type="file" id="how-image-file" accept="image/*" style="display: none;">
                         </div>
 
                     </div>
                     
                     <div>
                         <div class="input-title">Description under title<span class="required">*</span></div>
-                        <textarea id="work-description-input" placeholder="Insert text..." ></textarea>
+                        <textarea id="how-description" class="description-input" placeholder="Insert text..." required></textarea>
                         <div class="help-text">Enter the description under title</div>
         
                         <div class="url-input-container">
-                            <div class="signup-link">Sign Up Link</div>
-                            <textarea id="work-url-input" placeholder="Enter URL" ></textarea>
+                            <div class="signup-link">Sign Up Link<span style="color:red;">*</span></div>
+                            <textarea id="how-link" class="url-input" placeholder="Enter URL" required></textarea>
                         </div>
                     </div>
                 </div>
 
                 <!-- Save button for the second section -->
-                <button id="save-btn">Save</button>
+                <button type="submit" id="how-save" class="save-btn">Save</button>
+
             </form>
 
-            <!-- Section section for photo gallery -->
+            <!-- Third section: photo gallery -->
 
             <div class="photos">
-                <div class="current-interns">Past Projects<span class="required">*</span></div>
+                <div class="past-projects">Past Projects<span class="required">*</span></div>
             
                     <div id="show-img">
             
                         <div class="img-container">
-                            <div class="box" id="plus-box"></div>
+                            <div class="box"></div>
                             <button id="plus">+</button>
                         </div>
 
-                        <div class="box"></div>
                     </div>
                 </div>
             </div>
@@ -112,34 +112,28 @@
             <!-- Pop up modal -->
 
             <dialog class="modal">
-            
-                <form  class="section" id="modal-form">
-    
+                <form class="section" id="modal-form">
                     <div class="description-input-container">
-                        
-                        <div id="intern-image">
-    
-                            <img id="modal-image" width="312" height="234" src="/source/protected/assets/placeholder-image.png" alt="">
+                        <div id="past-interns-image">
+                            <img id="past-intern-image" width="312" height="234" src="/source/assets/placeholder-image.png">
                             <div id="button-container">
-                                <button id="modal-upload">Upload</button>
-                                <button id="modal-delete" style="color: red;">Delete Image</button>
+                                <button type="button" id="past-intern-image-upload">Upload</button>
+                                <input type="file" id="past-intern-image-file" accept="image/*" style="display: none;">
+                                <!-- <button style="color: red;">Delete Image</button> -->
                             </div>
-    
                         </div>
                         
-                        <form id="modal-form">
-                            <div class="input-title">Event Instagram Post Link</div>
-                            <input id="modal-instPost-input" type="text" name="name" placeholder="Enter URL" >
-                        </form>
+                        <div class="popup-right-container">
+                            <div class="post-link">Event Instagram Post Link<span class="required">*</span></div>
+                            <input id="post-url" type="text" name="post" placeholder="Enter URL" required>
+                        </div>
                     </div>
-    
-                </form>
-                
-                <div id="modal-btn-container">
-                    <button id="close-btn">Cancel</button>
-                    <button type="submit" id="submit-btn" form="modal-form"><i class="fa-solid fa-circle-check fa-2xl"></i></button>
-                </div>
 
+                    <div id="modal-btn-container">
+                        <button type="button" id="close-btn">Cancel</button>
+                        <button type="submit" id="submit-btn" form="modal-form"><i class="fa-solid fa-circle-check fa-2xl"></i></button>
+                    </div>
+                </form> 
             </dialog>
             
 

@@ -1,10 +1,222 @@
 // import everything from firebase.js
 import { firebase, database, ref, set, get, push, remove, storage, storageRef, uploadBytes, getDownloadURL, deleteObject } from '../../firebase/firebase.js';
 
-// Grabbing modal elements
+// Intern program
+const internProgramForm = document.getElementById("intern-program-form");
+const internProgramImage = document.getElementById("intern-program-image");
+const internProgramImageUpload = document.getElementById("intern-program-image-upload");
+const internProgramImageFile = document.getElementById("intern-program-image-file");
+const internProgramDescription = document.getElementById("intern-program-description");
+const internProgramLink = document.getElementById("intern-program-link");
+
+// click listener for the upload button
+internProgramImageUpload.addEventListener('click', () => {
+    // trigger the hidden upload file input (will open file upload dialogue)
+    internProgramImageFile.click();
+});
+
+// change the preview image for the intern program placeholder
+internProgramImageFile.addEventListener('change', () => {
+    const imageFile = internProgramImageFile.files[0];
+    const reader = new FileReader();
+
+    // generate url
+    if (imageFile) {
+        reader.readAsDataURL(imageFile);
+    }
+  
+    // display image preview when the image is loaded
+    reader.onload = () => {
+        internProgramImage.src = reader.result;
+    };
+})
+
+
+// save the form information when the save button is clicked
+internProgramForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // get the image file and url
+    const internProgramImageFileValue = internProgramImageFile.files[0];
+    const internProgramDescriptionValue = internProgramDescription.value;
+    const internProgramLinkValue = internProgramLink.value;
+  
+    // generate firebase database reference
+    const internProgramRef = ref(database, 'interns/internProgram');
+
+    // initialize data
+    const date = new Date()
+    const internProgramData = {
+        description: internProgramDescriptionValue,
+        link: internProgramLinkValue,
+        createdAt: date.toUTCString(),
+    };
+
+    // make sure an image file is uploaded
+    if (internProgramImageFileValue) {
+        // prepare for upload
+        const fileURL = URL.createObjectURL(internProgramImageFileValue);
+        const response = await fetch(fileURL);
+        const blob = await response.blob();
+        const filePath = "interns/internProgram";
+        const sRef = storageRef(storage, filePath);
+
+        // upload
+        uploadBytes(sRef, blob).then((snapshot) => {
+            // add data to database after upload is completed
+            set(internProgramRef, internProgramData)
+            .then(() => {
+                window.alert("Intern program info saved!");
+                console.log("Intern program stored successfully");
+            })
+            .catch((error) => {
+                console.error("Error storing intern program:", error);
+            });
+        });
+    } else if (internProgramImage.alt != "No Image") {
+        set(internProgramRef, internProgramData);
+        window.alert("Intern program info saved!");
+        console.log('Updated text only')
+    } else{
+        window.alert("Please upload an image");
+        console.log('Image missing')
+    }
+});
+
+
+// How does it work
+const howForm = document.getElementById("how-dows-it-work-form");
+const howImage = document.getElementById("how-dows-it-work-image");
+const howImageUpload = document.getElementById("how-image-upload");
+const howImageFile = document.getElementById("how-image-file");
+const howImageDelete = document.getElementById("how-image-delete");
+const howDescription = document.getElementById("how-description");
+const howLink = document.getElementById("how-link");
+
+// click listener for the upload button
+howImageUpload.addEventListener('click', () => {
+    // trigger the hidden upload file input (will open file upload dialogue)
+    howImageFile.click();
+});
+
+// change the preview image for the board member placeholder
+howImageFile.addEventListener('change', () => {
+    const imageFile = howImageFile.files[0];
+    const reader = new FileReader();
+
+    // generate url
+    if (imageFile) {
+        reader.readAsDataURL(imageFile);
+    }
+  
+    // display image preview when the image is loaded
+    reader.onload = () => {
+        howImage.src = reader.result;
+    };
+})
+
+
+// save the form information when the save button is clicked
+howForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // get the image file and url
+    const howImageFileValue = howImageFile.files[0];
+    const howDescriptionValue = howDescription.value;
+    const howLinkValue = howLink.value;
+  
+    // generate firebase database reference
+    const howRef = ref(database, 'interns/how');
+
+    // initialize data
+    const date = new Date()
+    const howData = {
+        description: howDescriptionValue,
+        link: howLinkValue,
+        createdAt: date.toUTCString(),
+    };
+
+    // make sure an image file is uploaded
+    if (howImageFileValue) {
+        // prepare for upload
+        const fileURL = URL.createObjectURL(howImageFileValue);
+        const response = await fetch(fileURL);
+        const blob = await response.blob();
+        const filePath = "interns/how";
+        const sRef = storageRef(storage, filePath);
+
+        // upload
+        uploadBytes(sRef, blob).then((snapshot) => {
+            // add data to database after upload is completed
+            set(howRef, howData)
+            .then(() => {
+                window.alert("How does it work info saved!");
+                console.log("How does it work stored successfully");
+            })
+            .catch((error) => {
+                console.error("Error storing how does it work:", error);
+            });
+        });
+    } else if (howImage.alt != "No Image") {
+        set(howRef, howData);
+        window.alert("How does it work info saved!");
+        console.log('Updated text only')
+    } else {
+        window.alert("Please upload an image");
+        console.log('Image missing')
+    }
+});
+
+
+// window load listener
+window.addEventListener("load", async () => {
+    // create database reference
+    const membershipCardRef = ref(database, 'interns/internProgram');
+    const membershipCardSnapshot = await get(membershipCardRef);
+  
+    if (membershipCardSnapshot.exists()) {
+        // retrieve data
+        const membershipCard = membershipCardSnapshot.val();
+
+        const sRef = storageRef(storage, "interns/internProgram");
+        const imageUrl = await getDownloadURL(sRef);
+
+        internProgramImage.src = imageUrl;
+        internProgramImage.alt = 'Intern Program Image';
+        internProgramDescription.value = membershipCard.description;
+        internProgramLink.value = membershipCard.link;
+    }
+
+
+    // create database reference
+    const howRef = ref(database, 'interns/how');
+    const howSnapshot = await get(howRef);
+  
+    if (howSnapshot.exists()) {
+        // retrieve data
+        const how = howSnapshot.val();
+
+        const sRef = storageRef(storage, "interns/how");
+        const imageUrl = await getDownloadURL(sRef);
+
+        howImage.src = imageUrl;
+        howImage.alt = 'How does it work Image';
+        howDescription.value = how.description;
+        howLink.value = how.link;
+    }
+});
+
+
+// MODAL
+const modal = document.querySelector('.modal');
+const modalForm = document.querySelector('#modal-form');
 const openModal = document.querySelector('#plus');
 const closeModal = document.querySelector('#close-btn');
-const modal = document.querySelector('.modal');
+const pastInternImage = document.getElementById('past-intern-image');
+const pastInternImageFile = document.getElementById('past-intern-image-file');
+const pastInternImageUpload = document.getElementById('past-intern-image-upload');
+const pastInternName = document.getElementById('post-url');
+const pastInternsSection = document.querySelector("#show-img");
 
 // open the modal by clicking the plus icon
 openModal.addEventListener('click', () => {
@@ -14,27 +226,21 @@ openModal.addEventListener('click', () => {
 // close the modal by clicking the cancel button
 closeModal.addEventListener('click', () => {
     modal.close();
+    pastInternName.value = "";
+    pastInternImageFile.value = null;
+    pastInternImage.src = "/source/assets/placeholder-image.png";
 })
 
 
-// Firebase for section 1
-const internUpload = document.querySelector('#intern-upload')
-const internDelete = document.querySelector('#intern-delete')
-const internImage = document.querySelector('#intern-image')
-const internDescriptionInput = document.querySelector('#intern-description-input')
-const internUrlInput = document.querySelector('#intern-url-input')
-const UploadInternFile = document.querySelector('#intern-image-upload-file')
-const internHeaderForm = document.querySelector('#intern-header-form')
-
 // click listener for the upload button
-internUpload.addEventListener('click', () => {
+pastInternImageUpload.addEventListener('click', () => {
     // trigger the hidden upload file input (will open file upload dialogue)
-    UploadInternFile.click();
+    pastInternImageFile.click();
 });
 
-// change the preview image for the intern placeholder
-UploadInternFile.addEventListener('change', () => {
-    const imageFile = UploadInternFile.files[0];
+// change the preview image for the board member placeholder
+pastInternImageFile.addEventListener('change', () => {
+    const imageFile = pastInternImageFile.files[0];
     const reader = new FileReader();
 
     // generate url
@@ -44,210 +250,7 @@ UploadInternFile.addEventListener('change', () => {
   
     // display image preview when the image is loaded
     reader.onload = () => {
-        internImage.src = reader.result;
-    };
-})
-
-// save the form information when the save button is clicked
-internHeaderForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    // get the image file and url
-    const internImageUploadFileValue = UploadInternFile.files[0];
-    const descriptionValue = internDescriptionInput.value;
-    const urlValue = internUrlInput.value;
-  
-    // generate firebase database reference
-    const internsHeaderRef = ref(database, 'interns/internsHeader');
-
-    // initialize data
-    const date = new Date()
-    const internsHeaderData = {
-        description: descriptionValue,
-        url: urlValue,
-        createdAt: date.toUTCString(),
-    };
-
-    // make sure an image file is uploaded
-    if (internImageUploadFileValue) {
-        // prepare for upload
-        const fileURL = URL.createObjectURL(internImageUploadFileValue);
-        const response = await fetch(fileURL);
-        const blob = await response.blob();
-        const filePath = "interns/internsHeaderPicture.png";
-        const sRef = storageRef(storage, filePath);
-
-        // upload
-        uploadBytes(sRef, blob).then((snapshot) => {
-            // add data to database after upload is completed
-            set(internsHeaderRef, internsHeaderData)
-            .then(() => {
-                window.alert("Intern info saved!");
-                console.log("Intern header stored successfully");
-            })
-            .catch((error) => {
-                console.error("Error storing intern header:", error);
-            });
-        });
-    } else if (internImage.alt != "") {
-        set(internsHeaderRef, internsHeaderData);
-        // window.alert("Intern info saved!");
-        console.log('Updated text only')
-    } else{
-        window.alert("Please upload an image");
-        console.log('Image missing')
-    }
-});
-
-
-
-// Firebase for section 2
-const workUpload = document.querySelector('#work-upload')
-const workDelete = document.querySelector('#work-delete')
-const workImage = document.querySelector('#work-image')
-const workDescriptionInput = document.querySelector('#work-description-input')
-const workUrlInput = document.querySelector('#work-url-input')
-const uploadWorkFile = document.querySelector('#work-image-upload-file')
-const workHeaderForm = document.querySelector('#work-header-form')
-
-// click listener for the upload button
-workUpload.addEventListener('click', () => {
-    // trigger the hidden upload file input (will open file upload dialogue)
-    uploadWorkFile.click();
-});
-
-// change the preview image for the how does it work placeholder
-uploadWorkFile.addEventListener('change', () => {
-    const imageFile = uploadWorkFile.files[0];
-    const reader = new FileReader();
-
-    // generate url
-    if (imageFile) {
-        reader.readAsDataURL(imageFile);
-    }
-  
-    // display image preview when the image is loaded
-    reader.onload = () => {
-        workImage.src = reader.result;
-    };
-})
-
-// save the form information when the save button is clicked
-workHeaderForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    // get the image file and url
-    const workImageUploadFileValue = uploadWorkFile.files[0];
-    const descriptionValue = workDescriptionInput.value;
-    const urlValue = workUrlInput.value;
-  
-    // generate firebase database reference
-    const worksHeaderRef = ref(database, 'interns/worksHeader');
-
-    // initialize data
-    const date = new Date()
-    const worksHeaderData = {
-        description: descriptionValue,
-        url: urlValue,
-        createdAt: date.toUTCString(),
-    };
-
-    // make sure an image file is uploaded
-    if (workImageUploadFileValue) {
-        // prepare for upload
-        const fileURL = URL.createObjectURL(workImageUploadFileValue);
-        const response = await fetch(fileURL);
-        const blob = await response.blob();
-        const filePath = "interns/worksHeaderPicture.png";
-        const sRef = storageRef(storage, filePath);
-
-        // upload
-        uploadBytes(sRef, blob).then((snapshot) => {
-            // add data to database after upload is completed
-            set(worksHeaderRef, worksHeaderData)
-            .then(() => {
-                window.alert("How does it work info saved!");
-                console.log("How does it work header stored successfully");
-            })
-            .catch((error) => {
-                console.error("Error storing how does it work header:", error);
-            });
-        });
-    } else if (workImage.alt != "") {
-        set(worksHeaderRef, worksHeaderData);
-        // window.alert("How does it work info saved!");
-        console.log('Updated text only')
-    } else{
-        window.alert("Please upload an image");
-        console.log('Image missing')
-    }
-});
-
-// window load listener
-window.addEventListener("load", async () => {
-
-    // create database reference
-    const internHeaderRef = ref(database, 'interns/internsHeader')
-    const internHeaderSapshot = await get(internHeaderRef);
-    const workHeaderRef = ref(database, 'interns/worksHeader');
-    const workHeaderSapshot = await get(workHeaderRef);
-  
-    if (internHeaderSapshot.exists()) {
-        // retrieve data
-        const internsHeader = internHeaderSapshot.val();
-
-        const sRef = storageRef(storage, "interns/internsHeaderPicture.png");
-        const imageUrl = await getDownloadURL(sRef);
-
-        internImage.src = imageUrl;
-        internImage.alt = 'Intern Image';
-        internDescriptionInput.value = internsHeader.description;
-        internUrlInput.value = internsHeader.link;
-    }
-
-    if (workHeaderSapshot.exists()) {
-        // retrieve data
-        const worksHeader = workHeaderSapshot.val();
-
-        const sRef = storageRef(storage, "interns/worksHeaderPicture.png");
-        const imageUrl = await getDownloadURL(sRef);
-
-        workImage.src = imageUrl;
-        workImage.alt = 'How Does It Work Image';
-        workDescriptionInput.value = worksHeader.description;
-        workUrlInput.value = worksHeader.link;
-    }
-});
-
-
-
-//Firebase for pop up modal form
-const modalUpload = document.querySelector('#modal-upload')
-const modalDelete = document.querySelector('#modal-delete')
-const modalImage = document.querySelector('#modal-image')
-const instPostInput = document.querySelector('#modal-instPost-input')
-const uploadModalrFile = document.querySelector('#modal-image-upload-file')
-const modalForm = document.querySelector('#modal-form')
-
-// click listener for the upload button
-modalUpload.addEventListener('click', () => {
-    // trigger the hidden upload file input (will open file upload dialogue)
-    uploadModalrFile.click();
-});
-
-// change the preview image for the intern placeholder
-uploadModalrFile.addEventListener('change', () => {
-    const imageFile = uploadModalrFile.files[0];
-    const reader = new FileReader();
-
-    // generate url
-    if (imageFile) {
-        reader.readAsDataURL(imageFile);
-    }
-  
-    // display image preview when the image is loaded
-    reader.onload = () => {
-        modalImage.src = reader.result;
+        pastInternImage.src = reader.result;
     };
 })
 
@@ -256,106 +259,107 @@ modalForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     // get the image file and url
-    const modalImageUploadFileValue = uploadModalrFile.files[0];
-    const instPostValue = instPostInput.value;
+    const pastInternImageFileValue = pastInternImageFile.files[0];
+    const pastInternNameValue = pastInternName.value;
   
     // generate firebase database reference
-    const internsRef = ref(database, `interns/${instPostValue}`);
-    const newInterntRef = push(internsRef); // Generate a new child reference with an auto-generated ID
-    const newInternId = newInterntRef.key; // Get the auto-generated ID
+    const pastInternsRef = ref(database, 'interns/past');
+    const addedPastInternsRef = push(pastInternsRef); // Generate a new child reference with an auto-generated ID
+    const addedPastInternsId = addedPastInternsRef.key; // Get the auto-generated ID
 
 
     // initialize data
     const date = new Date()
-    const internsData = {
-        id: newInternId,
-        instagramPost: instPostValue,
+    const pastInternsData = {
+        id: addedPastInternsId,
+        name: pastInternNameValue,
         createdAt: date.toUTCString(),
     };
 
     // make sure an image file is uploaded
-    if (modalImageUploadFileValue) {
+    if (pastInternImageFileValue) {
         // prepare for upload
-        const fileURL = URL.createObjectURL(modalImageUploadFileValue);
+        const fileURL = URL.createObjectURL(pastInternImageFileValue);
         const response = await fetch(fileURL);
         const blob = await response.blob();
-        const filePath = `internPictures${newInternId}.png`;
+        const filePath = `interns/past/${addedPastInternsId}`;
         
         const sRef = storageRef(storage, filePath);
 
         // upload
         uploadBytes(sRef, blob).then((snapshot) => {
             // add data to database after upload is completed
-            set(newInterntRef, internsData)
+            set(addedPastInternsRef, pastInternsData)
             .then(() => {
-                console.log("Intern info stored successfully");
+                console.log("Past project info stored successfully");
                 // hide pop-up and reset input fields
                 modal.close();
-                instPostInput.value = "";
-                uploadInternFile.value = null;
-                modalImage.src = "/source/assets/placeholder-image.png";
-                addInternToHtml(internsData.id, internsData.role);
+                pastInternName.value = "";
+                pastInternImageFile.value = null;
+                pastInternImage.src = "/source/assets/placeholder-image.png";
+                addPastInternToHtml(pastInternsData.id);
             })
             .catch((error) => {
-                console.error("Error storing intern info:", error);
+                console.error("Error storing past project info:", error);
             });
         });
     } else {
         window.alert("Please upload an image");
-        console.log('Failed to add intern')
+        console.log('Failed to add past project')
     }
 });
 
 // helper function that creates the corresponding html elements and append them to the section defined above
-async function addInternToHtml(internId) {
+async function addPastInternToHtml(pastInternId) {
     try {
         // get storage reference with path
-        const sRef = storageRef(storage, `internPictures/${internId}.png`);
+        const sRef = storageRef(storage, `interns/past/${pastInternId}`);
         const url = await getDownloadURL(sRef);
     
         // create element, add class, add style
-        const internContainer = document.createElement("div");
+        const pastInternContainer = document.createElement("div");
+        const pastInternImage = document.createElement("img");
         const crossElement = document.createElement("button");
+        pastInternContainer.classList.add("box");
+        pastInternContainer.setAttribute('pastInternId', pastInternId);
+        pastInternImage.src = url
+        pastInternImage.classList.add('past-intern-image');
+        pastInternImage.setAttribute('pastInternId', pastInternId);
         crossElement.textContent = 'x';
         crossElement.classList.add('cross');
-        crossElement.setAttribute('internId', internId);
-        internContainer.classList.add("box");
-        internContainer.style.backgroundImage = `url('${url}')`;
-        internContainer.setAttribute('internId', internId);
+        crossElement.setAttribute('pastInternId', pastInternId);
     
         // append child element to parent element
-        internContainer.appendChild(crossElement);
-        internInfoSection.appendChild(internContainer);
+        pastInternContainer.appendChild(pastInternImage);
+        pastInternContainer.appendChild(crossElement);
+        pastInternsSection.appendChild(pastInternContainer);
         
     } catch (error) {
-        console.error("Error loading intern picture:", error);
+        console.error("Error loading past project picture:", error);
     }
 }
 
 async function reloadData() {
     // create database reference
-    const dbRef = ref(database, 'interns');
+    const dbRef = ref(database, 'interns/past');
     const snapshot = await get(dbRef);
   
     if (snapshot.exists()) {
         // retrieve data
-        const internsArray = [];
+        const pastInternsArray = [];
 
         snapshot.forEach((positionSnap) => {
-            const internsInfo = positionSnap.val();
+            const pastIntern = positionSnap.val();
             // sort data by created date
-            for (const internId in internsInfo) {
-                const intern = internsInfo[internId];
-                intern.createdAt = new Date(intern.createdAt)
-                internsArray.push(intern);
-            }
+            pastIntern.createdAt = new Date(pastIntern.createdAt)
+            pastInternsArray.push(pastIntern);
         })
 
-        internsArray.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+        pastInternsArray.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
 
         // iterate through each data and call the helper function
-        for (const intern of internsArray) {
-            await addInternToHtml(intern.id);
+        for (const pastIntern of pastInternsArray) {
+            await addPastInternToHtml(pastIntern.id);
         }
     }
 }
@@ -363,33 +367,34 @@ async function reloadData() {
 // window load listener
 document.addEventListener("DOMContentLoaded", reloadData);
 
-// delete the intern info by clicking the x on the top right corner
+
+// delete the member info by clicking the x on the top right corner
 addEventListener('click', async (e) => {
     const target = e.target.closest('.cross');
 
     if(target){
-        if (window.confirm("Delete this intern")){
-            const internId = target.getAttribute('internId');
+        if (window.confirm("Delete this pastIntern")){
+            const pastInternId = target.getAttribute('pastInternId');
 
             // Create a reference to the file to delete 
-            const sRef = storageRef(storage, `internPictures${internId}.png`);
-            const dbRef = ref(database, `interns/${internId}`);
+            const sRef = storageRef(storage, `interns/past/${pastInternId}`);
+            const dbRef = ref(database, `interns/past/${pastInternId}`);
             
             try {
                 // Delete the file from Firebase Storage
                 await deleteObject(sRef);
                 console.log('File deleted photo successfully');
 
-                // Remove the intern info from the Realtime Database
+                // Remove the member info from the Realtime Database
                 await remove(dbRef);
-                console.log('Intern info deleted successfully');
+                console.log('Past project info deleted successfully');
 
                 // Reload the data to update the displayed content
                 //await reloadData();
-                const internToBeRemoved = document.querySelector(`[internId="${internId}"]`);
-                internToBeRemoved.remove();
+                const pastInternToBeRemoved = document.querySelector(`[pastInternId="${pastInternId}"]`);
+                pastInternToBeRemoved.remove();
             } catch (error) {
-                console.error('Failed to delete the photo or intern info', error);
+                console.error('Failed to delete the photo or past project info', error);
             }
         }
     }
