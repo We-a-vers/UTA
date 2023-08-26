@@ -7,14 +7,14 @@
     width: 100%;
 }
 
-.section /*, .photos*/ {
+.section, #photos {
     margin: 28px 0px 28px 33px;
     font-family: 'Noto Sans', sans-serif;
 }
 
-/* .photos{
+#photos{
     margin-top: 10rem;
-} */
+}
 
 .page-title {
     font-size: 24px;
@@ -22,7 +22,7 @@
     font-family: 'Inter', sans-serif;
 }
 
-.section-title /*, .current-board-members*/ {
+.section-title,.current-board-members {
     font-family: Noto Sans;
     font-size: 1.5rem;
     font-style: normal;
@@ -260,17 +260,22 @@ button{
     margin-right: 1.31rem;
 }
 
-/* #current-board-members {
+#current-board-members {
     margin-top: 2.53rem;
-} */
+}
 
-/* #show-img{
+img{
+    border: 1px solid;
+    object-fit: cover;
+}
+
+#show-img{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 3.31rem;
     margin-top: 1.38rem;
-} */
+}
 
 .svg-btn-small{
     position: absolute;
@@ -282,41 +287,72 @@ button{
     top: 0.3rem;
 }
 
-/* .img-container{
+#img-container{
     position: relative;
     display: flex;
     gap: 3.31rem;
-} */
+}
 
-/* #plus{
+#plus{
     position: absolute;
-    width: 2rem;
-    height: 1.75rem;
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
     color: #BBBFCC;
-    text-align: center;
     font-size: 6rem;
     font-style: normal;
     font-weight: 300;
-    line-height: 1.5rem;
-    letter-spacing: -0.01563rem;
     
     left: 3.5rem;
-    top: 4.1rem;
+    top: 3.7rem;
+    
+    background: none;
+	border: none;
+	padding: 0.4rem 0 1.2rem 0;
+	cursor: pointer;
+}
+
+.cross{
+    width: 2rem;
+    height: 2rem;
+    color: black;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    
+    left: 9rem;
+    top: 0rem;
     
     background: none;
 	border: none;
 	padding: 0;
 	cursor: pointer;
-    
-} */
+}
 
-/* .box{
+.cross:hover{
+    background-color: gray;
+    color: white;
+}
+
+.box{
     width: 10.25rem;
     height: 10rem;
-    border: 1px solid;
-} */
+    margin-right: 2.3rem;
+    margin-bottom: 2.3rem;
+    justify-content: flex-end;
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    background: url("/source/assets/placeholder-image.png") center/cover ;
+    border: 1px solid #BBBFCC;
+}
 
-/*.modal{
+#plus-box{
+    background: none;
+}
+
+.modal{
     padding: 4rem 5rem 2.75rem 5rem;
     border-radius: 0.5rem;
     border: 1px solid var(--dark-gray-300, #D5DAE4);    
@@ -347,7 +383,7 @@ button{
     padding: 0;
     width: auto;
     height: auto;
-}*/
+}
 
 /*
 .svg-container {

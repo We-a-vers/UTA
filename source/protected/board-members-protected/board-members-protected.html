@@ -1,1 +1,118 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Board Members Password Protected</title>
+
+    <link rel="stylesheet" type="text/css" href="./board-members-protected.css">
+    <script src="https://kit.fontawesome.com/aa44cb4455.js" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Noto+Sans:wght@400;600&family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
+
+    <script type="module" src="./board-members-protected.js"></script>
+    <script src="../tabs/tabs.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <tab-component></tab-component>
+
+        <div id="content">
+            <div class="page-title">Edit Board Members Page</div>
+            <hr>
+
+            <!-- This part is the first section -->
+            
+            <form class="section" id="board-member-header-form">
+                <div class="section-title">Board Member<span class="required">*</span></div>
+
+                <div class="description-input-container">
+                    
+                    <div id="member-image">
+
+                        <img id="board-member-image" width="312" height="234" src="/source/assets/placeholder-image.png" alt="No Image">
+                        <div id="button-container">
+                            <button id="board-member-upload">Upload</button>
+                            <input type="file" id="board-member-image-upload-file" accept="image/*" style="display: none;">
+                        </div>
+
+                    </div>
+                    
+                    <div>
+                        <div class="input-title">Description under title<span class="required">*</span></div>
+                        <textarea id="description-input" placeholder="Insert text..."  required></textarea>
+                        <div class="help-text">Enter the description under title</div>
+        
+                        <div class="url-input-container">
+                            <div class="signup-link">Sign Up Link</div>
+                            <textarea id="url-input" placeholder="Enter URL"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Save button for the first section -->
+                <button type="submit" id="save-btn">Save</button>
+
+            </form>
+
+            <!-- Section section for photo gallery -->
+
+            <div id="photos">
+                <div class="current-board-members">Current Board Members<span class="required">*</span></div>
+            
+                    <div id="show-img">
+            
+                        <div id="img-container">
+                            <div class="box" id="plus-box"></div>
+                            <button id="plus">+</button>
+                        </div>
+                    </div>
+            </div>
+            
+
+            
+            <!-- Pop up modal -->
+
+            <dialog class="modal">
+            
+                <form  class="section" id="modal-form">
+    
+                    <div class="description-input-container">
+                        
+                        <div id="member-image">
+    
+                            <img id="modal-image" width="312" height="234" src="/source/assets/placeholder-image.png" alt="No Image">
+                            <div id="button-container">
+                                <button type="button" id="modal-upload">Upload</button>
+                                <input type="file" id="modal-image-upload-file" accept="image/*" style="display: none;">
+                            </div>
+    
+                        </div>
+                        
+                        <div>
+                            <div class="input-title">Role<span class="required">*</span></div>
+                            <input id="modal-role-input" type="text" name="role" placeholder="Insert Role Name..." required>
+            
+                            <div class="url-input-container">
+                                <div class="signup-link">Board Member’s Name<span class="required">*</span></div>
+                                <input id="modal-name-input" type="text" name="name" placeholder="Insert Name..." required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="modal-btn-container">
+                        <button type="button" id="close-btn">Cancel</button>
+                        <button type="submit" id="submit-btn" form="modal-form"><i class="fa-solid fa-circle-check fa-2xl"></i></button>
+                    </div>
+                </form>
+                
+
+            </dialog>
+            
+
+        </div>
+    </div>
+</body>
+</html>

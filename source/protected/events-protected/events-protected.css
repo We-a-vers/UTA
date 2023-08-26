@@ -142,7 +142,7 @@ textarea::placeholder {
     background: none;
 }
 
-.past-events-section {
+#past-events-section {
     display: flex;
     flex-wrap: wrap;
     /* justify-content: space-between; */
@@ -186,14 +186,14 @@ textarea::placeholder {
 }
 
 /** window 1 **/
-#title-img-upload {
-    display: flex;
-    justify-content: flex-end;
+#form-image-preview {
     background: url("/source/assets/placeholder-image.png") center/cover ;
     width: 20.69025rem;
     height: 14.16713rem;
-    fill: linear-gradient(0deg, #FFF 0%, #FFF 100%), linear-gradient(0deg, #FFF 0%, #FFF 100%), #FFF;
     border: 1px solid #BBBFCC;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .buttons-row-container {
@@ -203,7 +203,7 @@ textarea::placeholder {
     width: 20.69025rem;
 }
 
-.upcoming-events-form {
+#past-events-form {
     display: none;
     position: fixed;
     top: 50%;
@@ -216,7 +216,7 @@ textarea::placeholder {
     border: 1px solid #000;
 }
 
-#form-image-preview-container {
+#form-input-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -232,7 +232,7 @@ textarea::placeholder {
     margin: 1.56rem 0rem 0.88rem 0rem;
 }
 
-#form-img-buttons {
+#form-image-buttons {
     justify-content: space-between;
     margin-top: 0.97rem;
     margin-bottom: 1.17rem;
@@ -254,11 +254,11 @@ textarea::placeholder {
     cursor: pointer;
 }
 
-#uploadTitleImg {
+#past-events-image-upload {
     color: #000000;
 }
 
-#deleteTitleImg {
+#past-events-image-delete {
     color: #F61414;
 }
 
