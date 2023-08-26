@@ -25,91 +25,89 @@
 
             <!-- This part is the first section -->
             
-            <div class="section">
+            <form class="section" id="board-member-header-form">
                 <div class="section-title">Board Member<span class="required">*</span></div>
 
                 <div class="description-input-container">
                     
                     <div id="member-image">
 
-                        <img width="312" height="234" src="/source/protected/assets/placeholder-image.png" alt="">
+                        <img id="board-member-image" width="312" height="234" src="/source/assets/placeholder-image.png" alt="No Image">
                         <div id="button-container">
-                            <button>Upload</button>
-                            <button style="color: red;">Delete Image</button>
+                            <button id="board-member-upload">Upload</button>
+                            <input type="file" id="board-member-image-upload-file" accept="image/*" style="display: none;">
                         </div>
 
                     </div>
                     
                     <div>
                         <div class="input-title">Description under title<span class="required">*</span></div>
-                        <textarea id="description-input" placeholder="Insert text..." ></textarea>
+                        <textarea id="description-input" placeholder="Insert text..."  required></textarea>
                         <div class="help-text">Enter the description under title</div>
         
                         <div class="url-input-container">
                             <div class="signup-link">Sign Up Link</div>
-                            <textarea id="url-input" placeholder="Enter URL" ></textarea>
+                            <textarea id="url-input" placeholder="Enter URL"></textarea>
                         </div>
                     </div>
                 </div>
 
                 <!-- Save button for the first section -->
-                <button id="save-btn">Save</button>
+                <button type="submit" id="save-btn">Save</button>
 
-            </div>
+            </form>
 
             <!-- Section section for photo gallery -->
 
-            <div class="photos">
+            <div id="photos">
                 <div class="current-board-members">Current Board Members<span class="required">*</span></div>
             
                     <div id="show-img">
             
-                        <div class="img-container">
-                            <div class="box"></div>
+                        <div id="img-container">
+                            <div class="box" id="plus-box"></div>
                             <button id="plus">+</button>
                         </div>
-
-                        <div class="box"></div>
                     </div>
-                </div>
             </div>
+            
 
             
             <!-- Pop up modal -->
 
             <dialog class="modal">
             
-                <div class="section">
+                <form  class="section" id="modal-form">
     
                     <div class="description-input-container">
                         
                         <div id="member-image">
     
-                            <img width="312" height="234" src="/source/protected/assets/placeholder-image.png" alt="">
+                            <img id="modal-image" width="312" height="234" src="/source/assets/placeholder-image.png" alt="No Image">
                             <div id="button-container">
-                                <button>Upload</button>
-                                <button style="color: red;">Delete Image</button>
+                                <button type="button" id="modal-upload">Upload</button>
+                                <input type="file" id="modal-image-upload-file" accept="image/*" style="display: none;">
                             </div>
     
                         </div>
                         
-                        <form id="modal-form">
+                        <div>
                             <div class="input-title">Role<span class="required">*</span></div>
-                            <input type="text" name="role" placeholder="Insert Role Name..." >
+                            <input id="modal-role-input" type="text" name="role" placeholder="Insert Role Name..." required>
             
                             <div class="url-input-container">
-                                <div class="signup-link">Board Member’s Name</div>
-                                <input type="text" name="name" placeholder="Insert Name..." >
+                                <div class="signup-link">Board Member’s Name<span class="required">*</span></div>
+                                <input id="modal-name-input" type="text" name="name" placeholder="Insert Name..." required>
                             </div>
-                        </form>
+                        </div>
                     </div>
-    
-                </div>
+                    
+                    <div id="modal-btn-container">
+                        <button type="button" id="close-btn">Cancel</button>
+                        <button type="submit" id="submit-btn" form="modal-form"><i class="fa-solid fa-circle-check fa-2xl"></i></button>
+                    </div>
+                </form>
                 
-                <div id="modal-btn-container">
-                    <button id="close-btn">Cancel</button>
-                    <button type="submit" id="submit-btn" form="modal-form"><i class="fa-solid fa-circle-check fa-2xl"></i></button>
-                </div>
 
             </dialog>
             

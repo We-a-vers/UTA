@@ -24,7 +24,7 @@
 
             <!-- This part is the first section -->
             
-            <div class="section">
+            <form id="membership-card-form" class="section">
 
                 <div class="description-input-container">
                     
@@ -32,10 +32,11 @@
 
                         <div class="section-title">Membership Card Info</div>
 
-                        <img width="312" height="234" src="/source/protected/assets/placeholder-image.png" alt="">
+                        <img id="membership-card-image" width="312" height="234" src="/source/assets/placeholder-image.png" alt="No Image">
                         <div id="button-container">
-                            <button>Upload</button>
-                            <button style="color: red;">Delete Image</button>
+                            <button type="button" id="membership-card-image-upload">Upload</button>
+                            <input type="file" id="membership-card-image-file" accept="image/*" style="display: none;">
+                            <!-- <button id="membership-card-image-delete" style="color: red;">Delete Image</button> -->
                         </div>
 
                     </div>
@@ -43,28 +44,28 @@
                     <div>
                         <div class="price-container">
                             <div class="price">Price<span style="color:red;">*</span></div>
-                            <textarea id="price-input" placeholder="Price" ></textarea>
+                            <textarea id="membership-card-price" class="price-input" placeholder="Price" required></textarea>
                         </div>
 
                         <div class="input-title">Description under title<span class="required">*</span></div>
-                        <textarea id="description-input" placeholder="Insert text..." ></textarea>
+                        <textarea id="membership-card-description" class="description-input" placeholder="Insert text..." required></textarea>
                         <div class="help-text">Enter the description under title</div>
         
                         <div class="url-input-container">
                             <div class="signup-link">Sign Up Link<span style="color:red;">*</span></div>
-                            <textarea id="url-input" placeholder="Enter URL" ></textarea>
+                            <textarea id="membership-card-link" class="url-input" placeholder="Enter URL" required></textarea>
                         </div>
                     </div>
                 </div>
 
                 <!-- Save button for the first section -->
-                <button id="save-btn">Save</button>
+                <button id="membership-card-save" class="save-btn" type="submit">Save</button>
 
-            </div>
+            </form>
 
             <!-- This part is the second section (a copy of the first section) -->
             
-            <div class="section-2">
+            <form id="merch-form" class="section-2">
                 
                 <div class="description-input-container">
                     
@@ -72,10 +73,11 @@
 
                         <div class="section-title">Merch<span class="required">*</span></div>
 
-                        <img width="312" height="234" src="/source/protected/assets/placeholder-image.png" alt="">
+                        <img id="merch-image" width="312" height="234" src="/source/assets/placeholder-image.png" alt="No Image">
                         <div id="button-container">
-                            <button>Upload</button>
-                            <button style="color: red;">Delete Image</button>
+                            <button type="button" id="merch-image-upload">Upload</button>
+                            <input type="file" id="merch-image-file" accept="image/*" style="display: none;">
+                            <!-- <button id="merch-image-delete" style="color: red;">Delete Image</button> -->
                         </div>
 
                     </div>
@@ -83,24 +85,24 @@
                     <div>
                         <div class="price-container">
                             <div class="price">Price<span style="color:red;">*</span></div>
-                            <textarea id="price-input" placeholder="Price" ></textarea>
+                            <textarea id="merch-price" class="price-input" placeholder="Price" required></textarea>
                         </div>
                         
                         <div class="input-title">Description under title<span class="required">*</span></div>
-                        <textarea id="description-input" placeholder="Insert text..." ></textarea>
+                        <textarea id="merch-description" class="description-input" placeholder="Insert text..." required></textarea>
                         <div class="help-text">Enter the description under title</div>
         
                         <div class="url-input-container">
                             <div class="signup-link">Sign Up Link<span style="color:red;">*</span></div>
-                            <textarea id="url-input" placeholder="Enter URL" ></textarea>
+                            <textarea id="merch-link" class="url-input" placeholder="Enter URL" required></textarea>
                         </div>
                     </div>
                 </div>
 
                 <!-- Save button for the second section -->
-                <button id="save-btn">Save</button>
+                <button type="submit" id="merch-save" class="save-btn">Save</button>
 
-            </div>
+            </form>
 
             <!-- Third section: photo gallery -->
 
@@ -114,7 +116,6 @@
                             <button id="plus">+</button>
                         </div>
 
-                        <div class="box"></div>
                     </div>
                 </div>
             </div>
@@ -123,41 +124,33 @@
             <!-- Pop up modal -->
 
             <dialog class="modal">
-            
-                <div class="section">
-    
+                <form class="section" id="modal-form">
                     <div class="description-input-container">
-                        
                         <div id="sponsors-image">
-    
-                            <img width="312" height="234" src="/source/protected/assets/placeholder-image.png" alt="">
+                            <img id="sponsor-image" width="312" height="234" src="/source/assets/placeholder-image.png">
                             <div id="button-container">
-                                <button>Upload</button>
-                                <button style="color: red;">Delete Image</button>
+                                <button type="button" id="sponsor-image-upload">Upload</button>
+                                <input type="file" id="sponsor-image-file" accept="image/*" style="display: none;">
+                                <!-- <button style="color: red;">Delete Image</button> -->
                             </div>
-    
                         </div>
                         
-                        <form id="modal-form">
-                            <div class="popup-right-container">
-                                <div class="sponsor-title">Sponsor<span class="required">*</span></div>
-                                <input type="text" name="sponsor" placeholder="Insert Sponsor Name..." >
-                                
-                                <div class="benefit-info-container">
-                                    <div class="input-title">Benefit Info<span class="required">*</span></div>
-                                    <textarea name="benefit" id="benefit-info" placeholder="Insert Benefit Name..." cols="30" rows="10"></textarea>
-                                </div>
+                        <div class="popup-right-container">
+                            <div class="sponsor-title">Sponsor<span class="required">*</span></div>
+                            <input id="sponsor-name" type="text" name="sponsor" placeholder="Insert Sponsor Name..." required>
+                            
+                            <div class="benefit-info-container">
+                                <div class="input-title">Benefit Info<span class="required">*</span></div>
+                                <textarea name="benefit" id="sponsor-benefit-info" placeholder="Insert Benefit Name..." cols="30" rows="10" required></textarea>
                             </div>
-                        </form>
+                        </div>
                     </div>
-    
-                </div>
-                
-                <div id="modal-btn-container">
-                    <button id="close-btn">Cancel</button>
-                    <button type="submit" id="submit-btn" form="modal-form"><i class="fa-solid fa-circle-check fa-2xl"></i></button>
-                </div>
 
+                    <div id="modal-btn-container">
+                        <button type="button" id="close-btn">Cancel</button>
+                        <button type="submit" id="submit-btn" form="modal-form"><i class="fa-solid fa-circle-check fa-2xl"></i></button>
+                    </div>
+                </form> 
             </dialog>
             
 
