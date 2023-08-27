@@ -97,17 +97,17 @@ historyUpload.addEventListener('click', () => {
 
 // change the preview image for the board member placeholder
 uploadHistoryFile.addEventListener('change', () => {
-    const imageFile = uploadHistoryFile.files[0];
-    const reader = new FileReader();
+    const imageFile2 = uploadHistoryFile.files[0];
+    const reader2 = new FileReader();
 
     // generate url
-    if (imageFile) {
-        reader.readAsDataURL(imageFile);
+    if (imageFile2) {
+        reader2.readAsDataURL(imageFile2);
     }
   
     // display image preview when the image is loaded
-    reader.onload = () => {
-        historyImage.src = reader.result;
+    reader2.onload = () => {
+        historyImage.src = reader2.result;
     };
 })
 
@@ -123,24 +123,24 @@ historyHeaderForm.addEventListener("submit", async (e) => {
     const historyHeaderRef = ref(database, 'aboutUs/historyHeader');
 
     // initialize data
-    const date = new Date()
+    const date2 = new Date()
 
     const historyHeaderData = {
         description: hDescriptionValue,
-        createdAt: date.toUTCString(),
+        createdAt: date2.toUTCString(),
     };
 
     // make sure an image file is uploaded
     if (historyImageUploadFileValue) {
         // prepare for upload
-        const fileURL = URL.createObjectURL(historyImageUploadFileValue);
-        const response = await fetch(fileURL);
-        const blob = await response.blob();
-        const filePath = "aboutUs/history/HeaderPicture.png";
-        const sRef = storageRef(storage, filePath);
+        const fileURL2 = URL.createObjectURL(historyImageUploadFileValue);
+        const response2 = await fetch(fileURL2);
+        const blob2 = await response2.blob2();
+        const filePath2 = "aboutUs/history/HeaderPicture.png";
+        const sRef2 = storageRef(storage, filePath2);
 
         // upload
-        uploadBytes(sRef, blob).then((snapshot) => {
+        uploadBytes(sRef2, blob2).then((snapshot) => {
             // add data to database after upload is completed
             set(historyHeaderRef, historyHeaderData)
             .then(() => {
