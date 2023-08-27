@@ -8,7 +8,7 @@
 }
 
 .section, .section-2, .photos {
-    margin: 28px 0px 28px 33px;
+    margin: 2.5rem 0px 28px 33px;
     font-family: 'Noto Sans', sans-serif;
 }
 
@@ -22,7 +22,7 @@
     font-family: 'Inter', sans-serif;
 }
 
-.section-title,.current-board-members {
+.section-title, .past-projects {
     font-family: Noto Sans;
     font-size: 1.5rem;
     font-style: normal;
@@ -31,11 +31,17 @@
     letter-spacing: -0.01563rem;
 }
 
-.url-input-container{
+.input-title, .url-input-container{
     margin-top: 1rem;
 }
 
-.input-title, .signup-link {
+.popup-right-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0rem;
+}
+
+.input-title, .post-link, .intern-description-title, .signup-link {
     font-family: Noto Sans;
     font-size: 1.2rem;
     font-style: normal;
@@ -50,15 +56,17 @@
 }
 
 
-.description-input-container{
+.description-input-container {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 5rem;
     margin-top: 1rem;
+    align-items: start;
+    
 }
 
-input{
+input, textarea{
     border: 1px solid #6B6F80;
     border-radius: 4px;
     width: 15.5rem;
@@ -67,7 +75,14 @@ input{
     font-size: 1rem;
 }
 
-#description-input {
+input::placeholder, textarea::placeholder{
+    font-size: 16px;
+    color: #6B6F80;
+    font-weight: 400;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.description-input {
     height: 6rem;
     width:  25.25rem;
     border: 1px solid #6B6F80;
@@ -121,7 +136,7 @@ button{
     letter-spacing: -0.01563rem;
 }
 
-#save-btn{
+.save-btn{
     overflow: hidden;
     float: right;
     margin: 2.62rem 5.15rem 0 0;
@@ -129,13 +144,19 @@ button{
     background: var(--light-blue-400, #3C4F75);
 }
 
-#member-image{
+#intern-image{
     display: flex;
     flex-direction: column;
     gap: 0.88rem;
 }
 
-#url-input {
+#interns-image{
+    display: flex;
+    flex-direction: column;
+    gap: 0.88rem;
+}
+
+.url-input {
     width: 18.5rem;
     height: 1.5rem;
     border: 1px solid #BBBFCC;
@@ -260,7 +281,7 @@ button{
     margin-right: 1.31rem;
 }
 
-#current-board-members {
+#past-projects {
     margin-top: 2.53rem;
 }
 
@@ -310,12 +331,6 @@ button{
     
 }
 
-.box{
-    width: 10.25rem;
-    height: 10rem;
-    border: 1px solid;
-}
-
 .modal{
     padding: 4rem 5rem 2.75rem 5rem;
     border-radius: 0.5rem;
@@ -363,3 +378,45 @@ button{
     cursor: pointer;
 }
 */
+
+.cross{
+    width: 1.8rem;
+    height: 1.8rem;
+    color: black;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 500;
+    
+    left: 8.5rem;
+    top: 0rem;
+    
+    background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+    position: absolute;
+}
+
+.cross:hover{
+    background-color: gray;
+    color: white;
+}
+
+.box{
+    width: 10.25rem;
+    height: 10rem;
+    margin-right: 2.3rem;
+    margin-bottom: 2.3rem;
+    justify-content: flex-end;
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    border: 1px solid;
+    display: inline-block;
+}
+
+.past-intern-image {
+    width: 10.25rem;
+    height: 10rem;
+    display: block;
+}
