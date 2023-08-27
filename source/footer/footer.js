@@ -59,7 +59,6 @@ class FooterComponent extends HTMLElement{
                 <div id="footer-content">
                     <p id="footer-title">© United Taiwanese Association (UTA)</p>
                     <div id="footer-links">
-                        <a>Email</a>
                         <a href="https://www.instagram.com/ucsduta/">Instagram</a>
                         <a href="https://www.facebook.com/groups/uta.at.ucsd/">Facebook</a>
                     </div>
