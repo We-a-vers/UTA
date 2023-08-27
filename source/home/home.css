@@ -1,4 +1,9 @@
-body {
+* {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+#content-container {
 	font-family: Arial, sans-serif;
 	background-color: white;
 	margin:0;
