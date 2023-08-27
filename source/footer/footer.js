@@ -13,7 +13,7 @@ class FooterComponent extends HTMLElement{
             <style>
                 #footer-container {
                     display: flex;
-                    max-width: 90rem;
+                    width: 100wh;
                     max-height: 12.625rem;
                     padding: 9rem 2.4375rem 1.9375rem 2.5625rem;
                     justify-content: center;
