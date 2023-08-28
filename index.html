@@ -3,52 +3,42 @@
 <head>
 	<title>UTA Website</title>
 	<link rel="stylesheet" href="source/home/home.css">
-	<link rel="stylesheet" type="text/css" href="source/navbar/navbar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="./source/navbar/navbar.js"></script>
+    <script src="./source/footer/footer.js"></script>
+    <script src="/source/home/home.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./source/navbar/navbar.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-	<div class="navbar">
-        <h1>LOGO</h1>
-
-        <ul>
-            <li><a href="">ABOUT</a></li>
-            <li class="drop-down">
-                <a class="prevent-select">TEAM</a>
-                <div class="drop-down-items">
-                    <a href="">TEAM 1</a>
-                    <a href="">TEAM 2</a>
-                </div>
-            </li>
-            <li class="drop-down">
-                <a class="prevent-select">EVENTS</a>
-                <div class="drop-down-items">
-                    <a href="">EVENT 1</a>
-                    <a href="">EVENT 2</a>
-                </div>
-            </li>
-            <li><a href="">SPONSORS</a></li>
-        </ul>
-    </div>
+    
+    <navbar-component></navbar-component>
 
     <!-- Header -->
     <div class="header">
-        <section id="header-left">
-            <h1>United Taiwanese Association (UTA)</h1>
-            <h3>We aim to provide a sense of home for oversease Taiwanese students and a platform for those interested in learning about Taiwan.</h2>
-            <section id="header-buttons">
-                <button id="learn">Learn More</button>
-                <button id="explore">Explore Event</button>
-            </section>
+            
+        <h1>United Taiwanese Association (UTA) at UC San Diego <img id="header-img" src="source/assets/home-header-img.png" alt="home pic"></h1>
+        <h3>We aim to provide a sense of home for oversease Taiwanese students and a platform for those interested in learning about Taiwan.</h2>
+
+        <section id="header-buttons">
+            <button id="learn">Learn More</button>
+            <button id="explore">Explore Event <img src="source/assets/home-arrow-logo.png" alt=""></button>
         </section>
-        <img id="header-right" src="source/assets/placeholder-image.png" alt="home pic">
+        
+        
     </div>
 
     <!-- Content -->
     <section id="content">
         <section id="join">
-            <h2>Join Us!</h2>
-            <h3>Join one of UCSD's largest cultural organization.</h3>
-            <h3 id="stats">200+ Members | 100+ Events</h3>
+            <div id = "join-text">
+                <h2 class="title-text">Join Us!</h2>
+                <h3 style="font-family: 'Open Sans', sans-serif; font-size: 1.875rem; font-style: normal; font-weight: 400;">Join one of UCSD's largest cultural organization.</h3>
+                <h3 id="stats">200+ Members | 100+ Events</h3>
+            </div>
+        
         </section>
         <section id="upcoming-events">
             <h2>Upcoming Events</h2>
@@ -91,12 +81,7 @@
         </section>
     </section>
 
-    <!-- Footer -->
-	<!-- <footer>
-		<p>&copy; 2023 We@vers</p>
-		<a href="/source/firebase-example.html" style="color: white">firebase</a>
-	</footer> -->
-	<script src="/source/home/home.js"></script>
+    <footer-component></footer-component>
 </body>
 </html>
 
