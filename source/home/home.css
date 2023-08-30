@@ -35,6 +35,7 @@ body{
 	font-style: normal;
 	font-weight: 500;
 	line-height: normal;
+	text-align: center;
 }
 
 .header h3{
@@ -120,6 +121,22 @@ body{
 	background: var(--light-gold-50, #F6F4F0);
 }
 
+#sign-up-btn{
+	width: 7.8125rem;
+	height: 2.625rem;
+	padding: 0.625rem;
+
+	border-radius: 0.5rem;
+	border: 1px solid var(--light-blue-400, #3C4F75);
+	background: var(--dark-gray-0, #FFF);
+
+	color: var(--dark-blue-400, #33465F);
+	font-family: Open Sans;
+	font-size: 1rem;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
 
 #stats{
 	font-weight: bold;

@@ -1,54 +1,57 @@
+// import everything from firebase.js
+import { firebase, database, ref, set, get, push, remove, storage, storageRef, uploadBytes, getDownloadURL, deleteObject } from '../firebase/firebase.js';
 
-const logInBtn = document.querySelector('.log-in');
-const modal = document.querySelector('.modal');
-const closeBtn = document.querySelector('.close');
-const subBtn = document.querySelector('#submit-btn');
-const passcode = document.querySelector('#passcode');
-const form = document.querySelector('form');
+// grab header image and header text
+const headerImage = document.querySelector('#header-img')
+const headerText = document.querySelector('#header-text')
 
-// Temp Passcode
-const defaultPasscode = '1234';
+// window load listener
+window.addEventListener("load", async () => {
+    // create database reference
+    const dbRef = ref(database, 'home/homeHeader');
+    const snapshot = await get(dbRef);
+  
+    if (snapshot.exists()) {
+        // retrieve data
+        const homeHeader = snapshot.val();
 
-// Close the modal and reset the form
-function closeModal(){
-    modal.style.display = 'none';
-    form.reset();
+        const sRef = storageRef(storage, "homeHeaderPicture.png");
+        const imageUrl = await getDownloadURL(sRef);
+
+        headerImage.src = imageUrl;
+        headerImage.alt = 'Board Member Image';
+        headerText.textContent = homeHeader.description;
+    }
+});
+
+// helper function for reloading Data
+async function reloadData() {
+    // create database reference
+    const dbRef = ref(database, 'boardMembers/members');
+    const snapshot = await get(dbRef);
+  
+    if (snapshot.exists()) {
+        // retrieve data
+        const sponsorsArray = [];
+
+        for(let i = 0; i < 6; i++){
+            const sponsorsInfo = snapshot[i].val();
+
+            for (const sponsorId in sponsorsInfo) {
+                const sponsor = sponsorsInfo[sponsorId];
+                sponsor.createdAt = new Date(sponsor.createdAt)
+                sponsorsArray.push(sponsor);
+            }
+        }
+
+        sponsorsArray.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+
+        // iterate through each data and call the helper function
+        for (const sponsor of sponsorsArray) {
+            await addMemberToHtml(sponsor.id, sponsor.role, sponsor.name);
+        }
+    }
 }
 
-// Display the modal
-logInBtn.addEventListener('click', ()=>{
-    modal.style.display = 'block';
-})
-
-// Close by clicking x button
-closeBtn.addEventListener('click', ()=>{
-    closeModal();
-})
-
-// Jump to the protected page if passcode matches
-subBtn.addEventListener('click', ()=>{
-    if(passcode.value === defaultPasscode){
-        console.log("Pass!!");
-        form.reset();
-        window.location.href = 'source/log-in/protected.html';
-    }
-    else{
-        alert('Wrong Code!!')
-    }
-})
-
-// Close by clicking outside of the form
-modal.addEventListener('click', (e)=>{
-    if(e.target === modal){
-        closeModal();
-    }
-})
-
-// Close by pressing Escape Key
-document.addEventListener('keydown', (e)=>{
-    if(e.key === "Escape" && modal.style.display === 'block'){
-        closeModal();
-    }
-})
-
-
+// window load listener
+document.addEventListener("DOMContentLoaded", reloadData);
