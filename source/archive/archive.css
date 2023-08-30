@@ -1,3 +1,8 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
 .title {
     font-family: 'Open Sans';
     font-style: normal;

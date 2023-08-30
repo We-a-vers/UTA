@@ -95,7 +95,7 @@ boardMemberHeaderForm.addEventListener("submit", async (e) => {
 // window load listener
 window.addEventListener("load", async () => {
     // create database reference
-    const dbRef = ref(database, 'boardMembersHeader');
+    const dbRef = ref(database, 'boardMembers/memberHeader');
     const snapshot = await get(dbRef);
   
     if (snapshot.exists()) {
@@ -243,7 +243,7 @@ async function addMemberToHtml(memberId, memberRole) {
 
 async function reloadData() {
     // create database reference
-    const dbRef = ref(database, 'boardMembers');
+    const dbRef = ref(database, 'boardMembers/members');
     const snapshot = await get(dbRef);
   
     if (snapshot.exists()) {
@@ -284,7 +284,7 @@ addEventListener('click', async (e) => {
 
             // Create a reference to the file to delete 
             const sRef = storageRef(storage, `memberPictures/${memberRole}/${memberId}.png`);
-            const dbRef = ref(database, `boardMembers/${memberRole}/${memberId}`);
+            const dbRef = ref(database, `boardMembers/members/${memberRole}/${memberId}`);
             
             try {
                 // Delete the file from Firebase Storage
