@@ -18,8 +18,8 @@
     <!-- Header -->
     <div class="header">
             
-        <h1>United Taiwanese Association (UTA) at UC San Diego <img id="header-img" src="source/assets/home-header-img.png" alt="home pic"></h1>
-        <h3 id="header-text">We aim to provide a sense of home for oversease Taiwanese students and a platform for those interested in learning about Taiwan.</h2>
+        <h1>United Taiwanese Association (UTA) at UC San Diego <img id="header-img" src="source/assets/placeholder-image.png" alt="home pic"></h1>
+        <h3 id="header-text"></h3>
 
         <section id="header-buttons">
             <button id="learn">Learn More</button>
@@ -39,21 +39,27 @@
         </section>
         <section id="upcoming-events">
             <h2 class="title-text">Upcoming Events</h2>
-            <h2>In 7 Days</h2>
+            <h2 id="date-countdown">In 7 Days</h2>
             <div class="events">
+
                 <img id="upcoming-events-image" src="./source/assets/placeholder-image.png" alt="">
 
-                <div>
-                    <h4 id="upcoming-events-title">Final Banquet</h4>
-                    <h4 id="upcoming-events-date">Date</h4>
-                    <h4 id="upcoming-events-description">Description</h4>
+                <div id="event-container">
+                    <h4 id="upcoming-events-title" class="events-text">Final Banquet</h4>
+                    <h4 id="upcoming-events-date" class="events-text">Saturday, Jun 3, at 6:30 PM your time.
+                    </h4>
+                    <h4 id="upcoming-events-description">
+                        Location: Palisade at UTC (8800 Lombard Pl) <br>
+                        Dress Code: Formal <br>
+                        Member Fee : $35 <br>
+                        Non-member Fee: $40 <br>
+                        Payment deadline: May 31, 11:59pm <br>
+                    </h4>
+                    <a href=""><button id="sign-up-btn">Sign Up</button></a>
                 </div>
-
-                <a href=""><button id="sign-up-btn">Sign Up</button></a>
             </div>
-            <div class="view-events">
-                <button>View All Events</button>
-            </div>
+            
+            <a id="event-btn"><button id="view-events">View All Events</button></a>
         </section>
         <section id="sponsors">
             <h2>Our Sponsors</h2>

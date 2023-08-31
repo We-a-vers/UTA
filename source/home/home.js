@@ -8,7 +8,7 @@ const headerText = document.querySelector('#header-text')
 // window load listener
 window.addEventListener("load", async () => {
     // create database reference
-    const dbRef = ref(database, 'home/homeHeader');
+    const dbRef = ref(database, 'homepage/homeHeader');
     const snapshot = await get(dbRef);
   
     if (snapshot.exists()) {
@@ -27,7 +27,7 @@ window.addEventListener("load", async () => {
 // helper function for reloading Data
 async function reloadData() {
     // create database reference
-    const dbRef = ref(database, 'boardMembers/members');
+    const dbRef = ref(database, 'homepage/homeHeader');
     const snapshot = await get(dbRef);
   
     if (snapshot.exists()) {
