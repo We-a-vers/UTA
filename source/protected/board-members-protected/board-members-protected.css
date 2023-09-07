@@ -94,7 +94,7 @@ input{
     font-weight: 400;
 }
 
-#button-container{
+.button-container{
     display: flex;
     gap: 0.5rem;
 }
