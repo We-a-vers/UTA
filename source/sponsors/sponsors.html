@@ -16,6 +16,8 @@
 
     <script src="./../footer/footer.js"></script>
     <script src="../navbar/navbar.js"></script>
+
+    <script type="module" src="./sponsors.js"></script>
 </head>
 <body>
 
@@ -33,12 +35,12 @@
             <h1>UTA Membership Card</h1>
 
             <div id="member-card-container">
-                <img src="Screenshot 2023-05-24 at 8.29 1.png" alt="UTA Card">
+                <img id="membership-card-image" alt="UTA Membership Card Image">
 
                 <div class="membership-card__price">
-                    <h3>Price $15</h3>
-                    <p>Getting a membership card gives you exclusive access to a variety of discounts to numerous authentic San Diego restaurants both on campus and off campus! Don’t miss out and purchase now!</p>
-                    <button id="membership-card__purchase-button">Purchase</button>
+                    <h3 id="membership-card-price"></h3>
+                    <p id="membership-card-description"></p>
+                    <button id="membership-card-purchase-button">Purchase</button>
                 </div>
             </div>
             
@@ -237,11 +239,11 @@
     
 
             <div class="merch__price">
-                <h3>Price: Crew t-shirt: $12.99/ Bundle (Card+t-shirt): $23.99</h3>
-                <p>Become a part of the UTA family and purchase our crew t-shirt. Purchase now to show everyone that you are part of UTA!</p>
-                <img src="1 1.png" alt="UTA Merch Demo">
+                <h3 id="merch-price">Price: Crew t-shirt: $12.99/ Bundle (Card+t-shirt): $23.99</h3>
+                <p id="merch-description">Become a part of the UTA family and purchase our crew t-shirt. Purchase now to show everyone that you are part of UTA!</p>
+                <img id="merch-image" alt="UTA Merch Image">
                 
-                <button id="merch__price-button">Purchase</button>
+                <button id="merch-purchase-button">Purchase</button>
             </div>
         </div>
 
