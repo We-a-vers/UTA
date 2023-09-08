@@ -31,7 +31,7 @@
     letter-spacing: -0.01563rem;
 }
 
-.benefit-info-container{
+.sponsor-benifit-info-container{
     margin-top: 1rem;
 }
 
@@ -90,7 +90,7 @@ input::placeholder, textarea::placeholder{
     font-family: 'Noto Sans', sans-serif;
 }
 
-#description-input {
+.description-input {
     height: 6rem;
     width:  25.25rem;
     border: 1px solid #6B6F80;
@@ -144,7 +144,7 @@ button{
     letter-spacing: -0.01563rem;
 }
 
-#save-btn{
+.save-btn{
     overflow: hidden;
     float: right;
     margin: 2.62rem 5.15rem 0 0;
@@ -164,7 +164,7 @@ button{
     gap: 0.88rem;
 }
 
-#price-input, #url-input {
+.price-input, .url-input {
     width: 18.5rem;
     height: 1.5rem;
     border: 1px solid #BBBFCC;
@@ -339,12 +339,6 @@ button{
     
 }
 
-.box{
-    width: 10.25rem;
-    height: 10rem;
-    border: 1px solid;
-}
-
 .modal{
     padding: 4rem 5rem 2.75rem 5rem;
     border-radius: 0.5rem;
@@ -392,3 +386,45 @@ button{
     cursor: pointer;
 }
 */
+
+.cross{
+    width: 1.8rem;
+    height: 1.8rem;
+    color: black;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 500;
+    
+    left: 8.5rem;
+    top: 0rem;
+    
+    background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+    position: absolute;
+}
+
+.cross:hover{
+    background-color: gray;
+    color: white;
+}
+
+.box{
+    width: 10.25rem;
+    height: 10rem;
+    margin-right: 2.3rem;
+    margin-bottom: 2.3rem;
+    justify-content: flex-end;
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    border: 1px solid;
+    display: inline-block;
+}
+
+.sponsor-image {
+    width: 10.25rem;
+    height: 10rem;
+    display: block;
+}

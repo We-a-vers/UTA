@@ -11,37 +11,11 @@
 
     <title>Board Member</title>
 
+    <script src="./../footer/footer.js"></script>
 </head>
 <body>
 
-    <!-- Copy the following code for the html of the navigation bar -->
-
-    <!-- <div class="navbar">
-        <h1>UTA at UC San Diego</h1>
-
-        <ul>
-            <li><a href="">ABOUT</a></li>
-            <li class="drop-down">
-                <a class="prevent-select">TEAM</a>
-                <div class="drop-down-items">
-                    <a href="">TEAM 1</a>
-                    <a href="">TEAM 2</a>
-                </div>
-            </li>
-            <li class="drop-down">
-                <a class="prevent-select">EVENTS</a>
-                <div class="drop-down-items">
-                    <a href="">EVENT 1</a>
-                    <a href="">EVENT 2</a>
-                </div>
-            </li>
-            <li><a href="">SPONSORS</a></li>
-        </ul>
-    </div> -->
-
-
     <navbar-component></navbar-component> 
-    
     
     <!-- Header -->
 
@@ -50,16 +24,15 @@
     <div class="header">
         
         <section id="header-left">
-            <h1>
+            <h1 id="headerText">
                 Being a part of UTA board is like being in a family.<br> 
                 We grow together, plan together, and most importantly, 
                 have fun together! 
             </h1> 
 
-            <button>Join our intern program</button>
         </section>
         <div class="img-container">
-            <img id="header-image" src="/source/assets/board-member-header-image.png" alt="">
+            <img id="header-image" src="/source/assets/placeholder-image.png" alt="">
         </div>
     </div>
 
@@ -67,7 +40,7 @@
     <section class="members">
         <h1>2023 - 2024 board</h1>
         
-        <div class="gallery">
+        <!-- <div class="gallery">
             <h1>Co-presidents</h1>
             
             <div class="gallery-image">
@@ -81,119 +54,13 @@
                     <h2>Name</h2>
                 </div>
             </div>
-        </div>
-        
-
-        <div class="gallery">
-            <h1>Activities</h1>
-            
-            <div class="gallery-image">
-                <div class="card">
-                    <img src="/source/assets/placeholder-image.png" alt="">
-                    <h2>Name</h2>
-                </div>
-
-                <div class="card">
-                    <img src="/source/assets/placeholder-image.png" alt="">
-                    <h2>Name</h2>
-                </div>
-
-                <div class="card">
-                    <img src="/source/assets/placeholder-image.png" alt="">
-                    <h2>Name</h2>
-                </div>
-            </div>
-        </div>
-
-        <div class="gallery">
-            <h1>Marketing</h1>
-            
-            <div class="gallery-image">
-                <div class="card">
-                    <img src="/source/assets/placeholder-image.png" alt="">
-                    <h2>Name</h2>
-                </div>
-
-                <div class="card">
-                    <img src="/source/assets/placeholder-image.png" alt="">
-                    <h2>Name</h2>
-                </div>
-            </div>
-        </div>
-
-        <div class="gallery">
-            <h1>Publicity</h1>
-            
-            <div class="gallery-image">
-                <div class="card">
-                    <img src="/source/assets/placeholder-image.png" alt="">
-                    <h2>Name</h2>
-                </div>
-
-                <div class="card">
-                    <img src="/source/assets/placeholder-image.png" alt="">
-                    <h2>Name</h2>
-                </div>
-
-                <div class="card">
-                    <img src="/source/assets/placeholder-image.png" alt="">
-                    <h2>Name</h2>
-                </div>
-            </div>
-        </div>
-
-        <div class="gallery">
-            <h1>Head of Interns</h1>
-            
-            <div class="gallery-image">
-                <div class="card">
-                    <img src="/source/assets/placeholder-image.png" alt="">
-                    <h2>Name</h2>
-                </div>
-
-                <div class="card">
-                    <img src="/source/assets/placeholder-image.png" alt="">
-                    <h2>Name</h2>
-                </div>
-            </div>
-        </div>
-
-        <div class="gallery">
-            <h1>Treasurer</h1>
-            
-            <div class="gallery-image">
-                <div class="card">
-                    <img src="/source/assets/placeholder-image.png" alt="">
-                    <h2>Name</h2>
-                </div>
-
-                <div class="card">
-                    <img src="/source/assets/placeholder-image.png" alt="">
-                    <h2>Name</h2>
-                </div>
-            </div>
-        </div>
-
-        <div class="gallery">
-            <h1>Internal</h1>
-            
-            <div class="gallery-image">
-                <div class="card">
-                    <img src="/source/assets/placeholder-image.png" alt="">
-                    <h2>Name</h2>
-                </div>
-
-                <div class="card">
-                    <img src="/source/assets/placeholder-image.png" alt="">
-                    <h2>Name</h2>
-                </div>
-            </div>
-        </div>
-        
-        
+        </div>  -->
         
     </section>
 
+    <footer-component></footer-component>
+
     <script src="../navbar/navbar.js"></script>
+    <script type="module" src="./board-member.js"></script>
 </body>
 </html>

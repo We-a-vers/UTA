@@ -53,7 +53,7 @@
 .description-input-container{
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: start;
     gap: 5rem;
     margin-top: 1rem;
 }
@@ -67,7 +67,7 @@ input{
     font-size: 1rem;
 }
 
-#description-input {
+#member-description-input {
     height: 6rem;
     width:  25.25rem;
     border: 1px solid #6B6F80;
@@ -76,7 +76,23 @@ input{
     font-size: 1rem;
 }
 
-.description-input::placeholder {
+#member-description-input::placeholder {
+    font-size: 16px;
+    color: #6B6F80;
+    font-weight: 400;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+#history-description-input {
+    height: 6rem;
+    width:  25.25rem;
+    border: 1px solid #6B6F80;
+    border-radius: 4px;
+    padding: 12px 16px 12px 16px;
+    font-size: 1rem;
+}
+
+#history-description-input::placeholder {
     font-size: 16px;
     color: #6B6F80;
     font-weight: 400;
@@ -121,7 +137,15 @@ button{
     letter-spacing: -0.01563rem;
 }
 
-#save-btn{
+#member-save-btn{
+    overflow: hidden;
+    float: right;
+    margin: 2.62rem 5.15rem 0 0;
+    color: #FFF;
+    background: var(--light-blue-400, #3C4F75);
+}
+
+#history-save-btn{
     overflow: hidden;
     float: right;
     margin: 2.62rem 5.15rem 0 0;
@@ -188,6 +212,16 @@ button{
     border: none;
     cursor: pointer;
     background: none;
+}
+
+#member-img{
+    object-fit: cover;
+    border: 1px solid;
+}
+
+#history-img{
+    object-fit: cover;
+    border: 1px solid;
 }
 
 .popup-form {
