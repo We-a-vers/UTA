@@ -28,7 +28,7 @@
                 
                 <div class="description-input-container">
                     
-                    <div id="member-image">
+                    <div id="event-image">
                         
                         <div class="section-title">Events<span class="required">*</span></div>
 
@@ -93,7 +93,7 @@
     
                     <div class="description-input-container">
                         
-                        <div id="member-image">
+                        <div id="event-image">
     
                             <img width="312" height="234" src="/source/protected/assets/placeholder-image.png" alt="">
                             <div id="button-container">
@@ -104,12 +104,23 @@
                         </div>
                         
                         <form id="modal-form">
-                            <div class="input-title">Role<span class="required">*</span></div>
-                            <input type="text" name="role" placeholder="Insert Role Name..." >
+                            <div class="date-container">
+                                <div class="date">Event Date<span style="color:red;">*</span></div>
+                                <textarea id="date-input" placeholder="MM/DD/YYYY" ></textarea>
+                            </div>
+
+                            <div class="title-container">
+                                <div class="title">Event Title<span style="color:red;">*</span></div>
+                                <textarea id="title-input" placeholder="Insert text..." ></textarea>
+                            </div>
+
+                            <div class="input-title">Description<span class="required">*</span></div>
+                            <textarea id="description-input" placeholder="Insert text..." ></textarea>
+                            <div class="help-text">Enter the description under title</div>
             
                             <div class="url-input-container">
-                                <div class="signup-link">Board Member's Name</div>
-                                <input type="text" name="name" placeholder="Insert Name..." >
+                                <div class="signup-link">Sign Up Link</div>
+                                <textarea id="url-input" placeholder="Enter URL" ></textarea>
                             </div>
                         </form>
                     </div>
