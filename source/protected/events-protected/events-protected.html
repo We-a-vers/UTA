@@ -24,18 +24,17 @@
 
             <!-- This part is the first section -->
             
-            <div class="section">
+            <form class="section" id="events-header-form">
                 
-                <div class="description-input-container">
-                    
-                    <div id="event-image">
-                        
-                        <div class="section-title">Events<span class="required">*</span></div>
+                <div class="section-title">Events<span class="required">*</span></div>
 
-                        <img width="312" height="234" src="/source/protected/assets/placeholder-image.png" alt="">
+                <div class="description-input-container">
+                    <div id="event-image">
+
+                        <img id="event-header-image" width="312" height="234" src="/source/protected/assets/placeholder-image.png" alt="">
                         <div id="button-container">
                             <button>Upload</button>
-                            <button style="color: red;">Delete Image</button>
+                            <input type="file" id="event-image-upload-file" accept="image/*" style="display: none;">
                         </div>
 
                     </div>
@@ -63,9 +62,9 @@
                 </div>
 
                 <!-- Save button for the first section -->
-                <button id="save-btn">Save</button>
+                <button type="submit" id="save-btn">Save</button>
 
-            </div>
+            </form>
 
             <!-- Section section for photo gallery -->
 

@@ -7,12 +7,11 @@ const closeModal = document.querySelector('#close-btn');
 const modal = document.querySelector('.modal');
 
 // Firebase
-const eventUpload = document.querySelector('#event-upload')
-const eventImage = document.querySelector('#event-image')
+const eventImage = document.querySelector('#event-header-image')
 const descriptionInput = document.querySelector('#description-input')
 const urlInput = document.querySelector('#url-input')
 const uploadEventFile = document.querySelector('#event-image-upload-file')
-const eventHeaderForm = document.querySelector('#event-header-form')
+const eventHeaderForm = document.querySelector('#events-header-form')
 
 // click listener for the upload button
 eventUpload.addEventListener('click', () => {
