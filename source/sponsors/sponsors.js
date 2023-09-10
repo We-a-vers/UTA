@@ -49,22 +49,6 @@ window.addEventListener("load", async () => {
 });
 
 
-// <div class="uta-sponsors__logos">
-//         <div class="uta-sponsors__logo-wrapper">
-//             <img src="Background.png" alt="Sponsor">
-//             <div class="uta-sponsors__discount">10% off</div>
-//             <div class="tooltiptext">
-//                 <div class="tooltiptext-title">Meet Fresh</div>
-
-//                 <div class="tooltiptext-body">
-//                     <div class="tooltiptext-discount">Discount: 10% Off</div>
-//                     <ul class="tooltiptext-content">
-//                         <li>Meet Fresh is THE BEST Taiwanese dessert place ever! They are best known for their hand-made dessert such as icy grass jelly and many more!</li>
-//                     </ul>
-//                 </div>
-//             </div>
-//         </div>
-
 const sponsorsContainer = document.querySelector('.uta-sponsors__logos');
 // helper function that creates the corresponding html elements and append them to the section defined above
 async function addSponsorToHtml(sponsorId, sponsorName, sponsorBenefitInfo) {
