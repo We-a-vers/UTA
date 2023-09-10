@@ -87,39 +87,67 @@ async function addSponsorToHtml(sponsorId, sponsorName, sponsorBenefitInfo) {
             sponsorImage.src = url;
             sponsorImage.alt = "Sponsor Image";
 
-            const sponsorBenefitInfo = document.createElement("div");
-            sponsorBenefitInfo.classList.add('uta-sponsors__discount');
+            const sponsorDiscount = document.createElement("div");
+            sponsorDiscount.classList.add('uta-sponsors__discount');
+            sponsorDiscount.textContent = sponsorBenefitInfo;
+
+            const tooltiptext = document.createElement("div");
+            tooltiptext.classList.add('tooltiptext');
+
+            const tooltiptextTitle = document.createElement("div");
+            tooltiptextTitle.classList.add('tooltiptext-title');
+            tooltiptextTitle.textContent = sponsorName;
+
+            const tooltiptextBody = document.createElement("div");
+            tooltiptextBody.classList.add('tooltiptext-body');
+
+            const tooltiptextDiscount = document.createElement("div");
+            tooltiptextDiscount.classList.add('tooltiptext-discount');
+            tooltiptextDiscount.textContent = "Discount: " + sponsorBenefitInfo;
+
+            const tooltiptextContent = document.createElement("ul");
+            tooltiptextContent.classList.add('tooltiptext-content');
+
+            const tooltiptextContentItem = document.createElement("li");
+            tooltiptextContentItem.textContent = "Meet Fresh is THE BEST Taiwanese dessert place ever! They are best known for their hand-made dessert such as icy grass jelly and many more!";
+
+            tooltiptextContent.appendChild(tooltiptextContentItem);
+            tooltiptextBody.appendChild(tooltiptextDiscount);
+            tooltiptextBody.appendChild(tooltiptextContent);
+            tooltiptext.appendChild(tooltiptextTitle);
+            tooltiptext.appendChild(tooltiptextBody);
+            sponsor.appendChild(sponsorImage);
+            sponsor.appendChild(sponsorDiscount);
+            sponsor.appendChild(tooltiptext);
+
+            sponsorsContainer.append(sponsor);
         }
         
     } catch (error) {
-        console.error("Error loading member picture:", error);
+        console.error("Error loading sponsors:", error);
     }
 }
 
 async function reloadData() {
     // create database reference
-    const dbRef = ref(database, 'boardMembers/members');
+    const dbRef = ref(database, 'sponsors/current');
     const snapshot = await get(dbRef);
   
     if (snapshot.exists()) {
         // retrieve data
-        const membersArray = [];
+        const sponsorsArray = [];
 
         snapshot.forEach((positionSnap) => {
-            const membersInfo = positionSnap.val();
-            // sort data by created date
-            for (const memberId in membersInfo) {
-                const member = membersInfo[memberId];
-                member.createdAt = new Date(member.createdAt)
-                membersArray.push(member);
-            }
+            const sponsor = positionSnap.val();
+            sponsor.createdAt = new Date(sponsor.createdAt)
+            sponsorsArray.push(sponsor);
         })
 
-        membersArray.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+        sponsorsArray.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
 
         // iterate through each data and call the helper function
-        for (const member of membersArray) {
-            await addMemberToHtml(member.id, member.role, member.name);
+        for (const sponsor of sponsorsArray) {
+            await addSponsorToHtml(sponsor.id, sponsor.name, sponsor.benefitInfo);
         }
     }
 }
