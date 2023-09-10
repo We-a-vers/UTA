@@ -225,6 +225,7 @@ const sponsorImageFile = document.getElementById('sponsor-image-file');
 const sponsorImageUpload = document.getElementById('sponsor-image-upload');
 const sponsorName = document.getElementById('sponsor-name');
 const sponsorBenefitInfo = document.getElementById('sponsor-benefit-info');
+const sponsorDescription = document.getElementById('sponsor-description');
 const sponsorsSection = document.querySelector("#show-img");
 
 // open the modal by clicking the plus icon
@@ -237,6 +238,7 @@ closeModal.addEventListener('click', () => {
     modal.close();
     sponsorName.value = "";
     sponsorBenefitInfo.value = "";
+    sponsorDescription.value = "";
     sponsorImageFile.value = null;
     sponsorImage.src = "/source/assets/placeholder-image.png";
 })
@@ -272,6 +274,7 @@ modalForm.addEventListener("submit", async (e) => {
     const sponsorImageFileValue = sponsorImageFile.files[0];
     const sponsorNameValue = sponsorName.value;
     const sponsorBenefitInfoValue = sponsorBenefitInfo.value;
+    const sponsorDescriptionValue = sponsorDescription.value;
   
     // generate firebase database reference
     const sponsorsRef = ref(database, 'sponsors/current');
@@ -285,6 +288,7 @@ modalForm.addEventListener("submit", async (e) => {
         id: newSponsorsId,
         name: sponsorNameValue,
         benefitInfo: sponsorBenefitInfoValue,
+        description: sponsorDescriptionValue,
         createdAt: date.toUTCString(),
     };
 
@@ -308,6 +312,7 @@ modalForm.addEventListener("submit", async (e) => {
                 modal.close();
                 sponsorName.value = "";
                 sponsorBenefitInfo.value = "";
+                sponsorDescription.value = "";
                 sponsorImageFile.value = null;
                 sponsorImage.src = "/source/assets/placeholder-image.png";
                 addSponsorToHtml(sponsorsData.id);

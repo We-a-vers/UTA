@@ -51,7 +51,7 @@ window.addEventListener("load", async () => {
 
 const sponsorsContainer = document.querySelector('.uta-sponsors__logos');
 // helper function that creates the corresponding html elements and append them to the section defined above
-async function addSponsorToHtml(sponsorId, sponsorName, sponsorBenefitInfo) {
+async function addSponsorToHtml(sponsorId, sponsorName, sponsorBenefitInfo, sponsorDescription) {
     try {
         // get storage reference with path
         const sRef = storageRef(storage, `sponsors/current/${sponsorId}`);
@@ -93,7 +93,7 @@ async function addSponsorToHtml(sponsorId, sponsorName, sponsorBenefitInfo) {
             tooltiptextContent.classList.add('tooltiptext-content');
 
             const tooltiptextContentItem = document.createElement("li");
-            tooltiptextContentItem.textContent = "Meet Fresh is THE BEST Taiwanese dessert place ever! They are best known for their hand-made dessert such as icy grass jelly and many more!";
+            tooltiptextContentItem.textContent = sponsorDescription;
 
             tooltiptextContent.appendChild(tooltiptextContentItem);
             tooltiptextBody.appendChild(tooltiptextDiscount);
@@ -131,7 +131,7 @@ async function reloadData() {
 
         // iterate through each data and call the helper function
         for (const sponsor of sponsorsArray) {
-            await addSponsorToHtml(sponsor.id, sponsor.name, sponsor.benefitInfo);
+            await addSponsorToHtml(sponsor.id, sponsor.name, sponsor.benefitInfo, sponsor.description);
         }
     }
 }
