@@ -66,6 +66,9 @@ async function addSponsorToHtml(sponsorId, sponsorName, sponsorBenefitInfo, spon
             sponsor.id = sponsorId;
 
             sponsorsContainer.appendChild(sponsor);
+            
+            const sponsorImageWrapper = document.createElement("div");
+            sponsorImageWrapper.classList.add('tooltip-image-wrapper');
 
             const sponsorImage = document.createElement("img");
             sponsorImage.src = url;
@@ -95,12 +98,13 @@ async function addSponsorToHtml(sponsorId, sponsorName, sponsorBenefitInfo, spon
             const tooltiptextContentItem = document.createElement("li");
             tooltiptextContentItem.textContent = sponsorDescription;
 
+            sponsorImageWrapper.appendChild(sponsorImage);
             tooltiptextContent.appendChild(tooltiptextContentItem);
             tooltiptextBody.appendChild(tooltiptextDiscount);
             tooltiptextBody.appendChild(tooltiptextContent);
             tooltiptext.appendChild(tooltiptextTitle);
             tooltiptext.appendChild(tooltiptextBody);
-            sponsor.appendChild(sponsorImage);
+            sponsor.appendChild(sponsorImageWrapper);
             sponsor.appendChild(sponsorDiscount);
             sponsor.appendChild(tooltiptext);
 

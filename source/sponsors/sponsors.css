@@ -140,14 +140,6 @@
   grid-gap: 30px; /* Optional: Add spacing between images */
 }
 
-.uta-sponsors__logo-wrapper{
-  text-align: center;
-}
-
-.uta-sponsors__logo-wrapper img {
-  max-width: 100%;
-}
-
 .uta-sponsors__discount {
   margin-top: 5px;
   font-family: Open Sans;
@@ -221,22 +213,35 @@ button{
   padding: 0.75rem 0.85rem 0.75rem 0.85rem;
 }
 
+.uta-sponsors__logo-wrapper{
+  text-align: center;
+  width: 19.1875rem;
+  height: 22rem;
+}
+
+.tooltip-image-wrapper {
+  height: 18rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.uta-sponsors__logo-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+}
 
 .uta-sponsors__logo-wrapper .tooltiptext {
   display: none;
+  position: relative;
+  top: -100%;
   width: 19.1875rem;
-  height: 17.625rem;
+  height: 22rem;
   background-color: #1D3159;
-  /* color: #fff; */
   text-align: center;
   border-radius: 10px;
-  padding: 5px 0;
-
-  /* Position the tooltip */
-  position: relative; 
-  z-index: 1;  
-  transform: translateY(-100%);
-
+  padding: 5px 10px 0px 0px;
+  z-index: 1;
 }
 
 .uta-sponsors__logo-wrapper:hover .tooltiptext {

@@ -53,6 +53,7 @@ class NavbarComponent extends HTMLElement{
         align-items: center;
         justify-content: space-between;
         filter: drop-shadow(0px 4px 4px rgba(29, 49, 89, 0.1));
+        z-index: 1000;
         }
         
         .navbar h1 {
