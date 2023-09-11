@@ -236,11 +236,11 @@ button{
   position: relative;
   top: -100%;
   width: 19.1875rem;
-  height: 22rem;
+  min-height: 22rem;
   background-color: #1D3159;
   text-align: center;
   border-radius: 10px;
-  padding: 5px 10px 0px 0px;
+  padding: 5px 10px 5px 0px;
   z-index: 1;
 }
 
@@ -256,12 +256,10 @@ button{
   font-weight: 700;
   line-height: normal;
 
-  width: 9.625rem;
-  height: 1.5625rem;
   flex-shrink: 0;
   margin-top: 3.5rem;
   margin-left: 1.63rem;
-  margin-right: 7.94rem;
+  margin-right: 1.63rem;
   margin-bottom: 1rem;
 }
 
@@ -275,9 +273,7 @@ button{
 }
 
 .uta-sponsors__logo-wrapper .tooltiptext-discount{
-  width: 9.625rem;
-  height: 1.5625rem;
-  margin-left: 1.6rem;
+  margin: 0rem 1.6rem;
 }
 
 .tooltiptext-content{
