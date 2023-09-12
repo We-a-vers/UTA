@@ -261,6 +261,7 @@ button{
   margin-left: 1.63rem;
   margin-right: 1.63rem;
   margin-bottom: 1rem;
+  text-align: left;
 }
 
 .uta-sponsors__logo-wrapper .tooltiptext-body{
@@ -274,6 +275,7 @@ button{
 
 .uta-sponsors__logo-wrapper .tooltiptext-discount{
   margin: 0rem 1.6rem;
+  text-align: left;
 }
 
 .tooltiptext-content{
