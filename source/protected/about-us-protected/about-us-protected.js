@@ -116,7 +116,7 @@ historyHeaderForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     // get the image file and url
-    const historyImageUploadFileValue = uploadAboutUsFile.files[0];
+    const historyImageUploadFileValue = uploadHistoryFile.files[0];
     const hDescriptionValue = hDescriptionInput.value;
   
     // generate firebase database reference
@@ -135,7 +135,7 @@ historyHeaderForm.addEventListener("submit", async (e) => {
         // prepare for upload
         const fileURL2 = URL.createObjectURL(historyImageUploadFileValue);
         const response2 = await fetch(fileURL2);
-        const blob2 = await response2.blob2();
+        const blob2 = await response2.blob();
         const filePath2 = "aboutUs/history/HeaderPicture.png";
         const sRef2 = storageRef(storage, filePath2);
 
@@ -166,10 +166,13 @@ window.addEventListener("load", async () => {
     // create database reference
     const dbRef = ref(database, 'memberHeader');
     const snapshot = await get(dbRef);
+
+    const dbRef2 = ref(database, 'historyHeader');
+    const snapshot2 = await get(dbRef2);
   
     if (snapshot.exists()) {
         // retrieve datam
-        const memberHeader = snapshot.val();
+        const memberHeader = snapshot2.val();
 
         const sRef = storageRef(storage, "aboutUs/member/HeaderPicture.png");
         const sRef2 = storageRef(storage, "aboutUs/history/HeaderPicture.png");
