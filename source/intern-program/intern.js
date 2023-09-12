@@ -42,7 +42,7 @@ window.addEventListener("load", async () => {
     }
 });
 
-const pastProjectsContainer = document.querySelector('#past-projects-container');
+const pastProjectsContainer = document.querySelector('#past-projects');
 // helper function that creates the corresponding html elements and append them to the section defined above
 async function addProjectToHtml(projectId, projectName) {
     try {
@@ -51,23 +51,12 @@ async function addProjectToHtml(projectId, projectName) {
         const url = await getDownloadURL(sRef);
     
         // create element, add class, add style
-        let project = pastProjectsContainer.querySelector(`#${projectId}`)
-
-        if (!project) {
-            project = document.createElement("div");
-            project.classList.add('past-projects');
-            project.id = projectId;
-
-            pastProjectsContainer.appendChild(project);
-
-            const projectRef = document.createElement("a");
-            projectRef.src = projectName;
-
             const projectImage = document.createElement("img");
             projectImage.src = url;
             projectImage.alt = projectId;
-        }
-        
+            
+            pastProjectsContainer.appendChild(projectImage)
+
     } catch (error) {
         console.error("Error loading past projects picture:", error);
     }
@@ -84,12 +73,10 @@ async function reloadData() {
 
         snapshot.forEach((positionSnap) => {
             const projectsInfo = positionSnap.val();
+
             // sort data by created date
-            for (const projectId in projectsInfo) {
-                const project = projectsInfo[projectId];
-                project.createdAt = new Date(project.createdAt)
-                projectsArray.push(project);
-            }
+            projectsInfo.createdAt = new Date(projectsInfo.createdAt)
+            projectsArray.push(projectsInfo);
         })
 
         projectsArray.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));

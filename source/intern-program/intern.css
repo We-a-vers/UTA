@@ -129,9 +129,12 @@ body {
 }
 
 #past-projects-container{
-  justify-content: center;
-  align-items: start;
   margin: 10rem;
+}
+
+#how-image{
+  display: block;
+  margin: auto;
 }
 
 #past-projects-container h2{
@@ -148,12 +151,15 @@ body {
   color: #3C4F75;
 
 }
-.past-projects{
+#past-projects{
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
   justify-content: space-evenly;
+  gap: 2rem;
 }
 
 .past-projects img{
-  width: 30%; 
+  width: 30%
 }
