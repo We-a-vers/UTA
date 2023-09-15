@@ -19,18 +19,10 @@
 
     <div class="header">
         <h1>About Us</h1>
-        <p>Learn about our history, mission, and values we hold at UTA</p>
-        <img src="/source/assets/about-us-image.png" alt="">
+        <p id="headerText"></p>
+        <img id="header-image" src="/source/assets/placeholder-image.png" alt="">
     </div>
     <div class="content">
-        <div class="history">
-            <h2>Our History</h2>
-
-            <div>
-                <img src="/source/assets/placeholder-image.png" alt="">
-                <h4>UTA was established in 19xx with the vision to create an inclusive environment for Taiwanese students. UTA aims to provide a sense of home for overseas Taiwanese students and a platform for those interested in learning about Taiwan.</h4>
-            </div>
-        </div>
 
         <div class="core-values">
             <h2>Core Values</h2>
@@ -50,6 +42,15 @@
                     <img src="/source/assets/about-us-icon-3.png" alt="">
                     <p>Inclusivity</p>
                 </div>
+            </div>
+        </div>
+
+        <div class="history">
+            <h2>Our History</h2>
+
+            <div>
+                <img id="history-image" src="/source/assets/placeholder-image.png" alt="">
+                <h4 id="historyText"></h4>
             </div>
         </div>
 
@@ -92,6 +93,7 @@
     <footer-component></footer-component>
 
     <script src="../navbar/navbar.js"></script>
+    <script type="module" src="about-us.js"></script>
     
 </body>
 </html>

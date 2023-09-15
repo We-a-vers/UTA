@@ -19,6 +19,20 @@
     margin-bottom: 0;
 }
 
+#header-image{
+    width: 71.25rem;
+    height: 36rem;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#history-image{
+    width: 28.4375rem;
+    height: 37.9375rem;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
 .header > p {
     font-family: 'Open Sans';
     font-style: normal;
@@ -59,9 +73,9 @@
 
 .history div{
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    gap: 5rem;
+    gap: 8rem;
     text-align: left;
     padding-top: 3rem;
 }
