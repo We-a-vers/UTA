@@ -12,3 +12,25 @@ closeModal.addEventListener('click', () =>{
     loginForm.reset()
     modal.close()
 })
+
+
+loginForm.addEventListener('submit', async (event) =>{
+
+    event.preventDefault();
+
+    const password = document.querySelector('#password').value
+    
+    const response = await fetch('http://localhost:3000/login', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({password})
+    })
+
+    if (response.ok) {
+        // Redirect the page to the desired URL
+        window.location.replace("http://127.0.0.1:5500/source/protected/board-members-protected/board-members-protected.html");
+    } else {
+        // Handle the error, e.g., show an error message
+        console.error('Authentication failed:', response.statusText);
+    }
+})
