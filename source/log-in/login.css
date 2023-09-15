@@ -1,0 +1,62 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
+/* layout */
+:root {
+  --primary: #1aac83;
+  --error: #e7195a;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    font-family: "Poppins";
+}
+
+input {
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius:px;
+    box-sizing: border-box;
+  }
+
+  form button {
+    background: var(--primary);
+    border: 0;
+    color: #fff;
+    padding: 10px;
+    font-family: "Poppins";
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+
+
+.modal {
+    padding: 4rem 5rem 2.75rem 5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--dark-gray-300, #D5DAE4);    
+    margin: auto;
+}
+
+.modal::backdrop {
+    background-color: black;
+    opacity: 0.4;
+}
+
+.modal > span {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    background: #f1f1f1;
+    padding: 6px;
+    border-radius: 50%;
+    color: #333;
+}
