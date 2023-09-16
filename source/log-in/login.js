@@ -2,7 +2,7 @@ const loginButton = document.querySelector("navbar-component").shadowRoot.queryS
 const modal = document.querySelector('.modal')
 const closeModal = document.querySelector('.material-symbols-outlined')
 const loginForm = document.querySelector('.login-form')
-const user = {auth: false}
+const user = {auth: ''}
 
 
 // open the modal by clicking the plus icon
@@ -24,9 +24,9 @@ loginForm.addEventListener('submit', (e) =>{
     if(password === '12345'){
         console.log('PASS')
 
-        user.auth = true
+        user.auth = `@aT3'h8GN?V4xaKGP[X0}&Kfx6ID1-`
 
         localStorage.setItem('user', JSON.stringify(user))
-        window.location.replace("http://127.0.0.1:5500/source/protected/board-members-protected/board-members-protected.html");
+        window.location.replace("/source/protected/board-members-protected/board-members-protected.html");
     }
 })

@@ -1,8 +1,8 @@
 const requireAuth = () => {
-    const auth = JSON.parse(localStorage.getItem('user'))
+    const user = JSON.parse(localStorage.getItem('user'))
 
-    if(!auth){
-        window.location.replace('http://127.0.0.1:5500/source/board-member/board-member.html')
+    if(!user.auth === `@aT3'h8GN?V4xaKGP[X0}&Kfx6ID1-`){
+        window.location.replace('./source/board-member/board-member.html')
     }
     else{
         console.log('PASS')
