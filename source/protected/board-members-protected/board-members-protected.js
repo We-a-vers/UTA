@@ -1,3 +1,17 @@
+const requireAuth = () => {
+    const auth = JSON.parse(localStorage.getItem('user'))
+
+    if(!auth){
+        window.location.replace('http://127.0.0.1:5500/source/board-member/board-member.html')
+    }
+    else{
+        console.log('PASS')
+    }
+}
+
+requireAuth()
+
+
 // import everything from firebase.js
 import { firebase, database, ref, set, get, push, remove, storage, storageRef, uploadBytes, getDownloadURL, deleteObject } from '../../firebase/firebase.js';
 
