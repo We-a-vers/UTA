@@ -12,9 +12,12 @@ body{
 }
 
 .header {
+	position: relative;
+	margin: auto;
 	color: #fff;
-	margin: 10rem 10.5rem;
 	border: 1px solid;
+	max-width: 70rem;
+	margin-top: 7rem;
 }
 
 .header h1{
@@ -35,6 +38,7 @@ body{
 	font-style: normal;
 	font-weight: 500;
 	line-height: normal;
+	text-align: center;
 }
 
 .header h3{
@@ -106,8 +110,12 @@ body{
 
 #header-img{
 	float: right;
-	margin-top: 2rem;
-	margin-left: 2rem;
+	margin-top: 2.5rem;
+	margin-right: 2.5rem;
+	width: 32.0625rem;
+	height: 22.875rem;
+	object-fit: cover;
+	border-radius: 10px;
 }
 
 #join{
@@ -120,6 +128,10 @@ body{
 	background: var(--light-gold-50, #F6F4F0);
 }
 
+#header-description{
+	min-height: 10.25rem;
+	max-width: 32rem;
+}
 
 #stats{
 	font-weight: bold;
@@ -133,7 +145,7 @@ body{
 }
 
 #upcoming-events{
-	margin-top: 5%;
+	margin-top: 9rem;
 }
 
 .events{

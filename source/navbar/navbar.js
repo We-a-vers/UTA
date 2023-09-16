@@ -120,7 +120,9 @@ class NavbarComponent extends HTMLElement{
         }
         
         .navbar-container {
+            position: fixed;
             margin-bottom: 5.25rem;
+            z-index: 1000;
         }
         
         #home-button{

@@ -9,9 +9,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
-    <script src="./source/navbar/navbar.js"></script>
-    <script src="./source/footer/footer.js"></script>
-    <script src="/source/home/home.js"></script>
 
     <link rel="stylesheet" type="text/css" href="./source/navbar/navbar.css">
 </head>
@@ -22,15 +19,13 @@
     <!-- Header -->
     <div class="header">
             
-        <h1>United Taiwanese Association (UTA) at UC San Diego <img id="header-img" src="source/assets/home-header-img.png" alt="home pic"></h1>
-        <h3>We aim to provide a sense of home for oversease Taiwanese students and a platform for those interested in learning about Taiwan.</h2>
+        <h1>United Taiwanese Association (UTA) at UC San Diego <img id="header-img" src="source/assets/placeholder-image.png" alt="home pic"></h1>
+        <h3 id="header-description"></h3>
 
         <section id="header-buttons">
             <button id="learn">Learn More</button>
             <button id="explore">Explore Event <img src="source/assets/home-arrow-logo.png" alt=""></button>
         </section>
-        
-        
     </div>
 
     <!-- Content -->
@@ -44,7 +39,7 @@
         
         </section>
         <section id="upcoming-events">
-            <h2>Upcoming Events</h2>
+            <h2 class="title-text">Upcoming Events</h2>
             <div class="events">
                 <div>
                     <img src="source/assets/placeholder-image.png" alt="home pic">
@@ -67,7 +62,7 @@
             </div>
         </section>
         <section id="sponsors">
-            <h2>Our Sponsors</h2>
+            <h2 class="title-text">Our Sponsors</h2>
 
             <div class="sponsor-gallery">
                 <img class="sponsor-image" src="/source/assets/placeholder-image.png" alt="">
@@ -89,6 +84,10 @@
     </section>
 
     <footer-component></footer-component>
+
+    <script src="./source/navbar/navbar.js"></script>
+    <script src="./source/footer/footer.js"></script>
+    <script type="module" src="/source/home/home.js"></script>
 </body>
 </html>
 
