@@ -1,16 +1,19 @@
-const requireAuth = () => {
-    const user = JSON.parse(localStorage.getItem('user'))
 
-    if(!user.auth === `@aT3'h8GN?V4xaKGP[X0}&Kfx6ID1-`){
-        window.location.replace('./source/board-member/board-member.html')
-    }
-    else{
-        console.log('PASS')
-    }
-}
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
 
-requireAuth()
-
+const auth = getAuth();
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/auth.user
+    const uid = user.uid;
+    // ...
+  } else {
+    // User is signed out
+    // ...
+    window.location.replace('/')
+  }
+});
 
 // import everything from firebase.js
 import { firebase, database, ref, set, get, push, remove, storage, storageRef, uploadBytes, getDownloadURL, deleteObject } from '../../firebase/firebase.js';
