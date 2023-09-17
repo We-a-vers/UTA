@@ -54,6 +54,8 @@ async function addProjectToHtml(projectId, projectName) {
             const projectImage = document.createElement("img");
             projectImage.src = url;
             projectImage.alt = projectId;
+            projectImage.width = 300;
+            projectImage.height = 300;
             
             pastProjectsContainer.appendChild(projectImage)
 
