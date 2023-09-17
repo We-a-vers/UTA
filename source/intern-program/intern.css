@@ -161,5 +161,6 @@ body {
 }
 
 .past-projects img{
-  width: 30%; 
+  /* width: 30%;  */
+  object-fit: cover;
 }
