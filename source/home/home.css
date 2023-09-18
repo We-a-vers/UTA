@@ -149,6 +149,8 @@ body{
 	font-style: normal;
 	font-weight: 400;
 	line-height: normal;
+
+	cursor: pointer;
 }
 
 #stats{
@@ -247,6 +249,8 @@ body{
 	text-decoration: underline;
 	text-underline-offset: 0.6rem;
 	text-decoration-thickness: 1px;
+
+	cursor: pointer;
 }
 
 #sponsors{
@@ -271,6 +275,8 @@ body{
 	text-decoration: underline;
 	text-underline-offset: 0.6rem;
 	text-decoration-thickness: 1px;
+	
+	cursor: pointer;
 }
 
 main {
@@ -286,10 +292,9 @@ main {
 }
 
 .sponsor-image{
-	width: 21.25rem;
-	height: 5.1875rem;
+	width: 19.1875rem;
+	height: 17.625rem;
 	object-fit: cover;
-	border: 1px solid;
 }
 
 #upcoming-events-image{
