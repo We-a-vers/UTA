@@ -10,7 +10,7 @@ logoutButton.addEventListener('click', () => {
     .then(() => {
       // User has been successfully signed out
       // Redirect to the login page or perform any other necessary actions
-      window.location.replace = '/'; // Replace with the URL of your login page
+      window.location.replace('/') // Replace with the URL of your login page
     })
     .catch((error) => {
       console.error('Error during logout:', error);

@@ -5,8 +5,7 @@ const loginButton = document.querySelector("navbar-component").shadowRoot.queryS
 const modal = document.querySelector('.modal')
 const closeModal = document.querySelector('.material-symbols-outlined')
 const loginForm = document.querySelector('.login-form')
-const user = {auth: ''}
-
+const errorText = document.querySelector('.error')
 
 // open the modal by clicking the plus icon
 loginButton.addEventListener('click', () => {
@@ -15,39 +14,29 @@ loginButton.addEventListener('click', () => {
 
 closeModal.addEventListener('click', () =>{
     loginForm.reset()
+    errorText.style.display = 'none'
     modal.close()
+    
 })
 
 loginForm.addEventListener('submit', (e) =>{
 
     e.preventDefault()
 
-    // const password = document.querySelector('#password').value
-    
-    // if(password === '12345'){
-    //     console.log('PASS')
-
-    //     user.auth = `@aT3'h8GN?V4xaKGP[X0}&Kfx6ID1-`
-
-    //     localStorage.setItem('user', JSON.stringify(user))
-    //     window.location.replace("/source/protected/board-members-protected/board-members-protected.html");
-    // }
-
-    const email = document.querySelector('#email').value
-    const password = document.querySelector('#password').value
+    const email = document.querySelector('#email')
+    const password = document.querySelector('#password')
 
 
     const auth = getAuth();
-        signInWithEmailAndPassword(auth, email, password)
+        signInWithEmailAndPassword(auth, email.value, password.value)
         .then((userCredential) => {
             // Signed in 
             const user = userCredential.user;
-            console.log(user.accessToken)
-            window.location.replace('/source/protected/board-members-protected/board-members-protected.html')
+            window.location.replace('/source/protected/home-protected/home-protected.html')
             // ...
         })
         .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
+            
+            errorText.style.display = 'block'
     });
 })

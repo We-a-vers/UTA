@@ -1,8 +1,8 @@
-<!-- NavBar thing -->
 <!DOCTYPE html>
 <html lang="en">
 <head>    
     <link rel="stylesheet" href="sponsors.css">
+    <link rel="stylesheet" href="/source/log-in/login.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,12 +11,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;700&family=Noto+Sans:wght@400;600&family=Open+Sans:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Open+Sans:ital,wght@0,400;1,700&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
     <title>Sponsors</title>
 
-    <script src="./../footer/footer.js"></script>
-    <script src="../navbar/navbar.js"></script>
-
-    <script type="module" src="./sponsors.js"></script>
 </head>
 <body>
 
@@ -68,8 +66,28 @@
         </div>
 
     </div>
+
+
+    <dialog class="modal">
+
+        <span class="material-symbols-outlined">Close</span>
+
+        <form class="login-form">
+            <label>Email</label>
+            <input id="email" type="email" required>
+            <label>Password</label>
+            <input id="password" type="password" required>
+            <p class="error">Incorrect email or password</p>
+            <button type="submit">Submit</button>
+        </form>
+    </dialog>
+
     <footer-component></footer-component>
       
+    <script src="./../footer/footer.js"></script>
+    <script src="../navbar/navbar.js"></script>
+    <script type="module" src="./sponsors.js"></script>
+    <script type="module" src="/source/log-in/login.js"></script>
 </body>
 </html>
 

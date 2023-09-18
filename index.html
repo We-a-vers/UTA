@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>UTA Website</title>
 	<link rel="stylesheet" href="source/home/home.css">
+    <link rel="stylesheet" href="source/log-in/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     <link rel="stylesheet" type="text/css" href="./source/navbar/navbar.css">
 </head>
@@ -74,11 +76,26 @@
         </section>
     </section>
 
+    <dialog class="modal">
+
+        <span class="material-symbols-outlined">Close</span>
+
+        <form class="login-form">
+            <label>Email</label>
+            <input id="email" type="email" required>
+            <label>Password</label>
+            <input id="password" type="password" required>
+            <p class="error">Incorrect email or password</p>
+            <button type="submit">Submit</button>
+        </form>
+    </dialog>
+
     <footer-component></footer-component>
 
     <script src="./source/navbar/navbar.js"></script>
     <script src="./source/footer/footer.js"></script>
     <script type="module" src="/source/home/home.js"></script>
+    <script type="module" src="/source/log-in/login.js"></script>
 </body>
 </html>
 
