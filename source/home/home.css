@@ -84,6 +84,7 @@ body{
 
 	/* Dark Gray/0 */
 	color: #FFFFFF;
+	cursor: pointer;
 }
 
 #explore{
@@ -101,6 +102,7 @@ body{
 	font-size: 24px;
 	line-height: 33px;
 	color: #645841;
+	cursor: pointer;
 }
 
 #explore > img{
