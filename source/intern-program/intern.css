@@ -12,7 +12,8 @@ body {
     flex-direction: row;
     /* border: 2px solid; */
     justify-content: center;
-    align-items: start;
+    align-items: center;
+    gap: 1.25rem;
     margin: 10rem;
  }
 
@@ -31,7 +32,6 @@ body {
   color: #172940;
   text-shadow: 0px 12px 16px rgba(16, 24, 40, 0.08), 0px 4px 6px rgba(16, 24, 40, 0.03);
 }
-
 
 
 #join p{
@@ -68,26 +68,19 @@ body {
 
 }
 
-#join button{
+#join-button{
+  padding: 1.375rem 2.875rem 1.3125rem 3rem;
+  border-radius: 0.625rem;
+  background: var(--light-blue-400, #3C4F75);
 
-  
-  /* Light Blue/400 */
-  background: #3C4F75;
-  /* xl */
-  box-shadow: 0px 20px 24px -4px rgba(16, 24, 40, 0.08), 0px 8px 8px -4px rgba(16, 24, 40, 0.03);
-  border-radius: 10px;
-
+  color: white;
+  text-align: center;
   /* Primary CTA Text */
-  font-family: 'Open Sans';
+  font-family: Open Sans;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 33px;
-  /* identical to box height */
-  text-align: center;
-
-  /* Dark Gray/0 */
-  color: #FFFFFF;
+  line-height: normal;
 }
 
 #intro{
@@ -126,6 +119,18 @@ body {
 
   text-shadow: 0px 12px 16px rgba(16, 24, 40, 0.08), 0px 4px 6px rgba(16, 24, 40, 0.03);
 
+}
+
+#intern-program-image{
+  width: 43.3125rem;
+  height: 26.1875rem;
+  object-fit: cover;
+}
+
+#intern-program-description{
+  min-height: 12.75rem;
+  max-width: 25rem;
+  text-align: start;
 }
 
 #past-projects-container{
