@@ -10,9 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Open+Sans:ital,wght@0,400;1,700&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
     
     <title>UTA Internship Program</title>
-
-    <script src="./../footer/footer.js"></script>
-
 </head>
 <body>
     <navbar-component></navbar-component>
@@ -25,41 +22,29 @@
             <h2>
                 Join Us!
             </h2> 
-            <p>
-                Being a UTA intern can help you gain hands-on experience in a student organization. 
-                If you liked our event and want to be a part of our family, come apply!
-            </p>
-            <button>Check Back Early Spring</button>
+            <p id="intern-program-description"> </p>
+            <button id="join-button">Check Back Early Spring</button>
             
         </section>
     
-        <img id="join-image" src="/source/assets/placeholder-image.png" alt="">
+        <img id="intern-program-image" src="/source/assets/placeholder-image.png" alt="">
     
     </div>
 
         <section id="intro">
             <h2>How does it work?</h2>
             
-            <p>The UTA intern program is a quarter-long program that includes shadowship and team 
-                projects. We want to provide the best experience for each intern to learn.
-            </p>
-
-            <img id="join-image" src="/source/assets/placeholder-image.png" alt="">
+            <p id="how-description"></p>
+            <img id="how-image" src="/source/assets/placeholder-image.png" alt="">
                 
         </section>
 
 
-        <section id = 'show'>
+        <section id ="past-projects-container">
 
                 <h2>Past Projects</h2>
-                
-                <div class="show-image">
-                    
-                    <img src="/source/assets/placeholder-image.png" alt="">
-                    <img src="/source/assets/placeholder-image.png" alt="">
-                    <img src="/source/assets/placeholder-image.png" alt="">
 
-                </div>
+                <div id="past-projects"></div>
 
         </section>
 
@@ -67,6 +52,7 @@
     <footer-component></footer-component>
     
     <script src="/source/navbar/navbar.js"></script>
-   
+    <script src="./../footer/footer.js"></script>
+    <script type="module" src="./intern.js"></script>
 </body>
 </html>

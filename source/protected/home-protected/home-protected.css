@@ -35,6 +35,10 @@
     margin-top: 1rem;
 }
 
+#home-input-image{
+    border: 1px solid;   
+}
+
 .input-title, .signup-link {
     font-family: Noto Sans;
     font-size: 1.2rem;
@@ -129,7 +133,7 @@ button{
     background: var(--light-blue-400, #3C4F75);
 }
 
-#member-image{
+.home-image{
     display: flex;
     flex-direction: column;
     gap: 0.88rem;
