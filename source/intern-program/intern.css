@@ -33,9 +33,6 @@ body {
 }
 
 
-#join-image{
-  border: 1px solid;    
-}
 
 #join p{
   font-family: 'Open Sans';
@@ -131,13 +128,16 @@ body {
 
 }
 
-#show{
-  justify-content: center;
-  align-items: start;
+#past-projects-container{
   margin: 10rem;
 }
 
-#show h2{
+#how-image{
+  display: block;
+  margin: auto;
+}
+
+#past-projects-container h2{
 
   /* Header 2 */
   font-family: 'Lora';
@@ -151,13 +151,16 @@ body {
   color: #3C4F75;
 
 }
-.show-image{
+#past-projects{
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
   justify-content: space-evenly;
+  gap: 2rem;
 }
 
-.show-image img{
-  width: 30%; 
-  border: 1px solid;
+.past-projects img{
+  /* width: 30%;  */
+  object-fit: cover;
 }
