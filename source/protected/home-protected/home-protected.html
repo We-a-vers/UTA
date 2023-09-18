@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Password Protected</title>
 
     <link rel="stylesheet" type="text/css" href="./home-protected.css">
@@ -24,37 +26,33 @@
 
             <!-- This part is the first section -->
             
-            <div class="section">
+            <form class="section" id="home-header-form">
                 <div class="section-title">Home<span class="required">*</span></div>
 
                 <div class="description-input-container">
                     
-                    <div id="member-image">
+                    <div id="home-image">
 
-                        <img width="312" height="234" src="/source/protected/assets/placeholder-image.png" alt="">
+                        <img id="home-input-image" width="312" height="234" src="/source/assets/placeholder-image.png" alt="">
                         <div id="button-container">
-                            <button>Upload</button>
-                            <button style="color: red;">Delete Image</button>
+                            <button type="button" id="home-image-upload">Upload</button>
+                            <input type="file" id="home-image-file" accept="image/*" style="display: none;">
                         </div>
 
                     </div>
                     
                     <div>
                         <div class="input-title">Description under title<span class="required">*</span></div>
-                        <textarea id="description-input" placeholder="Insert text..." ></textarea>
+                        <textarea id="description-input" placeholder="Insert text..." required></textarea>
                         <div class="help-text">Enter the description under title</div>
         
-                        <div class="url-input-container">
-                            <div class="signup-link">Sign Up Link</div>
-                            <textarea id="url-input" placeholder="Enter URL" ></textarea>
-                        </div>
                     </div>
                 </div>
 
                 <!-- Save button for the first section -->
-                <button id="save-btn">Save</button>
+                <button type="submit" id="save-btn">Save</button>
 
-            </div>
+            </form>
 
         </div>
     </div>
