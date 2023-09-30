@@ -46,46 +46,46 @@ window.addEventListener("load", async () => {
 
 /* Past Events Section */
 
-async function addSponsorsToHtml(id){
+async function addEventsToHtml(id){
 
     try {
         // get storage reference with path
-        const sRef = storageRef(storage, `sponsors/current/${id}`);
+        const sRef = storageRef(storage, `events/past/${id}`);
         const url = await getDownloadURL(sRef);
 
         //<img class="sponsor-image" src="/source/assets/placeholder-image.png" alt="">
-        const imageContainer = document.querySelector('.sponsor-gallery')
+        const imageContainer = document.querySelector('.event-gallery')
         const image = document.createElement('img')
-        image.classList.add('sponsor-image')
+        image.classList.add('event-image')
         image.src = url
-        image.alt = 'Sponsor Image'
+        image.alt = 'Event Image'
         
         imageContainer.appendChild(image)
         
     } catch (error) {
-        console.error("Error loading member picture:", error);
+        console.error("Error loading event picture:", error);
     }
 }
 
 // helper function for reloading Data from sponsors
 async function reloadData() {
     // create database reference
-    const dbRef = ref(database, 'sponsors/current');
+    const dbRef = ref(database, 'events/past');
     const snapshot = await get(dbRef);
   
     if (snapshot.exists()) {
 
         // retrieve data
-        const sponsorsArray = [];
+        const eventsArray = [];
 
         let count = 0;
         snapshot.forEach((positionSnap) => {
 
             if(count < 6){
-                const sponsorsInfo = positionSnap.val();
+                const eventsInfo = positionSnap.val();
                 // sort data by created date
-                sponsorsInfo.createdAt = new Date(sponsorsInfo.createdAt);
-                sponsorsArray.push(sponsorsInfo);
+                eventsInfo.createdAt = new Date(eventsInfo.createdAt);
+                eventsArray.push(eventsInfo);
 
                 count++;
             }
@@ -95,11 +95,11 @@ async function reloadData() {
 
         })
 
-        sponsorsArray.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+        eventsArray.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
 
         // iterate through each data and call the helper function
-        for (const sponsor of sponsorsArray) {
-            await addSponsorsToHtml(sponsor.id);
+        for (const event of eventsArray) {
+            await addEventsToHtml(event.id);
         }
     }
 }
