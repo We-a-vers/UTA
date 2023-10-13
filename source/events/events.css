@@ -2,7 +2,7 @@ header{
   margin:5rem;
 }
 
-.Upcoming__title {
+.upcoming-events-title {
   font-family: "Lora";
   font-style: normal;
   font-weight: 500;
@@ -23,7 +23,7 @@ header{
   flex-grow: 0;
 }
 
-.Upcoming__days {
+.upcoming-events-daysleft {
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 700;
@@ -48,7 +48,7 @@ header{
   flex-grow: 0;
 }
 
-.Upcoming__date {
+.upcoming-events-date {
   /* Header 3 */
 
   font-family: "Lora";
@@ -69,7 +69,7 @@ header{
   flex-grow: 0;
 }
 
-.Upcoming__img {
+.upcoming-events-image {
   width: 400px;
   height: 400px;
   margin: 4rem;
@@ -78,7 +78,7 @@ header{
   background-size: cover;
 }
 
-#Upcoming__descriptions {
+#upcoming-events-descriptions {
   margin: 4rem;
   margin-left: 0;
   width: 400px;
@@ -89,7 +89,7 @@ header{
   flex-grow: 0;
 }
 
-#Upcoming__descriptions h1 {
+#upcoming-events-descriptions h1 {
   font-family: 'Lora';
   font-style: normal;
   font-weight: 600;
@@ -100,7 +100,7 @@ header{
   color: #000000;
 }
 
-#Upcoming__descriptions h3 {
+#upcoming-events-descriptions h3 {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
@@ -110,7 +110,7 @@ header{
   color: #000000;
 }
 
-#Upcoming__descriptions p {
+#upcoming-events-descriptions p {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
@@ -122,7 +122,7 @@ header{
   color: #000000;
 }
 
-.Description__notes {
+.description_notes {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
@@ -135,7 +135,7 @@ header{
   flex-grow: 1;
 }
 
-#Upcoming__descriptions button {
+#upcoming-events-descriptions button {
   box-sizing: border-box;
 
   /* Auto layout */
@@ -185,7 +185,7 @@ header{
   flex-grow: 1;
 }
 
-.middle__background {
+.middle-background {
   
   padding: 20px 370px;
   /* Light Gold/50 */
@@ -234,7 +234,7 @@ body {
 }
 
 /* Entire past events section */
-.past__container {
+.past-container {
   margin: 5rem;
   display: flex;
   flex-wrap: wrap;
@@ -243,25 +243,25 @@ body {
 }
 
 /* View Event Gallery hover */
-.past__title {
+.past-title {
   width: 100%;
   margin-top: 3rem;
 }
 
 /* Past Events title */
-.past__title h2 {
+.past-title h2 {
   display: inline;
   font-size: 2rem;
   font-weight: bold;
 }
 
 /* 2022-23 */
-.past__title h3 {
+.past-title h3 {
   margin-top: 3rem;
 }
 
 /* View Event Gallery */
-.past__title button {
+.past-title button {
   text-align: right;
   display: inline;
   border: none;
@@ -273,6 +273,6 @@ body {
 }
 
 /* View Event Gallery hover */
-.past__title button:hover {
+.past-title button:hover {
   color: #007bff;
 }

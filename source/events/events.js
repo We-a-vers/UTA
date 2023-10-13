@@ -1,14 +1,14 @@
 // import everything from firebase.js
 import { firebase, database, ref, set, get, push, remove, storage, storageRef, uploadBytes, getDownloadURL, deleteObject } from '../firebase/firebase.js';
 
-// grab header image and header text
-const headerImage = document.querySelector('#header-img')
-const headerText = document.querySelector('#header-text')
+// // grab header image and header text
+// const headerImage = document.querySelector('#header-img')
+// const headerText = document.querySelector('#header-text')
 
 // window load listener for header
 window.addEventListener("load", async () => {
     // create database reference
-    const dbRef = ref(database, 'homepage/homeHeader');
+    const dbRef = ref(database, 'home/homeHeader');
     const snapshot = await get(dbRef);
   
     if (snapshot.exists()) {
@@ -24,11 +24,12 @@ window.addEventListener("load", async () => {
     }
 });
 
+/* Upcoming Event Section */
 
 const upComingEventImage = document.querySelector('#upcoming-events-image')
 const upComingEventDate = document.querySelector('#upcoming-events-date')
 const upComingEventTitle = document.querySelector('#upcoming-events-title')
-const upComingEventDescription = document.querySelector('#upcoming-events-description')
+const upComingEventDescription = document.querySelector('#upcoming-events-descriptions')
 
 // window load listener for upcoming event
 window.addEventListener("load", async () => {
@@ -65,47 +66,47 @@ window.addEventListener("load", async () => {
     }
 });
 
+/* Past Events Section */
 
-async function addSponsorsToHtml(id){
+async function addEventsToHtml(id){
 
     try {
         // get storage reference with path
-        const sRef = storageRef(storage, `sponsors/current/${id}`);
+        const sRef = storageRef(storage, `events/past/${id}`);
         const url = await getDownloadURL(sRef);
 
-        //<img class="sponsor-image" src="/source/assets/placeholder-image.png" alt="">
-        const imageContainer = document.querySelector('.sponsor-gallery')
+        const imageContainer = document.querySelector('.past-events')
         const image = document.createElement('img')
-        image.classList.add('sponsor-image')
+        image.classList.add('event-image')
         image.src = url
-        image.alt = 'Sponsor Image'
+        image.alt = 'Event Image'
         
         imageContainer.appendChild(image)
         
     } catch (error) {
-        console.error("Error loading member picture:", error);
+        console.error("Error loading event picture:", error);
     }
 }
 
-// helper function for reloading Data from sponsors
+// helper function for reloading data from events
 async function reloadData() {
     // create database reference
-    const dbRef = ref(database, 'sponsors/current');
+    const dbRef = ref(database, 'sponsors/past');
     const snapshot = await get(dbRef);
   
     if (snapshot.exists()) {
 
         // retrieve data
-        const sponsorsArray = [];
+        const eventsArray = [];
 
         let count = 0;
         snapshot.forEach((positionSnap) => {
 
             if(count < 6){
-                const sponsorsInfo = positionSnap.val();
+                const eventsInfo = positionSnap.val();
                 // sort data by created date
-                sponsorsInfo.createdAt = new Date(sponsorsInfo.createdAt);
-                sponsorsArray.push(sponsorsInfo);
+                eventsInfo.createdAt = new Date(eventsInfo.createdAt);
+                eventsArray.push(eventsInfo);
 
                 count++;
             }
@@ -115,11 +116,11 @@ async function reloadData() {
 
         })
 
-        sponsorsArray.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+        eventsArray.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
 
         // iterate through each data and call the helper function
-        for (const sponsor of sponsorsArray) {
-            await addSponsorsToHtml(sponsor.id);
+        for (const event of eventsArray) {
+            await addEventsToHtml(event.id);
         }
     }
 }
