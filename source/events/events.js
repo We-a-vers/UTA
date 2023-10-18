@@ -1,29 +1,6 @@
 // import everything from firebase.js
 import { firebase, database, ref, set, get, push, remove, storage, storageRef, uploadBytes, getDownloadURL, deleteObject } from '../firebase/firebase.js';
 
-// // grab header image and header text
-// const headerImage = document.querySelector('#header-img')
-// const headerText = document.querySelector('#header-text')
-
-// window load listener for header
-// window.addEventListener("load", async () => {
-//     // create database reference
-//     const dbRef = ref(database, 'home/homeHeader');
-//     const snapshot = await get(dbRef);
-  
-//     if (snapshot.exists()) {
-//         // retrieve data
-//         const homeHeader = snapshot.val();
-
-//         const sRef = storageRef(storage, "homeHeaderPicture.png");
-//         const imageUrl = await getDownloadURL(sRef);
-
-//         headerImage.src = imageUrl;
-//         headerImage.alt = 'Board Member Image';
-//         headerText.textContent = homeHeader.description;
-//     }
-// });
-
 /* Upcoming Event Section */
 
 const upcomingEventImage = document.getElementsByClassName('Upcoming__img')
@@ -41,12 +18,9 @@ window.addEventListener("load", async () => {
         // retrieve data
         const eventHeader = snapshot.val();
         const sRef = storageRef(storage, "events/eventHeaderPicture.png");
-        // console.log(`sRef: ${sRef}`);
         const imageUrl = await getDownloadURL(sRef);
-        // console.log(`Url: ${imageUrl}`);
+        
         upcomingEventImage[0].src = imageUrl;
-        // console.log(upcomingEventImage[0].src);
-
         upcomingEventImage[0].alt = 'Board Member Image';
         upcomingEventDate[0].textContent = eventHeader.date;
         upcomingEventTitle[0].textContent = eventHeader.title;
@@ -64,27 +38,24 @@ window.addEventListener("load", async () => {
 
             upcomingEventDescription.insertAdjacentElement('afterend', link)
         }
-        
     }
 });
 
 /* Past Events Section */
 
-async function addEventsToHtml(id){
+const pastEventsContainer = document.querySelector('.img-container');
+async function addEventsToHtml(eventTitle, eventId){
 
     try {
         // get storage reference with path
-        const sRef = storageRef(storage, `events/past/${id}`);
+        const sRef = storageRef(storage, `eventPictures/${eventTitle}/${eventId}.png`);
         const url = await getDownloadURL(sRef);
 
-        const imageContainer = document.querySelector('.past-events')
-        const image = document.createElement('img')
-        image.classList.add('event-image')
-        image.src = url
-        image.alt = 'Event Image'
+        const newPastEventCard = document.createElement('img');
+        newPastEventCard.src = url;
+        newPastEventCard.classList.add('event');
         
-        imageContainer.appendChild(image)
-        
+        pastEventsContainer.appendChild(newPastEventCard);
     } catch (error) {
         console.error("Error loading event picture:", error);
     }
@@ -93,36 +64,30 @@ async function addEventsToHtml(id){
 // helper function for reloading data from events
 async function reloadData() {
     // create database reference
-    const dbRef = ref(database, 'sponsors/past');
+    const dbRef = ref(database, 'events/pastEvents');
     const snapshot = await get(dbRef);
   
     if (snapshot.exists()) {
 
         // retrieve data
         const eventsArray = [];
-
         let count = 0;
+
+        // pushes each event into the eventsArray
         snapshot.forEach((positionSnap) => {
+            const eventsInfo = positionSnap.val();
 
-            if(count < 6){
-                const eventsInfo = positionSnap.val();
-                // sort data by created date
-                eventsInfo.createdAt = new Date(eventsInfo.createdAt);
-                eventsArray.push(eventsInfo);
-
-                count++;
+            for (const eventid in eventsInfo){
+                eventsArray.push(eventsInfo[eventid]);
             }
-            else{
-                return;
-            }
-
         })
 
-        eventsArray.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+        // sort data by created date
+        eventsArray.sort((a, b) => new Date(a.date) - new Date(b.date));
 
         // iterate through each data and call the helper function
         for (const event of eventsArray) {
-            await addEventsToHtml(event.id);
+            await addEventsToHtml(event.title, event.id);
         }
     }
 }

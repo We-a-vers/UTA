@@ -203,15 +203,10 @@ body {
 }
 
 .event {
-  width: 30%;
+  width: 18.75rem;
+  height: 18.75rem;
+  object-fit: cover;
   text-align: left;
-  margin-bottom: 20px;
-  margin-right: 2.5rem;
-}
-
-.event img {
-  width: 100%;
-  height: auto;
 }
 
 .event h3 {
@@ -275,4 +270,15 @@ body {
 /* View Event Gallery hover */
 .past__title button:hover {
   color: #007bff;
+}
+
+.img-container{
+
+  position: relative;
+  margin:auto;
+
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to the next line */
+  gap: 4rem 2rem;
+  justify-content: space-between;
 }
