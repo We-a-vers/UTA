@@ -203,15 +203,10 @@ body {
 }
 
 .event {
-  width: 30%;
-  text-align: left;
-  margin-bottom: 20px;
-  margin-right: 2.5rem;
-}
-
-.event img {
   width: 100%;
-  height: auto;
+  height: 18.75rem;
+  object-fit: cover;
+  justify-self: center;
 }
 
 .event h3 {
@@ -235,11 +230,7 @@ body {
 
 /* Entire past events section */
 .past__container {
-  margin: 5rem;
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 15rem;
-  margin-bottom: 6rem;
+  margin: 5rem;  
 }
 
 /* View Event Gallery hover */
@@ -275,4 +266,13 @@ body {
 /* View Event Gallery hover */
 .past__title button:hover {
   color: #007bff;
+}
+
+.img-container{
+  grid-template-columns: 1fr 1fr 1fr;
+  display: grid;
+
+  gap: 2rem 7rem;
+  
+  width: 100%;
 }
