@@ -109,7 +109,7 @@ input::placeholder, textarea::placeholder{
     font-weight: 400;
 }
 
-#button-container{
+.button-container{
     display: flex;
     gap: 0.5rem;
 }
@@ -144,11 +144,13 @@ button{
     background: var(--light-blue-400, #3C4F75);
 }
 
-#intern-image{
+.intern-image{
     display: flex;
     flex-direction: column;
     gap: 0.88rem;
 }
+
+
 
 #interns-image{
     display: flex;
