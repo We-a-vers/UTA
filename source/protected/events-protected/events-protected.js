@@ -11,7 +11,7 @@ onAuthStateChanged(auth, (user) => {
   } else {
     // User is signed out
     // ...
-    window.history.back()
+    window.location.replace('/')
   }
 });
 
