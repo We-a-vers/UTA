@@ -1,6 +1,8 @@
-import * as firebase from 'https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js';
-import { getDatabase, ref, set, get, push, remove } from 'https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js';
-import { getStorage, ref as storageRef, uploadBytes, getDownloadURL, deleteObject } from 'https://www.gstatic.com/firebasejs/9.21.0/firebase-storage.js';
+import * as firebase from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js';
+import { getDatabase, ref, set, get, push, remove } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js';
+import { getStorage, ref as storageRef, uploadBytes, getDownloadURL, deleteObject } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-storage.js';
+import { getAuth} from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js'
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyCmGMX9MoljOy6BngzVhs4PmtqhJtLnCrk",
@@ -12,8 +14,10 @@ const firebaseConfig = {
     measurementId: "G-MCPVDR0L3Q"
 };
 
-firebase.initializeApp(firebaseConfig);
+const app = firebase.initializeApp(firebaseConfig);
 const database = getDatabase();
 const storage = getStorage();
 
-export { firebase, database, ref, set, get, push, remove, storage, storageRef, uploadBytes, getDownloadURL, deleteObject };
+const auth = getAuth(app);
+
+export { firebase, database, auth, ref, set, get, push, remove, storage, storageRef, uploadBytes, getDownloadURL, deleteObject };

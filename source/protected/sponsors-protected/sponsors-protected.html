@@ -9,9 +9,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Noto+Sans:wght@400;600&family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
-
-    <script type="module" src="./sponsors-protected.js"></script>
-    <script src="../tabs/tabs.js"></script>
 </head>
 
 <body>
@@ -28,12 +25,12 @@
 
                 <div class="description-input-container">
                     
-                    <div id="member-image">
+                    <div class="member-image">
 
                         <div class="section-title">Membership Card Info</div>
 
                         <img id="membership-card-image" width="312" height="234" src="/source/assets/placeholder-image.png" alt="No Image">
-                        <div id="button-container">
+                        <div class="button-container">
                             <button type="button" id="membership-card-image-upload">Upload</button>
                             <input type="file" id="membership-card-image-file" accept="image/*" style="display: none;">
                             <!-- <button id="membership-card-image-delete" style="color: red;">Delete Image</button> -->
@@ -69,12 +66,12 @@
                 
                 <div class="description-input-container">
                     
-                    <div id="member-image">
+                    <div class="member-image">
 
                         <div class="section-title">Merch<span class="required">*</span></div>
 
                         <img id="merch-image" width="312" height="234" src="/source/assets/placeholder-image.png" alt="No Image">
-                        <div id="button-container">
+                        <div class="button-container">
                             <button type="button" id="merch-image-upload">Upload</button>
                             <input type="file" id="merch-image-file" accept="image/*" style="display: none;">
                             <!-- <button id="merch-image-delete" style="color: red;">Delete Image</button> -->
@@ -109,14 +106,13 @@
             <div class="photos">
                 <div class="current-sponsors">Current Sponsors<span class="required">*</span></div>
             
-                    <div id="show-img">
-            
-                        <div class="img-container">
-                            <div class="box"></div>
-                            <button id="plus">+</button>
-                        </div>
-
+                <div id="show-img">
+        
+                    <div class="img-container">
+                        <div class="box"></div>
+                        <button id="plus">+</button>
                     </div>
+
                 </div>
             </div>
 
@@ -157,5 +153,8 @@
 
         </div>
     </div>
+    <script type="module" src="./sponsors-protected.js"></script>
+    <script src="../tabs/tabs.js"></script>
+    <script type="module" src="/source/log-out/logout.js"></script>
 </body>
 </html>
