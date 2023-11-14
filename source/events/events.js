@@ -24,7 +24,7 @@ window.addEventListener("load", async () => {
         upcomingEventImage[0].alt = 'Board Member Image';
         upcomingEventDate[0].textContent = eventHeader.date;
         upcomingEventTitle[0].textContent = eventHeader.title;
-        upcomingEventDescription.textContent = eventHeader.description;
+        upcomingEventDescription.innerHTML = eventHeader.description.replace('\n', '<br>');
 
         if(eventHeader.url){
             const link = document.createElement('a')
@@ -36,7 +36,7 @@ window.addEventListener("load", async () => {
 
             link.appendChild(btn)
 
-            upcomingEventDescription.insertAdjacentElement('afterend', link)
+            upcomingEventDescription.insertAdjacentElement('beforeend', link)
         }
     }
 });
