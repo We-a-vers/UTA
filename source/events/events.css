@@ -90,7 +90,6 @@ header{
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 32px;
   width: 400px;
   height: 400px;
 
@@ -157,9 +156,8 @@ header{
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-top:32px;
   padding: 10px;
-  gap: 10px;
-
   width: 95px;
   height: 45px;
 
@@ -210,8 +208,8 @@ header{
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 40px;
-
+  gap: 68px;
+  padding-top: 40px;
   font-family: Open Sans;
   font-size: 18px;
   font-style: normal;
