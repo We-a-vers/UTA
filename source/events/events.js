@@ -5,7 +5,7 @@ import { firebase, database, ref, set, get, push, remove, storage, storageRef, u
 
 const upcomingEventImage = document.getElementsByClassName('Upcoming__img')
 const upcomingEventDate = document.getElementsByClassName('Upcoming__date')
-const upcomingEventTitle = document.getElementsByClassName('Upcoming__title')
+const upcomingEventDayDifference = document.getElementsByClassName('Upcoming__days')
 const upcomingEventDescription = document.getElementById('Upcoming__descriptions')
 
 // window load listener for upcoming event
@@ -19,12 +19,17 @@ window.addEventListener("load", async () => {
         const eventHeader = snapshot.val();
         const sRef = storageRef(storage, "events/eventHeaderPicture.png");
         const imageUrl = await getDownloadURL(sRef);
-        
+        const today = new Date();
+        const eventdate = new Date(eventHeader.date);
+
+        var daysLeft = Math.round((eventdate.getTime() - today.getTime()) / (24 * 3600 * 1000));
+
         upcomingEventImage[0].src = imageUrl;
-        upcomingEventImage[0].alt = 'Board Member Image';
+        upcomingEventImage[0].alt = 'Upcoming Event Image';
         upcomingEventDate[0].textContent = eventHeader.date;
-        upcomingEventTitle[0].textContent = eventHeader.title;
-        upcomingEventDescription.textContent = eventHeader.description;
+        upcomingEventDayDifference[0].innerHTML = `In ${daysLeft} Days`;
+        upcomingEventDescription.innerHTML = eventHeader.description.replace('\n', '<br>');
+        upcomingEventDescription.insertAdjacentHTML("afterbegin", `<h1>${eventHeader.title}</h1>`)
 
         if(eventHeader.url){
             const link = document.createElement('a')
@@ -36,7 +41,7 @@ window.addEventListener("load", async () => {
 
             link.appendChild(btn)
 
-            upcomingEventDescription.insertAdjacentElement('afterend', link)
+            upcomingEventDescription.insertAdjacentElement('beforeend', link)
         }
     }
 });
