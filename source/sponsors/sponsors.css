@@ -214,9 +214,23 @@ button{
   padding: 1rem 2rem 1rem 2rem;
 }
 
+#merch-image{
+  width: 71.4375rem;
+  height: 67.5rem;
+
+  object-fit: cover;
+}
+
 #membership-card-purchase-button{
   margin-left: 60%;
   padding: 0.75rem 0.85rem 0.75rem 0.85rem;
+}
+
+#membership-card-image{
+  width: 28.0625rem;
+  height: 20.25rem;
+  object-fit: cover;
+  border-radius: 20px;
 }
 
 .uta-sponsors__logo-wrapper{
