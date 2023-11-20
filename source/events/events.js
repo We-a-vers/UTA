@@ -28,7 +28,7 @@ window.addEventListener("load", async () => {
         upcomingEventImage[0].alt = 'Upcoming Event Image';
         upcomingEventDate[0].textContent = eventHeader.date;
         upcomingEventDayDifference[0].innerHTML = `In ${daysLeft} Days`;
-        upcomingEventDescription.innerHTML = eventHeader.description.replace('\n', '<br>');
+        upcomingEventDescription.innerHTML = eventHeader.description.replaceAll('\n', '<br>');
         upcomingEventDescription.insertAdjacentHTML("afterbegin", `<h1>${eventHeader.title}</h1>`)
 
         if(eventHeader.url){
