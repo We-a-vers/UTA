@@ -10,24 +10,21 @@ body{
 .header{
     display: flex;
     flex-direction: row;   
-    margin-left: 10%;
-    margin-right: 12%;
-    margin-bottom: 169px;
-    margin-top: 89px;
-    
-    justify-content: space-evenly;
+    margin: 7.5rem;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
 }
 
 #header-left h1{
     /* Font */
-    display: inline-block;
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
     font-size: 30px;
-    line-height: 41px;
     text-align: left;
     color: #211D16;
+    padding: 0;
 }
 
 .img-container img{
@@ -36,11 +33,13 @@ body{
     object-fit: cover; /* Scale the image to cover the entire space */
 }
 
-#header-left{
+#header-left {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: start;
-    justify-content: space-between;
+    gap: 1rem;
+    height: 26.1875rem;
 }
 
 .link{

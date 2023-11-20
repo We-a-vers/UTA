@@ -140,6 +140,12 @@
   grid-gap: 30px; /* Optional: Add spacing between images */
 }
 
+.uta-sponsors__logos img{
+  width: 19.1875rem;
+  height: 17.625rem;
+  object-fit: cover;
+}
+
 .uta-sponsors__discount {
   margin-top: 5px;
   font-family: Open Sans;

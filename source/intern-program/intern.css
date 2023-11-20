@@ -121,6 +121,12 @@ body {
 
 }
 
+#intro img{
+  width: 70.625rem;
+  height: 35.3125rem;
+  object-fit: cover;
+}
+
 #intern-program-image{
   width: 43.3125rem;
   height: 26.1875rem;
@@ -165,7 +171,7 @@ body {
   gap: 2rem;
 }
 
-.past-projects img{
+#past-projects img{
   /* width: 30%;  */
   object-fit: cover;
 }
